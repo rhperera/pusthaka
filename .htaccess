@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ main.php/$1 [L]
+
+RewriteCond $1 !^(index\.php|images|css|js|robots\.txt)
+RewriteRule ^(.*)$ /digital/index.php/$1 [L]
