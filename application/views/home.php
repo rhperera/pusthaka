@@ -100,7 +100,7 @@
                             {
                                 foreach($categories as $row)
                                 {
-                                    echo '<li><a href="#">'; echo $row['category_name'];
+                                    echo '<li><a href="';echo base_url(); echo 'categories/view/'; echo $row['category_id']; echo'">'; echo $row['category_name'];
                                     echo '</a>
                              </li>';
                                 }

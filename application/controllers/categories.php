@@ -13,10 +13,16 @@ class Categories extends CI_Controller
         $this->load->model('category');
     }
 
-    function view(#$category_id)
-    )
+    function view($category_id)
+
     {
-        $data['books']=$this->category->category_result();
-        echo"<pre>"; print_r($data['books']); echo "";
+        $data['books']=$this->category->category_result($category_id);
+        //echo"<pre>"; print_r($data['books']); echo "";
+        $data2=$this->category->category_result($category_id);
+
+        $this->load->view('header',$data);
+        $this->load->view('navbar',$data);
+        $this->load->view('search_results',$data);
+        $this->load->view('footer',$data);
     }
 }

@@ -17,13 +17,15 @@ class Category extends CI_Model
         return $query->result_array();
     }
 
-    function category_result(#$category_id
-    )
+    function category_result($category_id)
+
     {
         $query1 = $this->db->query("
-        SELECT material_id
-        FROM material_category
-        WHERE category_id=3
+        SELECT m.material_id, m.name, cat.category_name
+        FROM material_category mc
+        JOIN materials m ON m.material_id=mc.material_id
+        JOIN categories cat ON cat.category_id=$category_id
+        WHERE mc.category_id=$category_id
         ");
         $list = $query1->result_array();
 
