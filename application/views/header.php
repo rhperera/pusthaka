@@ -12,10 +12,10 @@
 
 <?php #echo link_tag('../assets/css/bootstrap.min.css'); ?>
 <!-- Bootstrap Core CSS-->
-<link href='assets/css/bootstrap.min.css' rel="stylesheet">
+<link href='/assets/css/bootstrap.min.css' rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href='assets/css/modern-business.css' rel="stylesheet">
+<link href='/assets/css/modern-business.css' rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href='assets/font-awesome-4.1.0/css/font-awesome.min.css' rel="stylesheet" type="text/css">
