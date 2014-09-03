@@ -91,8 +91,8 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
-        <div class="col-lg-12"><? if($books){$name = $books[0];} else {$name['category_name']="Nothing to show";}?>
-            <h1 class="page-header"><? echo $name['category_name']; ?>
+        <div class="col-lg-12"><?php if($books){$name = $books[0];} else {$name['category_name']="Nothing to show";}?>
+            <h1 class="page-header"><?php echo $name['category_name']; ?>
                 <small>Category</small>
             </h1>
             <ol class="breadcrumb">
@@ -116,20 +116,20 @@
                 <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
             </a>
             <h3>
-                <a href="<? echo base_url()?>posts/item/<?echo $row['material_id']?>"><?php echo $row['name'];?></a>
+                <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
             </h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
         </div>
-        <?
+        <?php
         if($i%3==0)
         { ?>
     </div>
-    <? if($i==9)
+    <?php if($i==9)
     {   break;}
     else
     { ?>
-    <div class="row"><?} } ?>
-    <?
+    <div class="row"><?php } } ?>
+    <?php
 
         $i = $i+1;
 
