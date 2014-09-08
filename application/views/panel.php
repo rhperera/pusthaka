@@ -58,7 +58,7 @@
                         </span>
             </div>
             <div class="panel-body">
-                <h4>Service Four</h4>
+                <h4>Manage Collections</h4>
                 <p>Get your favourite books and add them to collections.</p>
                 <a href="#" class="btn btn-primary">My Collections</a>
             </div>
