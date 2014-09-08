@@ -23,9 +23,10 @@
                 ?>
                 <li>
                     <a href="about.html">About</a>
+						
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="<?php base_url()?>contact/page">Contact</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
