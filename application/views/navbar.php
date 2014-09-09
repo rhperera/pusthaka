@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">UCSC DIGITAL LIBRARY</a>
+            <a class="navbar-brand" href="<?php echo base_url();?>">UCSC DIGITAL LIBRARY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -21,7 +21,7 @@
                 <?php
                 if($this->session->userdata('user_name'))
                 {
-                    echo ' <li class="active">
+                    echo ' <li>
                                <a href="#">'; echo $this->session->userdata('user_name'); echo '</a>
                                </li>';
                 }
@@ -75,7 +75,7 @@
 
     <!--Search search -->
     
-    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:0px; border:2px solid #86A3EC; height:40px; font-size:17px" id="search" placeholder="Type here to search">
+    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:5px; border:2px solid #86A3EC; height:40px; font-size:17px" id="search" placeholder="Type here to search">
     <style>
                 #search::-webkit-input-placeholder { font-style: italic; }
                 #search::-moz-placeholder { font-style: italic; }

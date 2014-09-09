@@ -9,7 +9,7 @@
 			<h4>Categories</h4>
 			<div class="row">
 				<div class="col-lg-6">
-					<ul class="list-unstyled">
+					<ul class="list-unstyled" style="width:140px">
 
 						<?php if(!isset($categories))
 						{
@@ -44,9 +44,9 @@
 
 
 		<div class="row">
-			<div class="col-lg-12">
+			<!--<div class="col-lg-12">
 				<p>Copyright &copy; Your Website 2014</p>
-			</div>
+			</div>-->
 		</div>
 		
 </div>	
@@ -54,7 +54,7 @@
 </div>
 </div>
 
-
+<p>Copyright &copy; University of Colombo School of Computing - 2014</p>
 		
 </footer>
 
