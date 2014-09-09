@@ -33,6 +33,19 @@
                 <li>
                     <a href="#">Advanced</a>
                 </li>
+				
+				
+
+				
+				
+				<?php
+				
+				echo ' <li>
+							<a href="'; echo base_url(); echo 'users/register'; echo '">Register</a></li>';
+				
+				
+				?>
+				
                 <?php
                 if($this->session->userdata('user_name'))
                 {
