@@ -7,7 +7,7 @@ include('navbar.php'); ?>
 
 <h1>Contact</h1>
 <p>
-If you have any problem with logging or other system manner you can contact administrator<br/>
+If you have any problem with logging or other system manner you can contact admin<br/>
 	<a href="www.gmail.com">Email to administrator</a>
 </p>
 <p>
