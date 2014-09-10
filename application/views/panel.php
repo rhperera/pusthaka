@@ -9,13 +9,13 @@
             <div class="panel-heading">
                         <span class="fa-stack fa-5x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-book fa-stack-1x fa-inverse"></i>
                         </span>
             </div>
             <div class="panel-body">
-                <h4>Service One</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <h4>Read Online</h4>
+                <p>View and read most recently uploaded books now.</p>
+                <a href="#" class="btn btn-primary">Recent Books</a>
             </div>
         </div>
     </div>
@@ -24,13 +24,13 @@
             <div class="panel-heading">
                         <span class="fa-stack fa-5x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-search fa-stack-1x fa-inverse"></i>
                         </span>
             </div>
             <div class="panel-body">
-                <h4>Service Two</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <h4>Search</h4>
+                <p>Use our Advance Search for a customized search</p>
+                <a href="#" class="btn btn-primary">Advance Search</a>
             </div>
         </div>
     </div>
@@ -39,13 +39,13 @@
             <div class="panel-heading">
                         <span class="fa-stack fa-5x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-upload fa-stack-1x fa-inverse"></i>
                         </span>
             </div>
             <div class="panel-body">
-                <h4>Service Three</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <h4>Upload</h4>
+                <p>Upload and share books on your own.</p>
+                <a href="#" class="btn btn-primary">Upload now</a>
             </div>
         </div>
     </div>
@@ -54,13 +54,13 @@
             <div class="panel-heading">
                         <span class="fa-stack fa-5x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-folder-open fa-stack-1x fa-inverse"></i>
                         </span>
             </div>
             <div class="panel-body">
-                <h4>Service Four</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <h4>Manage Collections</h4>
+                <p>Get your favourite books and add them to collections.</p>
+                <a href="#" class="btn btn-primary">My Collections</a>
             </div>
         </div>
     </div>

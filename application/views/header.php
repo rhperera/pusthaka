@@ -8,17 +8,17 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Modern Business - Start Bootstrap Template</title>
+<title>UCSC Digital Library</title>
 
 <?php #echo link_tag('../assets/css/bootstrap.min.css'); ?>
 <!-- Bootstrap Core CSS-->
-<link href='/digital/assets/css/bootstrap.min.css' rel="stylesheet">
+<link href='/ucsc-digital-library/assets/css/bootstrap.min.css' rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href='/digital/assets/css/modern-business.css' rel="stylesheet">
+<link href='/ucsc-digital-library/assets/css/modern-business.css' rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href='/digital/assets/font-awesome-4.1.0/css/font-awesome.min.css' rel="stylesheet" type="text/css">
+<link href='/ucsc-digital-library/assets/font-awesome-4.1.0/css/font-awesome.min.css' rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

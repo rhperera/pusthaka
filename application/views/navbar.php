@@ -1,3 +1,8 @@
+<script>
+    function showSearch(){
+        $('#search').slideToggle();
+    }
+</script>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">UCSC DIGITAL LIBRARY</a>
+            <a class="navbar-brand" href="<?php echo base_url();?>">UCSC DIGITAL LIBRARY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -16,7 +21,7 @@
                 <?php
                 if($this->session->userdata('user_name'))
                 {
-                    echo ' <li class="active">
+                    echo ' <li>
                                <a href="#">'; echo $this->session->userdata('user_name'); echo '</a>
                                </li>';
                 }
@@ -42,7 +47,6 @@
                    #<a href="; echo base_url(); echo 'posts/item/'; echo $row['material_id']; echo '>';echo $row['name'];
                 #echo   '</a>
 
-
                 }
                 else
                 {
@@ -51,9 +55,35 @@
 
                 }
                 ?>
+                <li>
+                    <button class="btn btn-default" type="button" onclick="showSearch();" style="position:relative; top:6px"><i class="fa fa-search"></i></button>
+                </li>
             </ul>
+			
+		<!-- Blog Sidebar Widgets Column -->
+
+			       
+		
+		
         </div>
         <!-- /.navbar-collapse -->
+		
+
+		
     </div>
     <!-- /.container -->
+
+    <!--Search search -->
+    
+    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:5px; border:2px solid #86A3EC; height:40px; font-size:17px" id="search" placeholder="Type here to search">
+    <style>
+                #search::-webkit-input-placeholder { font-style: italic; }
+                #search::-moz-placeholder { font-style: italic; }
+                #search::-ms-input-placeholder { font-style: italic; }
+    </style>
+            
+        
+	
+
+			
 </nav>

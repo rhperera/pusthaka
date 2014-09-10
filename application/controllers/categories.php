@@ -11,12 +11,14 @@ class Categories extends CI_Controller
     {
         parent::__construct();
         $this->load->model('category');
+
     }
 
     function view($category_id)
 
     {
         $data['books']=$this->category->category_result($category_id);
+        $data['categories']=$this->category->get_categories();
         //echo"<pre>"; print_r($data['books']); echo "";
         $data2=$this->category->category_result($category_id);
 
