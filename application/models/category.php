@@ -21,7 +21,7 @@ class Category extends CI_Model
 
     {
         $query1 = $this->db->query("
-        SELECT m.material_id, m.name, cat.category_name
+        SELECT m.material_id, m.name, cat.category_name, m.author
         FROM material_category mc
         JOIN materials m ON m.material_id=mc.material_id
         JOIN categories cat ON cat.category_id=$category_id
