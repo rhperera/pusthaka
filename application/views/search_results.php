@@ -29,13 +29,13 @@
     {
     ?>
         <div class="col-md-4 img-portfolio">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
+            <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>">
+                <img class="img-responsive img-hover" src="/ucsc-digital-library/assets/images/700x400.jpg" alt="">
             </a>
             <h3>
                 <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
             </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <p>by <?php echo $row['author']; ?></p>
         </div>
         <?php
         if($i%3==0)

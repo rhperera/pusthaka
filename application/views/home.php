@@ -28,7 +28,7 @@
 
     <!-- /.row -->
 
-    <hr>
+ 
 
     <!-- Footer -->
 <!-- /.container -->

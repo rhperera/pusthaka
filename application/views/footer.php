@@ -34,10 +34,12 @@
 
 
 		<!-- Side Widget Well -->
-		<div class="col-md-3 col-sm-6">
+		<div class="col-md-3 col-sm-6" style="float:right">
+         
 			<h4>Side Widget Well</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
 		</div>
+           
 
  
 
@@ -53,6 +55,8 @@
 
 </div>
 </div>
+    
+   <hr>
 
 <p>Copyright &copy; University of Colombo School of Computing - 2014</p>
 		
