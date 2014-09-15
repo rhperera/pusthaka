@@ -75,7 +75,7 @@
 
     <!--Search search -->
     
-    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:5px; border:2px solid #86A3EC; height:40px; font-size:17px" id="search" placeholder="Type here to search">
+    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:5px; border:2px solid; height:40px; font-size:17px" id="search">
     <style>
                 #search::-webkit-input-placeholder { font-style: italic; }
                 #search::-moz-placeholder { font-style: italic; }
