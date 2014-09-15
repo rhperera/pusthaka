@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2014 at 07:00 AM
+-- Generation Time: Sep 15, 2014 at 07:27 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -41,6 +41,7 @@ INSERT INTO `categories` (`category_id`, `category_name`) VALUES
 (2, 'Computer Science'),
 (0, 'Hardware'),
 (3, 'Networks'),
+(5, 'Programming '),
 (1, 'Stories'),
 (4, 'Web Development');
 
@@ -58,17 +59,19 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `comment_id` int(11) DEFAULT NULL,
   `upload_date` date DEFAULT NULL,
   `path_id` int(11) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `materials`
 --
 
-INSERT INTO `materials` (`material_id`, `name`, `author`, `uploader_id`, `comment_id`, `upload_date`, `path_id`) VALUES
-(1, 'Harry Potter', 'J. K. Rowling', 2, 12, '2012-08-22', 0),
-(2, 'Computer Networks', 'Tanenbaum', 2, 23, '2014-09-08', 0),
-(3, 'Beginning PHP5', 'Elizebeth Naramore', 1, 2, '2014-09-04', 7);
+INSERT INTO `materials` (`material_id`, `name`, `author`, `uploader_id`, `comment_id`, `upload_date`, `path_id`, `status`) VALUES
+(1, 'Harry Potter', 'J. K. Rowling', 2, 12, '2012-08-22', 0, 1),
+(2, 'Computer Networks', 'Tanenbaum', 2, 23, '2014-09-08', 0, 1),
+(3, 'Beginning PHP5', 'Elizebeth Naramore', 1, 2, '2014-09-04', 7, 1),
+(4, 'Java EE Development', 'somebody', 5, 3, '2014-09-04', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,8 @@ INSERT INTO `material_category` (`material_id`, `category_id`) VALUES
 (2, 2),
 (2, 3),
 (3, 4),
-(3, 2);
+(3, 2),
+(4, 5);
 
 -- --------------------------------------------------------
 
