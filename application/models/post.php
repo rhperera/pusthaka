@@ -14,9 +14,11 @@ class Post extends CI_Model
          FROM material_category mc
          JOIN materials m ON m.material_id = mc.material_id
          JOIN categories ca ON mc.category_id = ca.category_id
+         WHERE m.status=1
          GROUP BY m.material_id
          ORDER BY upload_date DESC
          LIMIT $num;
+         
         ");
        //$query = $this->db->get();
 
@@ -27,7 +29,7 @@ class Post extends CI_Model
     function get_material($material_id)
     {
         $query = $this->db->query("
-        SELECT * FROM materials WHERE material_id=$material_id
+        SELECT * FROM materials WHERE material_id=$material_id AND status=1
         ");
         return $query->first_row('array');
     }

@@ -25,7 +25,7 @@ class Category extends CI_Model
         FROM material_category mc
         JOIN materials m ON m.material_id=mc.material_id
         JOIN categories cat ON cat.category_id=$category_id
-        WHERE mc.category_id=$category_id
+        WHERE mc.category_id=$category_id AND m.status=1
         ");
         $list = $query1->result_array();
 
