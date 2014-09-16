@@ -58,7 +58,7 @@
 
    <hr>
 
-<p>Copyright &copy; University of Colombo School of Computing - 2014</p>
+<p>Copyright &copy; University of Colombo School of Computing 2014</p>
 		
 </footer>
 </div>
