@@ -6,3 +6,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond $1 !^(index\.php|images|css|js|robots\.txt)
 RewriteRule ^(.*)$ /ucsc-digital-library/index.php/$1 [L]
+
+php_value upload_max_filesize "50M"
