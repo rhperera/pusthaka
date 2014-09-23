@@ -10,6 +10,8 @@
 
 <title>UCSC Digital Library</title>
 
+<link rel="shortcut icon" href="/ucsc-digital-library/assets/images/icon.ico" type="image/icon" />
+
 <?php #echo link_tag('../assets/css/bootstrap.min.css'); ?>
 <!-- Bootstrap Core CSS-->
 <link href='/ucsc-digital-library/assets/css/bootstrap.min.css' rel="stylesheet">
