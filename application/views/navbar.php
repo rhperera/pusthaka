@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url();?>">UCSC DIGITAL LIBRARY</a>
+            <a class="navbar-brand" style="color:#ffffff" href="<?php echo base_url();?>">UCSC DIGITAL LIBRARY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,27 +22,27 @@
                 if($this->session->userdata('user_name'))
                 {
                     echo ' <li>
-                               <a href="#">'; echo $this->session->userdata('user_name'); echo '</a>
+                               <a href="#" style="color:#ffffff">'; echo $this->session->userdata('user_name'); echo '</a>
                                </li>';
                 }
                 ?>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.html" style="color:#ffffff">About</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" style="color:#ffffff">Contact</a>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="#" style="color:#ffffff">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Advanced</a>
+                    <a href="#" style="color:#ffffff">Advanced</a>
                 </li>
                 <?php
                 if($this->session->userdata('user_name'))
                 {
                     echo ' <li>
-                               <a href="'; echo base_url(); echo 'users/logout'; echo '">Logout</a></li>';
+                               <a style="color:#ffffff" href="'; echo base_url(); echo 'users/logout'; echo '">Logout</a></li>';
 
                    #<a href="; echo base_url(); echo 'posts/item/'; echo $row['material_id']; echo '>';echo $row['name'];
                 #echo   '</a>
