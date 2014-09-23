@@ -1,8 +1,3 @@
-
-
-<!-- Navigation -->
-
-
 <!-- Page Content -->
 <div class="container">
 
@@ -19,6 +14,7 @@
             </ol>
         </div>
     </div>
+
     <!-- /.row -->
 
     <!-- Projects Row -->
