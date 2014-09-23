@@ -6,28 +6,37 @@
         width: 42%;
     }
 </style>
+
 <div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Upload
+                <small>materials to the library</small>
+            </h1>
+        </div>
+    </div>
+
     <div class="row">
             <div class="col-md-8">
-                <h3>Upload</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form action="<?php base_url()?>uploads/do_upload" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Title</label><span style="color:red"> *</span>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Author</label><span style="color:red"> *</span>
-                            <input type="text" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <input type="text" class="form-control" name="author" required data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Category</label><span style="color:red"> *</span>
-                            <select class="form-control">
+                            <select class="form-control" name="category">
                                 <option selected disabled>Select Category</option>
                                 <?php
                                     if(!isset($categories))
@@ -38,29 +47,43 @@
                                     {
                                         foreach($categories as $row)
                                         {
-                                            echo '<option value="';echo $row['category_id']; echo'">'; echo $row['category_name']; echo'</option>';
+                                           echo '<option  value="';echo $row['category_id']; echo'">'; echo $row['category_name']; echo'</option>';
                                         }
                                     }
                                 ?>
                             </select>
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Short Description</label>
-                            <textarea rows="4" cols="100" class="form-control" id="description" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea rows="4" name="description" cols="100" class="form-control" id="description" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Add tags</label>
-                            <textarea rows="4" cols="100" class="form-control" id="tags" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea rows="4" name="tags" cols="100" class="form-control" id="tags" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
+
                     <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                     
+                    
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="file" name="file" value="file"/>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+                        </div>
+                    </div>
                 </form>
             </div>
+
+            <!-- Sidebar Column -->
 
         </div>
