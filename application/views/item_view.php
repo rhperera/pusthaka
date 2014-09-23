@@ -1,5 +1,8 @@
 
 <!-- Page Content -->
+<?php define('ACCESS_ALLOWED', 1); ?>
+
+
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
@@ -10,39 +13,20 @@
                 <small>by <?php echo $item['author']?>
                 </small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li class="active">Blog Post</li>
-            </ol>
         </div>
     </div>
     <!-- /.row -->
 
     <!-- Content Row -->
+    
     <div class="row">
-
         <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
-
-            <!-- Blog Post -->
-
-            <hr>
-
-            <!-- Date/Time -->
-            <p><i class="fa fa-clock-o"></i>Uploaded on <?php echo $item['upload_date']?></p>
-
-            <hr>
-
-            <!-- Preview Image -->
-            <img class="img-responsive" src="/ucsc-digital-library/assets/images/900x300.jpg" alt="">
-
-            <hr>
-
+        <div class="col-lg-9">
+            <iframe id="viewer" src = "/ucsc-digital-library/ViewerJS/#..<?php echo $item['path']?>.pdf" width='800' height='700' allowfullscreen webkitallowfullscreen></iframe>
             <!-- Post Content -->
 
             <hr>
-
+                        <p><i class="fa fa-clock-o"></i>Uploaded on <?php echo $item['upload_date']?></p>
             <!-- Blog Comments -->
 
             <!-- Comments Form -->
