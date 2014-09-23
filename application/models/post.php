@@ -33,4 +33,31 @@ class Post extends CI_Model
         ");
         return $query->first_row('array');
     }
+
+    function save_material($book,$category)
+    {
+        
+        $name       = $book->get_name();
+        $author     = $book->get_author();
+        $uploader_id= $book->get_uploader_id();
+        $upload_date= $book->get_upload_date();
+        $path       = $book->get_path();
+        $status     = $book->get_status();
+
+        $query1 = $this->db->query("
+            INSERT INTO materials
+            VALUES('','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."')");
+
+        $query2 = $this->db->query("
+            SELECT material_id
+            FROM materials
+            WHERE name='".$name."' AND author='".$author."' AND uploader_id='".$uploader_id."'");
+        $array = $query2->first_row('array');
+        $material_id =$array['material_id'];
+
+       $query2 = $this->db->query("
+            INSERT INTO material_category
+            VALUES('".$material_id."','".$category."')
+            ");
+    }
 }
