@@ -35,4 +35,14 @@ class Category extends CI_Model
         ");*/
         return $list;
     }
+
+    function get_category_name($category_id){
+        $query = $this->db->query("
+            SELECT category_name
+            FROM categories
+            WHERE category_id=$category_id");
+         $category_name=$query->result_array();
+        return $category_name;
+    }
+   
 }
