@@ -15,7 +15,7 @@
             <div class="panel-body">
                 <h4>Read Online</h4>
                 <p>View and read most recently uploaded books now.</p>
-                <a href="#" class="btn btn-primary">Recent Books</a>
+                <a href="<?php echo base_url()?>posts/recent" class="btn btn-primary">Recent Books</a>
             </div>
         </div>
     </div>

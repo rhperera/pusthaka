@@ -15,7 +15,7 @@ class Posts extends CI_Controller
     }
     function index()
     {
-        $data['posts']=$this->post->get_materials(10);
+        //$data['posts']=$this->post->get_materials(10);
         $data['categories']=$this->category->get_categories();
         //echo"<pre>"; print_r($data['posts']); echo "";
         $this->load->view('header',$data);
@@ -39,5 +39,14 @@ class Posts extends CI_Controller
         {
             redirect(base_url().'posts');
         }
+    }
+
+    function recent()
+    {
+        $data['recents']=$this->post->get_materials(10);
+        $this->load->view('header',$data);
+        $this->load->view('navbar',$data);
+        $this->load->view('recentbooks',$data);
+        $this->load->view('footer',$data);
     }
 }
