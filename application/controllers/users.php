@@ -24,7 +24,16 @@ class Users extends CI_Controller
             {
                 $this->session->set_userdata('user_name',$user['user_name']);
                 $this->session->set_userdata('user_type',$user['user_type']);
-                redirect(base_url().'posts');
+                if($user['user_type']=='librarian')
+                {
+                    
+                    redirect(base_url().'Lpanel');
+                }
+                else
+                {
+                    redirect(base_url().'posts');
+                }
+                
             }
         }
         $this->load->view('header',$data);

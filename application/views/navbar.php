@@ -33,9 +33,6 @@
                     <a href="contact.html" style="color:#ffffff">Contact</a>
                 </li>
                 <li>
-                    <a href="#" style="color:#ffffff">Profile</a>
-                </li>
-                <li>
                     <a href="#" style="color:#ffffff">Advanced</a>
                 </li>
                 <?php
