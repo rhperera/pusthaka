@@ -12,24 +12,34 @@
  </div> 
 
     <div class="row">
-            <div class="col-md-3 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
+         <?php
+    $i=1;
+    foreach($recents as $row)
+    {
+    ?>
+        <div class="col-md-3 img-portfolio">
+            <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>">
+                <img class="img-responsive img-hover" src="/ucsc-digital-library/assets/images/700x400.jpg" alt="">
+            </a>
+            <h3>
+                <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
+            </h3>
+            <p>by <?php echo $row['author']; ?></p>
+        </div>
+        <?php
+        if($i%4==0)
+        { ?>
+    </div>
+    <?php if($i==9)
+    {   break;}
+    else
+    { ?>
+    <div class="row"><?php } } ?>
+    <?php
+
+        $i = $i+1;
+
+    } ?>
+            
+                
     </div>
