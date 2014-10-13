@@ -64,7 +64,7 @@ class Uploads extends CI_Controller
                 $uploader_id=$this->session->userdata('user_id');
                 $date       =date("Y-m-d");
                 $path       ="/repo/".$category_name[0]['category_name']."/". $_POST["name"];
-                $status     =1;
+                $status     =0;
                 
                 require('../ucsc-digital-library/application/libraries/Material.php');
                 $book       = new Material($name,$author,$uploader_id,$date,$path,$status);

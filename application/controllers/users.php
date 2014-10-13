@@ -24,6 +24,9 @@ class Users extends CI_Controller
             {
                 $this->session->set_userdata('user_name',$user['user_name']);
                 $this->session->set_userdata('user_type',$user['user_type']);
+                $this->session->set_userdata('user_type',$user['user_id']);
+
+
                 if($user['user_type']=='librarian')
                 {
                     

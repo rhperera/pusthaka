@@ -6,14 +6,28 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header">
+            
+           
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="color:#ffffff" href="<?php echo base_url();?>">UCSC DIGITAL LIBRARY</a>
+            
+            <a class="navbar-brand" style="color:#ffffff" href="<?php 
+ 
+                                if($this->session->userdata('user_type')=='user')
+                                {
+                                    echo base_url();
+                                }
+                                elseif($this->session->userdata('user_type')=='librarian')
+                                {
+                                    echo base_url(); echo 'Lpanel';
+                                }
+                                ?>">DIGITAL LIBRARY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
