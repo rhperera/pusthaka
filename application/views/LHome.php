@@ -1,15 +1,28 @@
 <div class="container"> 
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
+
+
+    <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Welcome
+                    <small><?php echo $this->session->userdata('user_name');?></small>
+                </h1>
+            </div>
+    </div> 
+
+    <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">just now</span>
-                                        <i class="fa fa-fw fa-calendar"></i> Calendar updated
+                                    <a href="<?php echo base_url(); echo 'Lpanel/inactives'?>" class="list-group-item">
+                                        
+                                        <i class="fa fa-fw fa-book"></i> Books not active
+                                        <span class="badge"><?php echo $inactives[0]['inactive_books']; ?></span>
                                     </a>
+
                                     <a href="#" class="list-group-item">
                                         <span class="badge">4 minutes ago</span>
                                         <i class="fa fa-fw fa-comment"></i> Commented on a post
@@ -45,3 +58,6 @@
                             </div>
                         </div>
                     </div>
+
+       
+</div>
