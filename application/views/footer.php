@@ -1,5 +1,5 @@
 <footer>
-
+<?php /*
 <div class="row">
 <div class="input-group">
 <div class="well">
@@ -54,9 +54,29 @@
 </div>	
 
 </div>
-</div>
+</div>  */ ?>
 
-   <hr>
+     <hr>
+
+     <div class="row">
+                    <div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="/ucsc-digital-library/assets/images/ucsc.jpg" alt="ucsc-logo" width="140px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                .col-lg-3
+                            </div>
+                        </div>
+                    </div>
+                    
+       </div>
+
+
 
 <p>Copyright &copy; University of Colombo School of Computing 2014</p>
 		
