@@ -1,3 +1,4 @@
+
 <footer>
 <?php /*
 <div class="row">
@@ -86,10 +87,7 @@
 <!-- /.container -->
 
 <!-- jQuery Version 1.11.0 -->
-<script src='/ucsc-digital-library/assets/js/jquery-1.11.0.js'></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src='/ucsc-digital-library/assets/js/bootstrap.min.js'></script>
 
 </body>
 

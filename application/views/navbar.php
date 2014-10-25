@@ -62,7 +62,7 @@
                 else
                 {
                     echo ' <li>
-                               <a href="'; echo base_url(); echo 'users/login'; echo '">Login</a></li>';
+                               <a style="color:#ffffff" href="'; echo base_url(); echo 'users/login'; echo '">Login</a></li>';
 
                 }
                 ?>

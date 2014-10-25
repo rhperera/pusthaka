@@ -1,3 +1,6 @@
+<style>
+    
+</style>
 <header id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
