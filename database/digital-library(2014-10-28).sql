@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 23, 2014 at 03:59 PM
+-- Generation Time: Oct 27, 2014 at 07:41 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -19,6 +19,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `digital-library`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `p2`()
+    DETERMINISTIC
+BEGIN
+SELECT 'Hello World';
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -60,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `path` varchar(100) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `materials`
@@ -70,8 +82,10 @@ INSERT INTO `materials` (`material_id`, `name`, `author`, `uploader_id`, `upload
 (1, 'Harry Potter', 'J. K. Rowling', 2, '2012-08-22', '0', 1),
 (2, 'Computer Networks', 'Tanenbaum', 2, '2014-09-08', '0', 1),
 (3, 'Beginning PHP5', 'Elizebeth Naramore', 1, '2014-09-04', '7', 1),
-(4, 'Java EE Development', 'somebody', 5, '2014-09-04', '2', 0),
-(10, 'Maths Tutorial', 'Lalithi Perera', 0, '2014-09-23', '/repo/Computer Science/Maths Tutorial', 1);
+(4, 'Java EE Development', 'somebody', 5, '2014-09-04', '2', 1),
+(10, 'Maths Tutorial', 'Lalithi Perera', 0, '2014-09-23', '/repo/Computer Science/Maths Tutorial', 1),
+(11, 'Networks', 'Tanenbum', 0, '2014-09-25', '/repo/Networks/Networks', 1),
+(12, 'My Sample Book', 'Raveen Perera', 0, '2014-10-10', '/repo/Programming /My Sample Book', 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +112,9 @@ INSERT INTO `material_category` (`material_id`, `category_id`) VALUES
 (3, 4),
 (3, 2),
 (4, 5),
-(10, 2);
+(10, 2),
+(11, 3),
+(12, 5);
 
 -- --------------------------------------------------------
 
@@ -132,8 +148,8 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `user_type`) V
 -- Constraints for table `material_category`
 --
 ALTER TABLE `material_category`
-  ADD CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`),
-  ADD CONSTRAINT `fk_material_id` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`);
+  ADD CONSTRAINT `fk_material_id` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
