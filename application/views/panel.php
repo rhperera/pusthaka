@@ -6,10 +6,7 @@
         -webkit-box-shadow: none !important;
         color: #fff;
     }
-
-   
-      
-    
+ 
 </style>
 
 <script>
