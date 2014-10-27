@@ -1,10 +1,7 @@
 <!--The Container-->
 <!--The closing div tag is in the footer.php-->
 <style>
-    .form-control 
-    {
-        width: 42%;
-    }
+    
 </style>
 
 <div class="container">
@@ -18,8 +15,8 @@
     </div>
 
     <div class="row">
-            <div class="col-md-8">
-                <form action="<?php base_url()?>uploads/do_upload" method="post" enctype="multipart/form-data">
+            <div class="col-md-5">
+                <form action="<?php echo base_url();?>uploads/do_upload" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Title</label><span style="color:red"> *</span>
@@ -83,6 +80,24 @@
                     </div>
                 </form>
             </div>
+        <div class="col-md-4" style="top: 30px">
+            <?php
+                
+                 if($save=='success')
+                     {
+                        echo '<div class="alert alert-success">
+                                    <strong>Success!</strong> You successfully uploaded ';
+                                     echo ' to the library.';
+                              echo '</div>';
+                     }
+                     else if($save=='fail')
+                     {
+                         echo '<div class="alert alert-success">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>';
+                     }
+                     ?>
+        </div>
 
             <!-- Sidebar Column -->
 

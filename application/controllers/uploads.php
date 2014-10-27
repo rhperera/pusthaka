@@ -11,10 +11,11 @@ class Uploads extends CI_Controller
         $this->load->model('post');
         
     }
-	function Index()
+	function upload($stat)
 	{
         $data['categories']=$this->category->get_categories();
         $user_name = $this->session->userdata('user_name');
+        $data['save']=$stat;
 
         if($user_name)
         {
@@ -69,10 +70,24 @@ class Uploads extends CI_Controller
                 require('../ucsc-digital-library/application/libraries/Material.php');
                 $book       = new Material($name,$author,$uploader_id,$date,$path,$status);
                 //$book   =serialize($book);
-                $save   =$this->post->save_material($book,$category);
-               
+                $save1   =$this->post->save_material($book,$category);
+                
+                
             }
           }
+
+          if($save1)
+                {
+                    
+                  redirect(base_url().'uploads/upload/success');
+                  
+                }
+                else
+                {
+                    
+                  redirect(base_url().'uploads/upload/fail');
+                   
+                }
 
     }
 
