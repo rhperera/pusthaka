@@ -59,5 +59,18 @@ class Post extends CI_Model
             INSERT INTO material_category
             VALUES('".$material_id."','".$category."')
             ");
+        if($query1 && $query2)
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
+    function browse_materials()
+    {
+        
     }
 }
