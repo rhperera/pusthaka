@@ -5,7 +5,18 @@ class Lpanel extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('librarianpanel');
+        $user_type = $this->session->userdata('user_type');
+         if($user_type!='librarian')
+         {
+                    
+            redirect(base_url());
+          }
+          else
+          {
+              $this->load->model('librarianpanel');
+             
+          }
+
         
     }
 
