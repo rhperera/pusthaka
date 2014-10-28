@@ -77,7 +77,7 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="advance">
-                            <a href="#">
+                            <a href="<?php echo base_url()?>AdvanceSearch">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color:#CA4252" ></i>
                               <i class="fa fa-search fa-stack-1x fa-inverse"></i></a>
                         </span>
