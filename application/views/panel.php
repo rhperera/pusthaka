@@ -6,10 +6,7 @@
         -webkit-box-shadow: none !important;
         color: #fff;
     }
-
-   
-      
-    
+ 
 </style>
 
 <script>
@@ -64,14 +61,15 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="read">
+                            <a href="<?php echo base_url()?>posts/browse">
                               <i class="fa fa-circle fa-stack-2x text-primary" ></i>
-                              <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-book fa-stack-1x fa-inverse"></i></a>
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="read1">
-                    <h4>Read Online</h4>
-                    <p>View and read most recently uploaded books now.</p>
-                    <a href="<?php echo base_url()?>posts/recent" class="btn btn-primary">Recent Books</a>
+                    <h4>Browse</h4>
+                    <p>Browse the library with different options.</p>
+                    <a href="<?php echo base_url()?>posts/browse" class="btn btn-primary">Browse Library</a>
                 </div>
         </div>
     </div>
@@ -79,8 +77,9 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="advance">
+                            <a href="#">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color:#CA4252" ></i>
-                              <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-search fa-stack-1x fa-inverse"></i></a>
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="advance1">
@@ -94,14 +93,15 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="upload">
+                            <a href="<?php echo base_url()?>uploads/upload/new">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color:#42CA68" ></i>
-                              <i class="fa fa-upload fa-stack-1x fa-inverse" ></i>
+                              <i class="fa fa-upload fa-stack-1x fa-inverse" ></i></a>
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="upload1">
                     <h4>Upload</h4>
                     <p>Upload and share books on your own.</p>
-                    <a href="<?php echo base_url()?>uploads" class="btn btn-primary" style="background-color:#42CA68; border-color:#42CA68  ">Upload now</a>
+                    <a href="<?php echo base_url()?>uploads/upload/new" class="btn btn-primary" style="background-color:#42CA68; border-color:#42CA68  ">Upload now</a>
                 </div>
         </div>
     </div>
@@ -109,8 +109,9 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="collection">
+                            <a href="#">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color: #b050bb "></i>
-                              <i class="fa fa-folder-open fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-folder-open fa-stack-1x fa-inverse"></i></a>
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden " id="collection1">
@@ -121,4 +122,6 @@
         </div>
     </div>
 </div>
+
+ 
 

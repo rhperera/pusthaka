@@ -27,6 +27,10 @@
                                 {
                                     echo base_url(); echo 'Lpanel';
                                 }
+                                else
+                                {
+                                    echo base_url();
+                                }
                                 ?>">DIGITAL LIBRARY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
