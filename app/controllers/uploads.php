@@ -1,0 +1,102 @@
+<?php
+
+class Uploads extends Controller
+{
+
+
+    function __construct()
+    {
+        parent::__construct();
+        
+        $category = $this->model('category');
+        $post = $this->model('post');
+        
+    }
+	function upload($stat)
+	{
+        $category = $this->model('category');
+        $data['categories']=$category->get_categories();
+
+        $user_name = $_SESSION['user_name'];
+
+        $data['save']=$stat;
+
+        if($user_name)
+        {
+		  $this->view('header',$data);
+		  $this->view('navbar',$data);
+          $this->view('upload_file',$data,array('error' =>''));
+		  $this->view('footer',$data);
+        }
+        else
+        {
+            header("Location: ".ASSET_PATH);
+        }
+	}
+
+    function do_upload()
+    {
+        if ($_FILES['file']['size']<50000000) 
+        {
+        # code...
+            if ($_FILES["file"]["error"] > 0) 
+            {
+              echo "Error: " . $_FILES["file"]["error"] . "<br>";
+            } 
+            else 
+            {
+                
+                $category = $this->model('category');
+                $category_name=$category->get_category_name($_POST['category']);
+                
+                if (!file_exists('../www/repo/'.$category_name[0]['category_name'])) 
+                {
+                    mkdir('../www/repo/'.$category_name[0]['category_name'],0777,true);
+                }
+                  
+                move_uploaded_file($_FILES["file"]["tmp_name"],
+                    '../www/repo/'.$category_name[0]['category_name']."/". $_POST["name"].".pdf");
+
+               // echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+              //  echo "Type: " . $_FILES["file"]["type"] . "<br>";
+              //  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+              //  echo "Stored in: " . $_FILES["file"]["tmp_name"] . "<br>";
+                $name       =$_POST['name'];
+                $author     =$_POST['author'];
+                $category   =$_POST['category'];
+                $descrption =$_POST['description'];
+                $tags       =$_POST['tags']; 
+                $uploader_id=$_SESSION['user_id'];
+                $date       =date("Y-m-d");
+                $path       ="/repo/".$category_name[0]['category_name']."/". $_POST["name"];
+                $status     =0;
+                
+                $this->load_class('Material');
+                $book       = new Material($name,$author,$uploader_id,$date,$path,$status);
+                $post = $this->model('post');
+                $save1   =$post->save_material($book,$category);
+                
+                
+            }
+          }
+
+          if($save1)
+                {
+                    
+                  header("Location: ".ASSET_PATH.'/uploads/upload/success');
+                  
+                }
+                else
+                {
+                    
+                  header("Location: ".ASSET_PATH.'/uploads/upload/fail');
+                   
+                }
+
+    }
+
+
+} 
+
+
+?>
