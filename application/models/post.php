@@ -5,8 +5,15 @@
  * Date: 8/22/14
  * Time: 1:52 PM
  */
-class Post extends CI_Model
+class Post
 {
+    protected $db;
+
+    public function __construct(PDO $db)
+    {
+        $this->db = $db;
+    }
+    
     function get_materials($num)
     {
         $query = $this->db->query("
@@ -21,18 +28,19 @@ class Post extends CI_Model
          
         ");
        //$query = $this->db->get();
-
-        return $query->result_array();
+        //var_dump($query->result_array());
+        return $query->fetchAll();
 
     }
 
-    function get_material($material_id)
-    {
-        $query = $this->db->query("
-        SELECT * FROM materials WHERE material_id=$material_id AND status=1
-        ");
-        return $query->first_row('array');
-    }
+    //function get_material($material_id)
+    //{
+       // $query = $this->db->query("
+        //SELECT * FROM materials WHERE material_id=$material_id AND status=1
+       // ");
+        //return $query->first_row('array');
+        //return $query->fetch(PDO::FETCH_OBJ);
+   // }
 
     function save_material($book,$category)
     {
@@ -52,7 +60,7 @@ class Post extends CI_Model
             SELECT material_id
             FROM materials
             WHERE name='".$name."' AND author='".$author."' AND uploader_id='".$uploader_id."'");
-        $array = $query2->first_row('array');
+        $array = $query2->result_array();
         $material_id =$array['material_id'];
 
        $query2 = $this->db->query("
