@@ -3,6 +3,7 @@
 class Material
 {
     private $id;
+    private $ISBN;
 	private $name;
 	private $author;
 	private $path;
@@ -10,10 +11,11 @@ class Material
 	private $upload_date;
 	private $uploader_id;
 
-	public function __construct($name,$author,$uploader_id,$upload_date,$path,$status)
+	public function __construct($ISBN,$name,$author,$uploader_id,$upload_date,$path,$status)
 	{
 		
 		$this->name=$name;
+        $this->ISBN=$ISBN;
 		$this->author=$author;
 		$this->path=$path;
 		$this->status=$status;
@@ -30,6 +32,11 @@ class Material
     {
         $this->id=$id;
     }
+
+    public function get_ISBN()
+	{
+		return $this->ISBN;
+	}
 
 	public function get_name()
 	{

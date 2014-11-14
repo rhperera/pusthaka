@@ -62,6 +62,7 @@ class Uploads extends Controller
               //  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
               //  echo "Stored in: " . $_FILES["file"]["tmp_name"] . "<br>";
                 $name       =$_POST['name'];
+                $ISBN       =$_POST['ISBN'];
                 $author     =$_POST['author'];
                 $category   =$_POST['category'];
                 $descrption =$_POST['description'];
@@ -72,7 +73,7 @@ class Uploads extends Controller
                 $status     =0;
                 
                 $this->load_class('Material');
-                $book       = new Material($name,$author,$uploader_id,$date,$path,$status);
+                $book       = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status);
                 $post = $this->model('post');
                 $save1   =$post->save_material($book,$category);
                 

@@ -38,13 +38,14 @@ class LibrarianPanel extends Model
         foreach($books as $book)
         {
              $name       =$book['name'];
+             $ISBN       =$book['ISBN'];
              $author     =$book['author'];
              $uploader_id=$book['uploader_id'];
              $date       =$book['upload_date'];
              $path       =$book['path'];
              $status     =$book['status'];
 
-             $material       = new Material($name,$author,$uploader_id,$date,$path,$status);
+             $material       = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status);
              $material->set_id($book['material_id']);
              $booklist[$i]=$material;
              $i++;  

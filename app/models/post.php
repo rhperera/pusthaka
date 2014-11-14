@@ -44,7 +44,7 @@ class Post
 
     function save_material($book,$category)
     {
-        
+        $ISBN       = $book->get_ISBN();
         $name       = $book->get_name();
         $author     = $book->get_author();
         $uploader_id= $book->get_uploader_id();
@@ -54,7 +54,7 @@ class Post
 
         $query1 = $this->db->query("
             INSERT INTO materials
-            VALUES('','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."')");
+            VALUES('','".$ISBN."','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."')");
 
         $query2 = $this->db->query("
             SELECT material_id

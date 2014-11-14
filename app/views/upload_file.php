@@ -19,15 +19,21 @@
                 <form action="<?php echo ASSET_PATH;?>/uploads/do_upload" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
                         <div class="controls">
+                            <label>ISBN Number</label><span style="color:red"> *</span>
+                            <input type="text" class="form-control" name="ISBN" required data-validation-required-message="Please enter.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
                             <label>Title</label><span style="color:red"> *</span>
-                            <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter your name.">
+                            <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Author</label><span style="color:red"> *</span>
-                            <input type="text" class="form-control" name="author" required data-validation-required-message="Please enter your phone number.">
+                            <input type="text" class="form-control" name="author" required data-validation-required-message="Please enter.">
                         </div>
                     </div>
                     <div class="control-group form-group">

@@ -72,15 +72,7 @@ class Main extends Controller
  
         function test_function($return)
         {
-          //$return = $_POST;
-  
-          //Do what you need to do with the info. The following are some examples.
-          //if ($return["favorite_beverage"] == ""){
-          //  $return["favorite_beverage"] = "Coke";
-          //}
-          //$return["favorite_restaurant"] = $this->post->get_materials(10);
-  
-          //$return["json"] = 
+          
           echo json_encode($return);
         }
 
