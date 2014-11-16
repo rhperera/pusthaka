@@ -3,15 +3,10 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
-        <div class="col-lg-12"><?php if($books){$name = $books[0];} else {$name['category_name']="Nothing to show";}?>
-            <h1 class="page-header"><?php echo $name['category_name']; ?>
-                <small>Category</small>
+        <div class="col-lg-12"><?php ?>
+            <h1 class="page-header">Search Results
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li class="active">Three Column Portfolio</li>
-            </ol>
+           
         </div>
     </div>
 
@@ -21,15 +16,15 @@
     <div class="row">
     <?php
     $i=1;
-    foreach($books as $row)
+    foreach($data['quick_results'] as $row)
     {
     ?>
         <div class="col-md-4 img-portfolio">
-            <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>">
-                <img class="img-responsive img-hover" src="/ucsc-digital-library/assets/images/700x400.jpg" alt="">
+            <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
+                
             </a>
             <h3>
-                <a href="<?php echo base_url()?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
+                <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
             </h3>
             <p>by <?php echo $row['author']; ?></p>
         </div>
@@ -49,7 +44,7 @@
     } ?>
     <!-- /.row -->
 
-    <hr>
+
 
     <!-- Pagination -->
     <div class="row text-center">
@@ -80,5 +75,3 @@
         </div>
     </div>
     <!-- /.row -->
-
-    <hr>

@@ -1,6 +1,6 @@
 <?php
 
-class AdvanceSearch extends Controller
+class Search extends Controller
 {
     function __construct()
     {
@@ -19,7 +19,18 @@ class AdvanceSearch extends Controller
         
         $this->view('header');
         $this->view('navbar');
-        //$this->load->view('search_results',$data);
+        $this->view('search_results');
+        $this->view('footer');
+    }
+
+    function quick($key)
+    {
+        $quick = $this->model('search_material');
+        //$key = str_replace($key,"%20"," ");
+        $data['quick_results']=$quick->simple_search($key);
+        $this->view('header');
+        $this->view('navbar');
+        $this->view('search_results',$data);
         $this->view('footer');
     }
 }

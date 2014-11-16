@@ -2,6 +2,18 @@
     function showSearch(){
         $('#search').slideToggle();
     }
+
+    function do_search(){
+        var a = $('#search_box').val();
+        if(a.length<3)
+        {
+            $('#search_box').css("color","red");
+        }
+        else
+        {
+            location = '<?php echo ASSET_PATH;   echo '/search/quick/';?>'+a;
+        }
+    }
 </script>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -82,7 +94,7 @@
                 
                 ?>
                 <li>
-                    <button class="btn btn-default" type="button" onclick="showSearch();" style="position:relative; top:6px"><i class="fa fa-search"></i></button>
+                    <a href="#" onclick="showSearch()" style="color:#ffffff">Search</a>
                 </li>
             </ul>
 			
@@ -100,8 +112,12 @@
     <!-- /.container -->
 
     <!--Search search -->
-    
-    <input type="text" class="form-control" style="width:255px; position:fixed; right:3px; top:51px; display:none; border-radius:5px; border:2px solid; height:40px; font-size:17px" id="search">
+    <div id="search" style="display:none">
+    <a class="btn btn-default" onclick="do_search()" type="button" style="position:fixed; right:3px; top:50px; border-radius:5px; border:2px solid;">
+    <i class="fa fa-search"></i>
+    </a>
+    <input type="text" id="search_box" class="form-control" style="width:230px; position:fixed; right:42px; top:50px; border-radius:5px; border:2px solid; height:36px; font-size:17px"/>
+    </div>
     <style>
                 #search::-webkit-input-placeholder { font-style: italic; }
                 #search::-moz-placeholder { font-style: italic; }

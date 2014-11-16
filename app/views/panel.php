@@ -77,7 +77,7 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="advance">
-                            <a href="<?php echo ASSET_PATH; ?>/AdvanceSearch">
+                            <a href="<?php echo ASSET_PATH; ?>/search">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color:#CA4252" ></i>
                               <i class="fa fa-search fa-stack-1x fa-inverse"></i></a>
                         </span>
@@ -85,7 +85,7 @@
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="advance1">
                      <h4>Search</h4>
                      <p>Use our Advance Search for a customized search</p>
-                     <a href="<?php echo ASSET_PATH; ?>/AdvanceSearch" class="btn btn-primary" style="background-color:#CA4252; border-color:#CA4252">Advance Search</a>
+                     <a href="<?php echo ASSET_PATH; ?>/search" class="btn btn-primary" style="background-color:#CA4252; border-color:#CA4252">Advance Search</a>
                 </div>
         </div>
     </div>
