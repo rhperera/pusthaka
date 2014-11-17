@@ -16,10 +16,10 @@ class Search extends Controller
         //$data['categories']=$this->category->get_categories();
         //echo"<pre>"; print_r($data['books']); echo "";
         //$data2=$this->category->category_result($category_id);
-        
+
         $this->view('header');
         $this->view('navbar');
-        $this->view('search_results');
+        $this->view('advance_search');
         $this->view('footer');
     }
 

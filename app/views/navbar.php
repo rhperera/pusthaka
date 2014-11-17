@@ -20,16 +20,16 @@
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <div class="navbar-header">
-            
-           
+
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            
-            <a class="navbar-brand" style="color:#ffffff" href="<?php 
+
+            <a class="navbar-brand" style="color:#ffffff" href="<?php
                             if($_SESSION)
                             {
                                 if($_SESSION["user_type"]=='user')
@@ -58,7 +58,7 @@
                 //if($this->session->userdata('user_name'))
                 //{
                     echo ' <li>
-                               <a href="#" style="color:#ffffff">'; //echo $this->session->userdata('user_name'); 
+                               <a href="#" style="color:#ffffff">'; //echo $this->session->userdata('user_name');
                                echo '</a>
                                </li>';
                 //}
@@ -73,9 +73,9 @@
                     <a href="#" style="color:#ffffff">Advanced</a>
                 </li>
                 <?php
-               
+
                     # code...
-                
+
                     if($_SESSION)
                     {
                         echo ' <li>
@@ -91,41 +91,42 @@
                                    <a style="color:#ffffff" href="';   echo ASSET_PATH;   echo '/users/login">Login</a></li>';
 
                     }
-                
+
                 ?>
                 <li>
                     <a href="#" onclick="showSearch()" style="color:#ffffff">Search</a>
                 </li>
             </ul>
-			
+
 		<!-- Blog Sidebar Widgets Column -->
 
-			       
-		
-		
+
+
+
         </div>
         <!-- /.navbar-collapse -->
-		
 
-		
+
+
     </div>
     <!-- /.container -->
 
     <!--Search search -->
     <div id="search" style="display:none">
-    <a class="btn btn-default" onclick="do_search()" type="button" style="position:fixed; right:3px; top:50px; border-radius:5px; border:2px solid;">
-    <i class="fa fa-search"></i>
-    </a>
-    <input type="text" id="search_box" class="form-control" style="width:230px; position:fixed; right:42px; top:50px; border-radius:5px; border:2px solid; height:36px; font-size:17px"/>
-    </div>
+      <a class="btn btn-default" onclick="do_search()" type="button" style="position:fixed; right:3px; top:50px; border-radius:5px; border:2px solid;">
+      <i class="fa fa-search"></i>
+      </a>
+      <input type="text" id="search_box" class="form-control" style="width:230px; position:fixed; right:42px; top:50px; border-radius:5px; border:2px solid; height:36px; font-size:17px"/>
+      </div>
+      
     <style>
                 #search::-webkit-input-placeholder { font-style: italic; }
                 #search::-moz-placeholder { font-style: italic; }
                 #search::-ms-input-placeholder { font-style: italic; }
     </style>
-            
-        
-	
 
-			
+
+
+
+
 </nav>

@@ -1,15 +1,38 @@
 <!-- Page Content -->
+<script>
+  function do_search(){
+      var a = $('#search_box2').val();
+      if(a.length<3)
+      {
+          $('#search_box2').css("color","red");
+      }
+      else
+      {
+          location = '<?php echo ASSET_PATH;   echo '/search/quick/';?>'+a;
+      }
+  }
+</script>
+
+
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
-        <div class="col-lg-12"><?php ?>
-            <h1 class="page-header">Search Results
-            </h1>
-           
+      <br/><br/>
+
+
+    <div class="col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search_box2">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" onclick="do_search()" type="button"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+    <div class="col-lg-4">
+            <a href="<?php echo ASSET_PATH; echo '/search'; ?>">Use the advance search</a>
         </div>
     </div>
-
     <!-- /.row -->
 
     <!-- Projects Row -->
@@ -21,7 +44,7 @@
     ?>
         <div class="col-md-4 img-portfolio">
             <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
-                
+
             </a>
             <h3>
                 <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
@@ -41,12 +64,12 @@
 
         $i = $i+1;
 
-    } ?>
+    } ?></div>
     <!-- /.row -->
 
 
 
-    <!-- Pagination -->
+    <!-- Pagination
     <div class="row text-center">
         <div class="col-lg-12">
             <ul class="pagination">
@@ -73,5 +96,5 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>-->
     <!-- /.row -->
