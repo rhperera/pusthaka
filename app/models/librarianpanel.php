@@ -1,7 +1,7 @@
 <?php
     
 
-class LibrarianPanel extends Model
+class LibrarianPanel
 {
     protected $db;
 
