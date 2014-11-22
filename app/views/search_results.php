@@ -47,7 +47,7 @@
 
             </a>
             <h3>
-                <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
+                <a href="<?php echo ASSET_PATH?>/main/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
             </h3>
             <p>by <?php echo $row['author']; ?></p>
         </div>
