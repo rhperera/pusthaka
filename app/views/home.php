@@ -3,6 +3,9 @@
     {
         background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
         background-size: cover;
+        background-size:100% auto;
+        height:100%;
+    	width:100%;
     }
 </style>
 <!-- Navigation -->

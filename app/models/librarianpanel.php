@@ -10,6 +10,11 @@ class LibrarianPanel
         $this->db = $db;
     }
 
+    protected function load_class($name)
+    {
+        require_once('../app/libraries/'.$name.'.php');
+    }
+
     function get_inactives()
     {
         $query = $this->db->query("
