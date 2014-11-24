@@ -67,8 +67,8 @@
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="read1">
-                    <h4>Browse</h4>
-                    <p>Browse the library with different options.</p>
+                    <!--<h4>Browse</h4>
+                    <p>Browse the library with different options.</p>-->
                     <a href="<?php echo ASSET_PATH; ?>/main/browse" class="btn btn-primary">Browse Library</a>
                 </div>
         </div>
@@ -83,8 +83,8 @@
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="advance1">
-                     <h4>Search</h4>
-                     <p>Use our Advance Search for a customized search</p>
+                     <!--<h4>Search</h4>
+                     <p>Use our Advance Search for a customized search</p>-->
                      <a href="<?php echo ASSET_PATH; ?>/search" class="btn btn-primary" style="background-color:#CA4252; border-color:#CA4252">Advance Search</a>
                 </div>
         </div>
@@ -99,8 +99,8 @@
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden" id="upload1">
-                    <h4>Upload</h4>
-                    <p>Upload and share books on your own.</p>
+                    <!--<h4>Upload</h4>
+                    <p>Upload and share books on your own.</p>-->
                     <a href="<?php echo ASSET_PATH;?>/uploads/upload/new" class="btn btn-primary" style="background-color:#42CA68; border-color:#42CA68  ">Upload now</a>
                 </div>
         </div>
@@ -109,15 +109,15 @@
         <div class="panel panel-default text-center" style=" background-color: transparent !important; border-color: transparent">
             <div class="panel-heading" style=" background-color: transparent !important; border-color: transparent">
                         <span class="fa-stack fa-5x" id="collection">
-                            <a href="#">
+                            <a href="<?php echo ASSET_PATH;?>/managecollections">
                               <i class="fa fa-circle fa-stack-2x text-primary" style="color: #b050bb "></i>
                               <i class="fa fa-folder-open fa-stack-1x fa-inverse"></i></a>
                         </span>
             </div>
                 <div class="panel-body" style=" background-color: transparent !important; visibility: hidden " id="collection1">
-                    <h4>Manage Collections</h4>
-                    <p>Get your favourite books and add them to collections.</p>
-                    <a href="#" class="btn btn-primary" style="background-color:#b050bb; border-color:#b050bb">My Collections</a>
+                    <!--<h4>Manage Collections</h4>
+                    <p>Get your favourite books and add them to collections.</p>-->
+                    <a href="<?php echo ASSET_PATH;?>/managecollections" class="btn btn-primary" style="background-color:#b050bb; border-color:#b050bb">My Collections</a>
                 </div>
         </div>
     </div>

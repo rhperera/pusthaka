@@ -7,7 +7,20 @@
         height:100%;
     	width:100%;
     }
+
 </style>
+<script type="text/javascript">
+    $('#anchor1').click(function()
+    {
+        $('html, body').animate(
+        {
+            scrollTop: $( $(this).attr('class') ).offset().top
+        }, 1000);
+        return false;
+    });
+
+  
+</script>
 <!-- Navigation -->
 <?php //include('slider.php')?>
 <!-- Page Content -->
@@ -15,18 +28,18 @@
     <div class="container">
 
         <?php include('panel.php');?>
+        <h3><a id='#anchor1' href="#recent">Recent Books</a></h3>
 
     </div>
 </div>
+
 <div class="container">
     <br><br>
 
 
-    <div class="row">
+    <div class="row" id="recent">
             <div class="col-lg-6">
-                <h3 class="page-header">Recent Books
-                    
-                </h3>
+                <h3 class="page-header">Recent Books</h3>
             </div></div>
      
 
