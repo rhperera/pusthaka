@@ -7,8 +7,6 @@ class Controller
     public function __construct()
     {
         session_start();
-        //$_SESSION['user_name']='guest';
-       // $_SESSION['user_type']='guest';
     }
 
     public function getDb()

@@ -88,20 +88,21 @@
             </div>
         <div class="col-md-4" style="top: 30px">
             <?php
-                
-                 if($data['save']=='success')
+                if(isset($_SESSION['save'])){
+                 if($_SESSION['save']=='success')
                      {
                         echo '<div class="alert alert-success">
                                     <strong>Success!</strong> You successfully uploaded ';
                                      echo ' to the library.';
                               echo '</div>';
                      }
-                     else if($data['save']=='fail')
+                     else if($_SESSION['save']=='fail')
                      {
                          echo '<div class="alert alert-success">
                     <strong>Well done!</strong> You successfully read this important alert message.
                 </div>';
                      }
+                 }
                      ?>
         </div>
 

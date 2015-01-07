@@ -10,8 +10,10 @@ class Material
 	private $status;
 	private $upload_date;
 	private $uploader_id;
+	private $description;
+	private $tags;
 
-	public function __construct($ISBN,$name,$author,$uploader_id,$upload_date,$path,$status)
+	public function __construct($ISBN,$name,$author,$uploader_id,$upload_date,$path,$status,$description,$tags)
 	{
 		
 		$this->name=$name;
@@ -21,6 +23,8 @@ class Material
 		$this->status=$status;
 		$this->upload_date=$upload_date;
 		$this->uploader_id=$uploader_id;
+		$this->description=$description;
+		$this->tags=$tags;
 	}
 
     public function get_id()
@@ -68,8 +72,13 @@ class Material
 		return $this->status;
 	}
 
-	public function get_data()
+	public function get_description()
 	{
-		echo "string";
+		return $this->description;
+	}
+
+	public function get_tags()
+	{
+		return->$this->tags;
 	}
 }

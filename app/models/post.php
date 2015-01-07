@@ -51,10 +51,12 @@ class Post
         $upload_date= $book->get_upload_date();
         $path       = $book->get_path();
         $status     = $book->get_status();
+        $description= $book->get_description();
+        $tags       = $book->get_tags();
 
         $query1 = $this->db->query("
             INSERT INTO materials
-            VALUES('','".$ISBN."','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."')");
+            VALUES('','".$ISBN."','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."','".$description."','".$tags."')");
 
         $query2 = $this->db->query("
             SELECT material_id

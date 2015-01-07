@@ -27,8 +27,18 @@
 <div id="con">
     <div class="container">
 
-        <?php include('panel.php');?>
-        <h3><a id='#anchor1' href="#recent">Recent Books</a></h3>
+        <?php //include('panel.php');?>
+        <!--Search box-->
+        <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            
+          </div>
+        <div class="col-md-2"></div>
+        </div>
+
+
+        
 
     </div>
 </div>
@@ -36,16 +46,34 @@
 <div class="container">
     <br><br>
 
-
-    <div class="row" id="recent">
-            <div class="col-lg-6">
-                <h3 class="page-header">Recent Books</h3>
-            </div></div>
-     
-
+<!--the sign in form-->
+<?php if(!isset($_SESSION['user_name'])){  ?>
+<div class="row">
+    <div class="col-lg-3">
+                <h3>Sign In</h3>
+                <br>
+                <form role="form" action="" method="post" enctype="plain"> 
+                  <div class="form-group">
+                    <label for="name1" style="font-weight: 100 !important;">Username</label>
+                    <input type="username" name="username" class="form-control" id="name1" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                    <label for="password" style="font-weight: 100 !important;">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <!--<div class="form-group">
+                    <label>Your Text</label>
+                    <textarea class="form-control" name="Message" rows="3"></textarea>
+                  </div>-->
+                  <br>
+                  <button style="width: 100%;" type="submit" class="btn btn-large btn-success">Sign In</button>
+                </form>
+            </div>
+        </div>
+<?php } ?>
 
     <div class="row">
-         <?php
+    <!--      <?php
     $i=1;
     foreach($data['recents'] as $row)
     {
@@ -75,7 +103,7 @@
                 
     </div>
 
-    <!-- /.row -->
+    /.row -->
 
 
 

@@ -24,7 +24,7 @@
     });
 
 </script>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
 
@@ -38,8 +38,8 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" style="color:#ffffff" href="<?php
-                            if($_SESSION)
+            <a class="navbar-brand" style="color:#000" href="<?php
+                            if(isset($_SESSION['user_name']))
                             {
                                 if($_SESSION["user_type"]=='user')
                                 {
@@ -67,19 +67,19 @@
                 //if($this->session->userdata('user_name'))
                 //{
                     echo ' <li>
-                               <a href="#" style="color:#ffffff">'; //echo $this->session->userdata('user_name');
+                               <a href="#" style="color:#000">'; //echo $this->session->userdata('user_name');
                                echo '</a>
                                </li>';
                 //}
                 ?>
                 <li>
-                    <a href="about.html" style="color:#ffffff">About</a>
+                    <a href="about.html" style="color:#000">About</a>
                 </li>
                 <li>
-                    <a href="contact.html" style="color:#ffffff">Contact</a>
+                    <a href="contact.html" style="color:#000">Contact</a>
                 </li>
                 <li>
-                    <a href="#" style="color:#ffffff">Advanced</a>
+                    <a href="#" style="color:#000">Advanced</a>
                 </li>
                 
 
@@ -90,7 +90,7 @@
                     if($_SESSION)
                     {
                         echo ' <li>
-                                   <a style="color:#ffffff" href="';   echo ASSET_PATH;   echo '/users/logout">Logout</a></li>';
+                                   <a style="color:#000" href="';   echo ASSET_PATH;   echo '/users/logout">Logout</a></li>';
 
                        #<a href="; echo base_url(); echo 'main/item/'; echo $row['material_id']; echo '>';echo $row['name'];
                     #echo   '</a>
@@ -99,7 +99,7 @@
                     else
                     {
                         echo ' <li>
-                                   <a style="color:#ffffff" href="';   echo ASSET_PATH;   echo '/users/login">Login</a></li>';
+                                   <a style="color:#000" href="#sign-in" class="smoothScroll">Login</a></li>';
 
                     }
 
@@ -107,7 +107,7 @@
 
 
                 <li>
-                    <a href="#" onclick="showSearch()" style="color:#ffffff">Search</a>
+                    <a href="#" onclick="showSearch()" style="color:#000">Search</a>
                 </li>
 
 

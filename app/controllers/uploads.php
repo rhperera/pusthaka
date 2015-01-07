@@ -12,17 +12,13 @@ class Uploads extends Controller
         $post = $this->model('post');
         
     }
-	function upload($stat)
+	function Index()
 	{
-        $category = $this->model('category');
-        $data['categories']=$category->get_categories();
-
-        $user_name = $_SESSION['user_name'];
-
-        $data['save']=$stat;
-
-        if($user_name)
+        if(isset($_SESSION['user_name']))
         {
+          $category = $this->model('category');
+          $data['categories']=$category->get_categories();
+          
 		  $this->view('header',$data);
 		  $this->view('navbar',$data);
           $this->view('upload_file',$data,array('error' =>''));
@@ -65,7 +61,7 @@ class Uploads extends Controller
                 $ISBN       =$_POST['ISBN'];
                 $author     =$_POST['author'];
                 $category   =$_POST['category'];
-                $descrption =$_POST['description'];
+                $description =$_POST['description'];
                 $tags       =$_POST['tags']; 
                 $uploader_id=$_SESSION['user_id'];
                 $date       =date("Y-m-d");
@@ -73,7 +69,7 @@ class Uploads extends Controller
                 $status     =0;
                 
                 $this->load_class('Material');
-                $book       = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status);
+                $book       = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status,$description,$tags);
                 $post = $this->model('post');
                 $save1   =$post->save_material($book,$category);
                 

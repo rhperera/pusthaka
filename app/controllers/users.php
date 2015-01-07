@@ -51,7 +51,7 @@ class Users extends Controller
 
     function logout()
     {
-        session_destroy();
+        session_unset(); 
         header("Location: ".ASSET_PATH."/main");
     }
 }
