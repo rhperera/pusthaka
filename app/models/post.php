@@ -53,17 +53,22 @@ class Post
         $status     = $book->get_status();
         $description= $book->get_description();
         $tags       = $book->get_tags();
+        $privacy    = $book->get_privacy();
 
         $query1 = $this->db->query("
             INSERT INTO materials
-            VALUES('','".$ISBN."','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."','".$description."','".$tags."')");
+            VALUES('','".$ISBN."','".$name."','".$author."','".$uploader_id."','".$upload_date."','".$path."','".$status."','".$description."','".$tags."','".$privacy."')");
 
         $query2 = $this->db->query("
             SELECT material_id
             FROM materials
             WHERE name='".$name."' AND author='".$author."' AND uploader_id='".$uploader_id."'");
+
+
         $array = $query2->fetchAll();
         $material_id =$array[0]['material_id'];
+
+         $query3 = $this->db->query("INSERT INTO view_results VALUES(".$uploader_id.",".$material_id.")");
 
        $query2 = $this->db->query("
             INSERT INTO material_category
@@ -77,6 +82,20 @@ class Post
         {
             return FALSE;
         }
+    }
+
+    function delete_material($user_id,$material_id,$user_type)
+    {
+        $query = $this->db->query("SELECT uploader_id FROM materials");
+        $array = $query->fetchAll();
+        $uploader_id =$array[0]['uploader_id'];
+
+        if($user_id==$uploader_id or $user_type=='admin' or $user_type=='librarian')
+        {
+            $query = $this->db->query("DELETE FROM materials WHERE material_id=$material_id");
+            return $query;
+        }
+        
     }
 
     

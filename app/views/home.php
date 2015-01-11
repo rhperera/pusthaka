@@ -7,20 +7,8 @@
         height:100%;
     	width:100%;
     }
-
 </style>
-<script type="text/javascript">
-    $('#anchor1').click(function()
-    {
-        $('html, body').animate(
-        {
-            scrollTop: $( $(this).attr('class') ).offset().top
-        }, 1000);
-        return false;
-    });
 
-  
-</script>
 <!-- Navigation -->
 <?php //include('slider.php')?>
 <!-- Page Content -->
@@ -48,14 +36,14 @@
 
 <!--the sign in form-->
 <?php if(!isset($_SESSION['user_name'])){  ?>
-<div class="row">
+<div class="row" id="sign">
     <div class="col-lg-3">
                 <h3>Sign In</h3>
                 <br>
-                <form role="form" action="" method="post" enctype="plain"> 
+                <form role="form" action="<?php echo ASSET_PATH; ?>/users/login" method="post" enctype="plain" > 
                   <div class="form-group">
                     <label for="name1" style="font-weight: 100 !important;">Username</label>
-                    <input type="username" name="username" class="form-control" id="name1" placeholder="Username">
+                    <input type="username" name="user_name" class="form-control" id="name1" placeholder="Username">
                   </div>
                   <div class="form-group">
                     <label for="password" style="font-weight: 100 !important;">Password</label>
@@ -66,7 +54,7 @@
                     <textarea class="form-control" name="Message" rows="3"></textarea>
                   </div>-->
                   <br>
-                  <button style="width: 100%;" type="submit" class="btn btn-large btn-success">Sign In</button>
+                  <button style="width: 100%;" type="submit" class="btn btn-large btn-default">Sign In</button>
                 </form>
             </div>
         </div>

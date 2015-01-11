@@ -23,7 +23,18 @@
         });
     });
 
+
+    
+    function scroll() {
+    $('html, body').animate({
+        scrollTop: $("#sign").offset().top
+    }, 600);
+
+}
+
+  
 </script>
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -72,15 +83,7 @@
                                </li>';
                 //}
                 ?>
-                <li>
-                    <a href="about.html" style="color:#000">About</a>
-                </li>
-                <li>
-                    <a href="contact.html" style="color:#000">Contact</a>
-                </li>
-                <li>
-                    <a href="#" style="color:#000">Advanced</a>
-                </li>
+                
                 
 
                 <?php
@@ -99,7 +102,7 @@
                     else
                     {
                         echo ' <li>
-                                   <a style="color:#000" href="#sign-in" class="smoothScroll">Login</a></li>';
+                                   <a style="color:#000" href="javascript: scroll()" >Login</a></li>';
 
                     }
 
@@ -110,7 +113,7 @@
                     <a href="#" onclick="showSearch()" style="color:#000">Search</a>
                 </li>
 
-
+                <!--
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                         <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
@@ -122,7 +125,7 @@
                                 <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
                             </form>
                         </div>
-                </li>
+                </li>-->
                 
 
             </ul>

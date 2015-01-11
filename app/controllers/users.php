@@ -19,7 +19,7 @@ class Users extends Controller
 
             if(!$user)
             {
-                $data['error']=1;
+                header("Location: ".ASSET_PATH."/main#sign");
             }
             else
             {
@@ -45,8 +45,7 @@ class Users extends Controller
                 
             }
         }
-        $this->view('header',$data);
-        $this->view('login',$data);
+        
     }
 
     function logout()

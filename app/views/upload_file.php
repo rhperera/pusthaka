@@ -71,6 +71,17 @@
                         </div>
                     </div>
 
+
+                     <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Do you want to make this book publicly available</label><span style="color:red"> *</span>
+                            <select class="form-control" name="privacy">
+                                <option value="1">Yes</option>
+                                <option value="0">No. Let me choose</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div id="success"></div>
                      
                     
@@ -84,6 +95,8 @@
                             <input type="submit" name="submit" class="btn btn-primary" value="Upload">
                         </div>
                     </div>
+
+
                 </form>
             </div>
         <div class="col-md-4" style="top: 30px">

@@ -12,8 +12,9 @@ class Material
 	private $uploader_id;
 	private $description;
 	private $tags;
+	private $privacy;
 
-	public function __construct($ISBN,$name,$author,$uploader_id,$upload_date,$path,$status,$description,$tags)
+	public function __construct($ISBN,$name,$author,$uploader_id,$upload_date,$path,$status,$description,$tags,$privacy)
 	{
 		
 		$this->name=$name;
@@ -25,6 +26,7 @@ class Material
 		$this->uploader_id=$uploader_id;
 		$this->description=$description;
 		$this->tags=$tags;
+		$this->privacy=$privacy;
 	}
 
     public function get_id()
@@ -79,6 +81,11 @@ class Material
 
 	public function get_tags()
 	{
-		return->$this->tags;
+		return $this->tags;
+	}
+
+	public function get_privacy()
+	{
+		return $this->privacy;
 	}
 }
