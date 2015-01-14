@@ -29,6 +29,17 @@ class Comment
 		);
         return $query->fetchAll();
     }
+	
+	function add_comment($material_id , $user_id , $comment_content)
+    {
+        $query = $this->db->query("
+        Insert 
+        INTO comments (material_id , user_id , comment_content )
+		VALUES ($material_id , $user_id , $comment_content) 
+		"
+		);
+        return $query->fetchAll();
+    }
 }
 
 ?>
