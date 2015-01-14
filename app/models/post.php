@@ -98,5 +98,10 @@ class Post
         
     }
 
+    function show_my_uplaods($uploader_id)
+    {
+        $query = $this->db->query("SELECT * FROM materials WHERE uploader_id=$uploader_id");
+        return $query->fetchAll();
+    }
     
 }

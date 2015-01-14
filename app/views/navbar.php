@@ -74,24 +74,29 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                
                 <?php
-                //if($this->session->userdata('user_name'))
-                //{
+                if(isset($_SESSION['user_name']))
+                    {
                     echo ' <li>
-                               <a href="#" style="color:#000">'; //echo $this->session->userdata('user_name');
+                               <a href="'; echo ASSET_PATH; echo '/mytable';    
+                               echo '" style="color:#000">'; echo $_SESSION['full_name'];
                                echo '</a>
                                </li>';
-                //}
+                }
+                
                 ?>
                 
-                
+                 <li>
+                    <a href="#" onclick="showSearch()" style="color:#000">Search</a>
+                </li>
 
                 <?php
 
                     # code...
 
-                    if($_SESSION)
-                    {
+                    if(isset($_SESSION['user_name']))
+                    {   
                         echo ' <li>
                                    <a style="color:#000" href="';   echo ASSET_PATH;   echo '/users/logout">Logout</a></li>';
 
@@ -109,9 +114,7 @@
                 ?>
 
 
-                <li>
-                    <a href="#" onclick="showSearch()" style="color:#000">Search</a>
-                </li>
+               
 
                 <!--
                     <li class="dropdown">
