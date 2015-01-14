@@ -27,6 +27,8 @@ class Users extends Controller
                 $_SESSION['user_name'] = $user[0]['user_name'];
                 $_SESSION['user_type'] = $user[0]['user_type'];
                 $_SESSION['user_id']   = $user[0]['user_id'];
+                $_SESSION['full_name']   = $user[0]['full_name'];
+                
 
 
 
@@ -37,7 +39,7 @@ class Users extends Controller
                 }
                 else
                 {
-
+                    $_SESSION['reg_number']   = $user[0]['reg_number'];
                     //header("Location: " + ASSET_PATH + "/main");
                     header("Location: ".ASSET_PATH."/main");
 
