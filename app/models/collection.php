@@ -47,6 +47,6 @@ class Collection
     function remove_material($material_id,$collection_id)
     {
     	$query = $this->db->query("DELETE FROM material_collection WHERE collection_id=$collection_id and material_id=$material_id");
-    	return $query;
+    	return $query; //update
     }
 }
