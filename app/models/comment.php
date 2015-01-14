@@ -19,6 +19,16 @@ class Comment
 		);
         return $query->fetchAll();
     }
+	
+	function delete_comment($material_id , $user_id)
+    {
+        $query = $this->db->query("
+        Delete 
+        FROM comments
+        where material_id = '$material_id' and user_id = '$user_id'"
+		);
+        return $query->fetchAll();
+    }
 }
 
 ?>
