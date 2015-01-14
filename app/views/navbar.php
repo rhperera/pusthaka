@@ -100,8 +100,7 @@
                         echo ' <li>
                                    <a style="color:#000" href="';   echo ASSET_PATH;   echo '/users/logout">Logout</a></li>';
 
-                       #<a href="; echo base_url(); echo 'main/item/'; echo $row['material_id']; echo '>';echo $row['name'];
-                    #echo   '</a>
+                      
 
                     }
                     else
