@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2015 at 07:40 PM
+-- Generation Time: Jan 15, 2015 at 07:33 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -60,6 +60,34 @@ INSERT INTO `categories` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `collections`
+--
+
+CREATE TABLE IF NOT EXISTS `collections` (
+  `collection_id` int(11) NOT NULL AUTO_INCREMENT,
+  `collection_name` varchar(30) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`collection_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `comment_id` int(11) DEFAULT NULL,
+  `material_id` int(11) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL,
+  `comment_content` text NOT NULL,
+  PRIMARY KEY (`material_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `materials`
 --
 
@@ -76,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `tags` varchar(100) DEFAULT NULL,
   `privacy` int(1) NOT NULL,
   PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -94,6 +122,18 @@ CREATE TABLE IF NOT EXISTS `material_category` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `material_collection`
+--
+
+CREATE TABLE IF NOT EXISTS `material_collection` (
+  `collection_id` int(11) DEFAULT NULL,
+  `material_id` int(11) DEFAULT NULL,
+  KEY `collection_id` (`collection_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -103,6 +143,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(25) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
   `user_type` enum('admin','librarian','user') DEFAULT NULL,
+  `full_name` varchar(30) NOT NULL,
+  `reg_number` varchar(9) NOT NULL,
+  `banned` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
@@ -110,11 +153,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `user_type`) VALUES
-(1, 'admin', 'admin@mail.com', 'admin', 'admin'),
-(2, 'user', 'user@user.com', 'user', 'user'),
-(3, 'librarian', 'librarian@librarian.com', 'librarian', 'librarian'),
-(4, 'user1', 'user1', 'user1', 'user');
+INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `user_type`, `full_name`, `reg_number`, `banned`) VALUES
+(1, 'admin', 'admin@mail.com', 'admin', 'admin', 'Administrator', '', 0),
+(2, 'user', 'user@user.com', 'user', 'user', 'L A R H Perera', '2012CS103', 0),
+(3, 'librarian', 'librarian@librarian.com', 'librarian', 'librarian', 'Librarian', '', 0),
+(4, 'user1', 'user1', 'user1', 'user', 'A Edirisooriya', '2012IS028', 0);
 
 -- --------------------------------------------------------
 
@@ -134,11 +177,23 @@ CREATE TABLE IF NOT EXISTS `view_results` (
 --
 
 --
+-- Constraints for table `collections`
+--
+ALTER TABLE `collections`
+  ADD CONSTRAINT `collections_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `material_category`
 --
 ALTER TABLE `material_category`
   ADD CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`),
   ADD CONSTRAINT `fk_material_id` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `material_collection`
+--
+ALTER TABLE `material_collection`
+  ADD CONSTRAINT `material_collection_ibfk_1` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`collection_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `view_results`
