@@ -47,6 +47,21 @@ $( document ).ready(function() {
 
 </script>
 
+<style type="text/css">
+	.panel-default{
+		border: 0px;
+		border-radius: 0px;
+		-webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
+		box-shadow: 0 0px 0px rgba(0,0,0,0);
+	}
+
+	.panel-heading {
+		color: #FFF;
+		background-color: #FFFFFF !important;
+		border-color: none;
+		border-bottom: none !important;
+</style>
+
 
 <div class="container">
 
@@ -69,7 +84,7 @@ $( document ).ready(function() {
                 <div class="panel-body">
                     <?php 
                     	if(empty($data['banned_list'])){ echo "Empty";}else{?>
-                    	<table class="table table-bordered table-hover table-striped">
+                    	<table class="table table-hover table-bordered">
                     		<thead>
                     			<tr>
                                     <th>Reg Number</th>
