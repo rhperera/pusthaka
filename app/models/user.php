@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Raveen
- * Date: 8/23/14
- * Time: 10:46 PM
-*/
+
 
 class User
 {
@@ -14,16 +9,37 @@ class User
     {
         $this->db = $db;
     }
-    function create_user($data)
-    {
-        //$this->db->insert('users',$data);
-    }
+  
 
     function login($user_name,$password)
     {
         
-        $query = $this->db->query("SELECT * FROM users WHERE user_name='".$user_name."' AND password='".$password."'");
+        $query = $this->db->query("SELECT * FROM users WHERE user_name='".$user_name."' AND password='".$password."' AND banned=0");
         //$query = $this->db->get();
+        return $query->fetchAll();
+    }
+
+    function ban_user($user_id)
+    {
+        $query = $this->db->query("UPDATE users set banned=1 WHERE user_id=$user_id");
+        return $query;
+    }
+
+    function unban_user($user_id)
+    {
+        $query = $this->db->query("UPDATE users set banned=0 WHERE user_id=$user_id");
+        return $query;
+    }
+
+    function get_banned_list()
+    {
+        $query = $this->db->query("SELECT * FROM users WHERE banned=1");
+        return $query->fetchAll();
+    }
+
+    function get_users($key)
+    {
+        $query = $this->db->query("SELECT * FROM users WHERE banned=0 and reg_number LIKE '%".$key."%'");
         return $query->fetchAll();
     }
 }

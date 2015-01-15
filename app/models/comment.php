@@ -27,7 +27,7 @@ class Comment
         FROM comments
         where material_id = '$material_id' and user_id = '$user_id'"
 		);
-        return $query->fetchAll();
+        return $query;
     }
 	
 	function add_comment($material_id , $user_id , $comment_content)
@@ -38,8 +38,7 @@ class Comment
 		VALUES ($material_id , $user_id , $comment_content) 
 		"
 		);
-        return $query->fetchAll();
+        return $query;
     }
 }
 
-?>

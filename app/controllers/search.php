@@ -33,6 +33,13 @@ class Search extends Controller
         $this->view('search_results',$data);
         $this->view('footer');
     }
+
+    function search_author()
+    {
+        $author = $_POST['author'];
+        $search_model = $this->model('search_material');
+        $data['author_search'] = $search_model->author_search($author);
+    }
 }
 
 ?>
