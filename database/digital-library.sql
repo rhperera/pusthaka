@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2015 at 07:33 PM
--- Server version: 5.5.24-log
--- PHP Version: 5.3.13
+-- Generation Time: Jan 16, 2015 at 04:46 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `digital-library`
 --
+CREATE DATABASE IF NOT EXISTS `digital-library` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `digital-library`;
 
 DELIMITER $$
 --
@@ -78,12 +80,13 @@ CREATE TABLE IF NOT EXISTS `collections` (
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `comment_id` int(11) DEFAULT NULL,
-  `material_id` int(11) NOT NULL DEFAULT '0',
-  `user_id` int(11) NOT NULL,
-  `comment_content` text NOT NULL,
-  PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `material_id` int(11) DEFAULT NULL,
+  `comment_content` text,
+  PRIMARY KEY (`comment_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -181,6 +184,13 @@ CREATE TABLE IF NOT EXISTS `view_results` (
 --
 ALTER TABLE `collections`
   ADD CONSTRAINT `collections_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `material_category`
