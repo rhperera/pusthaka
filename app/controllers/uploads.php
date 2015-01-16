@@ -94,7 +94,26 @@ class Uploads extends Controller
     }
 
 
-} 
-
-
+	function do_update()
+    {           
+		$ISBN       =$_POST['ISBN'];
+		$name       =$_POST['name'];
+        $author     =$_POST['author'];
+        $category   =$_POST['category'];
+        $description =$_POST['description'];
+        $tags       =$_POST['tags'];
+		$privacy       =$_POST['privacy']; 
+        $uploader_id=$_SESSION['user_id'];
+        $date       =date("Y-m-d");
+        $path       ="/repo/".$category_name[0]['category_name']."/". $_POST["name"];
+        $status     =0;
+                
+        $this->load_class('Material');
+        $book = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status,$description,$tags,$privacy);
+        $post = $this->model('post');
+        $update1   =$post->update_material($material_id,$book,$category);        
+                
+    }
+}
+      
 ?>

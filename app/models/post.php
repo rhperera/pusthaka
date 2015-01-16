@@ -103,5 +103,25 @@ class Post
         $query = $this->db->query("SELECT * FROM materials WHERE uploader_id=$uploader_id");
         return $query->fetchAll();
     }
-    
+	
+	 function update_material($material_id,$book,$category)
+    {
+        $ISBN       = $book->get_ISBN();
+        $name       = $book->get_name();
+        $author     = $book->get_author();
+        $uploader_id= $book->get_uploader_id();
+        $upload_date= $book->get_upload_date();
+        $path       = $book->get_path();
+        $status     = $book->get_status();
+        $description= $book->get_description();
+        $tags       = $book->get_tags();
+        $privacy    = $book->get_privacy();
+
+        $query1 = $this->db->query("
+            UPDATE materials
+			set ISBN = $ISBN , name = $name , author = $author , uploader_id = $uploader_id ,  upload_date =  $upload_date , path = $path , status = $status , description = $description , tags = $tags , privacy = $privacy
+			where material_id = $material_id ;
+            "
+			);
+    }
 }
