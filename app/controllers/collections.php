@@ -27,4 +27,7 @@ class Collections extends Controller
         $collection=$this->model('collection');
         $result = $collection->delete($collection_id);
     }
+	function Index(){
+	
+	}
 }

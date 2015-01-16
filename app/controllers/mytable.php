@@ -28,6 +28,6 @@ class MyTable extends Controller
             var_dump($result);
         }
     }
-
-    
+	
+	
 }
