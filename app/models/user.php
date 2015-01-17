@@ -42,4 +42,11 @@ class User
         $query = $this->db->query("SELECT * FROM users WHERE banned=0 and reg_number LIKE '%".$key."%'");
         return $query->fetchAll();
     }
+
+    function get_user($user_id)
+    {
+        $query = $this->db->query("SELECT full_name, user_name, reg_number FROM users WHERE user_id=$user_id");
+        $return = $query->fetchAll();
+        return $return[0];
+    }
 }

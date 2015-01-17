@@ -38,7 +38,18 @@ class Post
         $query = $this->db->query("
         SELECT * FROM materials WHERE material_id=".$material_id." AND status=1
         ");
-        return $query->fetchAll();
+        $return = $query->fetchAll();
+        return $return;
+        //return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function get_inactive_material($material_id)
+    {
+        $query = $this->db->query("
+        SELECT * FROM materials WHERE material_id=".$material_id."
+        ");
+        $return = $query->fetchAll();
+        return $return;
         //return $query->fetch(PDO::FETCH_OBJ);
     }
 

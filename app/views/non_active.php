@@ -19,28 +19,29 @@
      
 <?php
     
-    foreach($data['inactive_list'] as $book)
+    foreach($data['inactive_list'] as $pair)
     {
-        $id = $book->get_id();
+        $id = $pair[0]->get_id();
 ?>      
         
         <div class="row">
             
             <div class="col-md-7">
-                <h3><?php echo $book->get_name();?></h3>
-                <h4>by <?php echo $book->get_author();?></h4>
-                <p>Uploaded by: <?php echo $book->get_uploader_id();?></p>
-                <p>Uploaded on: <?php echo $book->get_upload_date();?></p>
+                <h3><?php echo $pair[0]->get_name();?><small> by <?php echo $pair[0]->get_author();?></small></h3>
+                <p><b>Uploaded by:</b> 
+                    <?php echo $pair[1]->get_reg_number(); echo " | ";?>
+                    <?php echo $pair[1]->get_full_name(); echo " | ";?> <b>on : </b>
+                    <?php echo $pair[0]->get_upload_date();?></p>
 
-                <a class="btn btn-success" onclick="drop(<?php echo $id;?>);">Approve Book</i></a>
-                <a class="btn btn-primary" href="portfolio-item.html">Review Book</i></a>
+                <a  href="javascript:drop(<?php echo $id;?>);">Approve</a>
+                <a  href="<?php echo ASSET_PATH; echo '/Lpanel/review/'; echo $id;?>" style="padding-left:10px;">Review</a>
                 <div class="row">
                     <div class="col-md-5">
                         <div id="<?php echo $id;?>" style="display: none">
                               <br>
                             <strong>Are You Sure</strong>
-                             <a class="btn btn-sm btn-success" href="<?php echo ASSET_PATH; echo '/Lpanel/authenticate/'; echo $id;?>">YES</i></a>
-                             <a class="btn btn-sm btn-danger" onclick="drop(<?php echo $id;?>);">NO</i></a>
+                             <a  href="<?php echo ASSET_PATH; echo '/Lpanel/authenticate/'; echo $id;?>">YES</i></a>
+                             <a  href="javascript:drop(<?php echo $id;?>);">NO</i></a>
                         </div>
                     </div>
                 </div>
@@ -48,5 +49,4 @@
         </div>
         <!-- /.row -->
 
-        <hr>
 <?php    }?>

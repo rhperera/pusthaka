@@ -55,6 +55,19 @@ class Lpanel extends Controller
             var_dump($result);
         }
     }
+
+    function review($material_id)
+    {
+      $post = $this->model('post');
+      $data['material'] = $post->get_inactive_material($material_id);
+
+      $user_id = $data['material'][0]['uploader_id'];
+      $users = $this->model('user');
+      $data['user'] = $users->get_user($user_id);
+
+      var_dump($data['user']);
+      var_dump($data['material']);
+    }
    
 }
 
