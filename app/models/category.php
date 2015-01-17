@@ -53,5 +53,14 @@ class Category
          $category_name=$query->fetchAll();
         return $category_name;
     }
+
+    function get_category_by_material($material_id)
+    {
+        $query = $this->db->query("SELECT category_id from material_category WHERE material_id=$material_id");
+        $result = $query->fetchAll();
+        $category_id = $result[0]['category_id'];
+        $query = $this->db->query("SELECT category_name from categories where category_id=$category_id");
+        return $query->fetchAll();
+    }
    
 }

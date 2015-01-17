@@ -26,7 +26,7 @@
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]-->
 <script src="<?php echo ASSET_PATH;?>/js/jquery-1.11.0.js"></script>
-
+<script src="<?php echo ASSET_PATH;?>/js/pdfobject.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo ASSET_PATH;?>/js/bootstrap.min.js"></script>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
