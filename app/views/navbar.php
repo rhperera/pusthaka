@@ -55,7 +55,7 @@
                                         }
                                         elseif($_SESSION["user_type"]='librarian')
                                         {
-                                            echo ASSET_PATH; echo "/Lpanel";
+                                            echo ASSET_PATH; echo "/main";
                                         }
                                         else
                                         {
@@ -113,7 +113,7 @@
                 <!-- Logout -->
                 <?php
                     # code...
-                    if($_SESSION)
+                    if(isset($_SESSION['user_name']))
                     {
                         echo ' 
                             <li>
@@ -121,10 +121,23 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> '; echo $_SESSION['full_name']; echo' <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                    <a href="'; echo ASSET_PATH; echo "/settings";
+                                
+                                echo '"><i class="fa fa-fw fa-user"></i>Settings</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                    <a href="';
+                                    
+                                if($_SESSION["user_type"]=='user')
+                                {
+                                    echo ASSET_PATH; echo "/mytable";
+                                }
+                                elseif($_SESSION["user_type"]='librarian')
+                                {
+                                    echo ASSET_PATH; echo "/Lpanel";
+                                }
+                               
+                                    echo '"><i class="fa fa-fw fa-gear"></i>Dashboard</a>
                                 </li>
                             </ul>
                             </li>';

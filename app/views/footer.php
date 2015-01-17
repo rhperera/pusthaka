@@ -65,30 +65,26 @@
 </div>
 </div>  */ ?>
 
-     <hr>
+   
 
-     <div class="row">
-                    <div class="col-lg-3 text-center">
+     <div class="row" >
+                    <div class="col-lg-4 text-center">
                         <div class="panel panel-default" id="panel">
-                            <div class="panel-body">
-                                <img src="<?php echo ASSET_PATH;?>/images/ucsc.jpg" alt="ucsc-logo" width="140px">
-                            </div>
+                            
                         </div>
                     </div>
-                    <div class="col-lg-9 text-center">
-                        <div class="panel panel-default" id="panel">
+                    <div class="col-lg-4 text-center">
                             <div class="panel-body">
-                                .col-lg-3
+                                <p>Copyright &copy; University of Colombo School of Computing 2014</p>	
                             </div>
-                        </div>
                     </div>
                     
        </div>
 
 
 
-<p>Copyright &copy; University of Colombo School of Computing 2014</p>
-		
+
+	
 </footer>
 </div>
 

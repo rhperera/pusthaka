@@ -49,4 +49,21 @@ class User
         $return = $query->fetchAll();
         return $return[0];
     }
+
+    function update_pass($old_password,$new_password,$user_id)
+    {
+        $query = $this->db->query("SELECT password from users WHERE user_id=$user_id");
+        $result = $query->fetchAll();
+        $old = $result[0]['password'];
+        if($old==$old_password)
+        {
+            $query = $this->db->query("UPDATE users set password='".$new_password."' WHERE user_id=$user_id");
+            $result = $query->fetchAll();
+            $_SESSION["password_change"]="true";
+        }
+        else
+        {
+            $_SESSION["password_change"]="false";
+        }
+    }
 }

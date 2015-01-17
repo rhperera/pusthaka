@@ -50,8 +50,14 @@
                 <a href="<?php echo ASSET_PATH?>/main/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
             </h3>
             <p>by <?php echo $row['author']; ?></p>
+
+            <?php if(isset($_SESSION['user_name']) and $_SESSION['user_type']=="librarian")
+                {  ?>
+            <a href="<?php echo ASSET_PATH;?>/Lpanel/review/<?php echo $row['material_id']; ?>">Review Book</a>
+            <?php }?>
         </div>
-        <?php
+
+        <?php 
         if($i%3==0)
         { ?>
     </div>
