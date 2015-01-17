@@ -14,12 +14,23 @@
 <!-- Page Content -->
 <div id="con">
 
+    <div class="container">
+    <div class="row" style="top:3%;">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4" style="background-color:rgba(255, 255, 255, 0.8); text-align:justify; padding:0 20px 10px 20px; -webkit-border-radius: 0 0 10px 10px;">
+        <h3>UCSC Digital Library</h3>
+        <p>UCSC Digital Library (UCSC-DL) is an online e-Repository which mainly contains published materials of UCSC students and staff, namely undergraduate, masters and research level dissertations, thesis and published research papers. In addition, UCSC-DL contains electronic materials shared among internal staff. Only authorized personnel will be allowed to access library materials but selected materials as listed here, could be accessed without login into the system. This repository is updated regularly, and new works are added to collections on a continuous basis.</p>
+        </div>
+    </div>
+    </div>
+
     <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
     <h3 style="color:#fff;">Recent Books</h3>
 
 
 
-    <div class="row" style="z-index:-1;">
+    <div class="row">
         <?php //include('panel.php');?>
         <!--Search box-->
 
