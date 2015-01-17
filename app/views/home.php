@@ -13,31 +13,63 @@
 <?php //include('slider.php')?>
 <!-- Page Content -->
 <div id="con">
-    <div class="container">
 
+    <div class="container">
+    <div class="row" style="top:3%;">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4" style="background-color:rgba(255, 255, 255, 0.8); text-align:justify; padding:0 20px 10px 20px; -webkit-border-radius: 0 0 10px 10px;">
+        <h3>UCSC Digital Library</h3>
+        <p>UCSC Digital Library (UCSC-DL) is an online e-Repository which mainly contains published materials of UCSC students and staff, namely undergraduate, masters and research level dissertations, thesis and published research papers. In addition, UCSC-DL contains electronic materials shared among internal staff. Only authorized personnel will be allowed to access library materials but selected materials as listed here, could be accessed without login into the system. This repository is updated regularly, and new works are added to collections on a continuous basis.</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
+    <h3 style="color:#fff;">Recent Books</h3>
+
+
+
+    <div class="row">
         <?php //include('panel.php');?>
         <!--Search box-->
-        <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            
-          </div>
-        <div class="col-md-2"></div>
+
+         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
+                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
+                    <p>hello</p>
+        </div>
+
+         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; ">   
+                     <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
+                    <p>hello</p>
+        </div>
+
+         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; "> 
+
+                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
+                    <p>hello</p>
+
+        </div>
+
+        <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; ">
+                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
+                    <p>hello</p>
+
         </div>
 
 
-        
-
+    </div>  
     </div>
+
 </div>
 
 <div class="container">
     <br><br>
 
-<!--the sign in form-->
-<?php if(!isset($_SESSION['user_name'])){  ?>
-<div class="row" id="sign">
-    <div class="col-lg-3">
+        <!--the sign in form-->
+        <?php if(!isset($_SESSION['user_name'])){  ?>
+        <div class="row" id="sign">
+            <div class="col-lg-3">
                 <h3>Sign In</h3>
                 <br>
                 <form role="form" action="<?php echo ASSET_PATH; ?>/users/login" method="post" enctype="plain" > 
@@ -58,38 +90,39 @@
                 </form>
             </div>
         </div>
-<?php } ?>
+        <?php } ?>
 
-    <div class="row">
-    <!--      <?php
-    $i=1;
-    foreach($data['recents'] as $row)
-    {
-    ?>
-        <div class="col-md-3 img-portfolio">
+    <!-- <div class="row">
+            <?php
+            $i=1;
+            foreach($data['recents'] as $row)
+            {
+            ?>
+                <div class="col-md-3 img-portfolio">
 
-            <h4>
-                <a href="<?php echo ASSET_PATH; echo '/main/item/'; echo $row['material_id']?>"><?php echo $row['name'];?></a>
-            </h4>
-            <p>by <?php echo $row['author']; ?></p>
-        </div>
-        <?php
-        if($i%2==0)
-        { ?>
-    </div>
+                    <h4>
+                        <a href="<?php echo ASSET_PATH; echo '/main/item/'; echo $row['material_id']?>"><?php echo $row['name'];?></a>
+                    </h4>
+                    <p>by <?php echo $row['author']; ?></p>
+                </div>
+                
+                <?php
+                if($i%2==0)
+                { ?>
+
+          </div>
+
     <?php if($i==9)
     {   break;}
     else
     { ?>
-    <div class="row"><?php } } ?>
-    <?php
+            <div class="row"><?php } } ?>
+            <?php
 
-        $i = $i+1;
+                $i = $i+1;
 
-    } ?>
-            
-                
-    </div>
+            } ?>         
+            </div>
 
     /.row -->
 
