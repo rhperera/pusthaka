@@ -67,7 +67,7 @@
                                         echo ASSET_PATH;
                                     }
                                         ?>">
-            <img src="http://localhost/ucsc-digital-library/www/images/logo.png" style="margin: 0 0 -20px 10px; position:absolute; z-index:100; "></a>
+            <img src="<?php echo ASSET_PATH;?>/images/logo.png" style="margin: 0 0 -20px 10px; position:absolute; z-index:100; "></a>
             </div>
 
 
@@ -96,6 +96,89 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
+            <?php
+                //if($this->session->userdata('user_name'))
+                //{
+                    echo ' <li>
+                               <a href="#" style="color:#ffffff">'; //echo $this->session->userdata('full_name');
+                               echo '</a>
+                               </li>';
+                //}
+                ?>
+                
+
+
+                
+                <!-- Logout -->
+                <?php
+                    # code...
+                    if($_SESSION)
+                    {
+                        echo ' 
+                            <li>
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> '; echo $_SESSION['full_name']; echo' <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                </li>
+                            </ul>
+                            </li>';
+
+
+                            echo '<li>
+                                <a href="';   echo ASSET_PATH;   echo '/users/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+                            </li>
+
+                            <li>
+                                <div class="navbar-form navbar-left" role="search">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search" id="search_box" >
+                                  </div>
+                                  <button onclick="do_search()" class="btn btn-default" >Search</button>
+                                </div>
+                            </li>';
+
+
+                    }
+                ?>
+
+
+                <!-- <li>
+                    <a href="#" onclick="showSearch()" style="color:#ffffff">Search</a>
+                </li> -->
+
+
+                <!-- search -->
+ 
+
+    
+                    
+                    <?php if(!$_SESSION){ ?>
+                           <form action="<?php echo ASSET_PATH; ?>/users/login" method="post" class="navbar-form navbar-left" >
+                            <div class="form-group">
+                                    <!-- <?php
+                                        if($data['error']==1)
+                                        {
+                                            echo '<p style="color: red;">username / password did not match</p>';
+                                        }
+                                    ?> -->
+                                <input type="text" class="form-control" placeholder="Username" required data-validation-required-message="Please enter your name." id="name" name="user_name">
+                                <input type="password" class="form-control" placeholder="Password" required data-validation-required-message="Please enter your name." id="password" name="password">
+                      
+                            </div>
+                                <input type="submit" class="btn btn-primary" placeholder="sad" value="Sign in" align="center">
+                            </form>
+
+                    <?php } ?>
+
+
+<!--raveen
+
                 
                 <?php
                 if(isset($_SESSION['user_name']))
@@ -133,6 +216,8 @@
                     }
 
                 ?>
+
+                -->
 
 
                
