@@ -6,9 +6,9 @@
       <div class="col-md-12">
         <h3></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="<?php echo ASSET_PATH;?>/collections">My Collection</a></li>
-          <li><a href="<?php echo ASSET_PATH;?>/books">My Books</a></li>
-          <li><a href="<?php echo ASSET_PATH;?>/search">Advanced Search</a></li>
+			<li><a href="<?php echo ASSET_PATH;?>/collections">My Collection</a></li>
+			<li><a href="<?php echo ASSET_PATH;?>/books">My Books</a></li>
+			<li><a href="<?php echo ASSET_PATH;?>/search">Advanced Search</a></li>
         </ul>
       </div>
   </div>
