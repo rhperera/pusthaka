@@ -52,7 +52,7 @@ class Lpanel extends Controller
             $user_type  =$_SESSION['user_type'];
             $post = $this->model('post');
             $result = $post->delete_material($user_id,$material_id,$user_type);
-            var_dump($result);
+            header("Location: ".ASSET_PATH.'/Lpanel/inactives');
         }
     }
 
@@ -65,8 +65,19 @@ class Lpanel extends Controller
       $users = $this->model('user');
       $data['user'] = $users->get_user($user_id);
 
-      var_dump($data['user']);
-      var_dump($data['material']);
+      $category = $this->model('category');
+      $data['categories']=$category->get_categories();
+      $data['category'] = $category->get_category_by_material($material_id);
+
+
+
+
+
+
+      $this->view('header');
+      $this->view('navbar');
+      $this->view('review',$data);
+      $this->view('footer');
     }
    
 }

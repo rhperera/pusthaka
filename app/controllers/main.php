@@ -38,6 +38,10 @@ class Main extends Controller
             $category = $this->model('category');
             $data['categories']=$category->get_categories();
 
+            $user_id = $data['item'][0]['uploader_id'];
+            $users = $this->model('user');
+            $data['user'] = $users->get_user($user_id);
+
             $this->view('header',$data);
             $this->view('navbar',$data);
             $this->view('item_view',$data);

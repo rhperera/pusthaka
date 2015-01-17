@@ -17,7 +17,7 @@ class Post
     function get_materials($num)
     {
         $query = $this->db->query("
-         SELECT DISTINCT m.name, m.author, m.upload_date, m.material_id, GROUP_CONCAT(DISTINCT ca.category_name ORDER BY ca.category_id) AS cat_list
+         SELECT DISTINCT m.name, m.author, m.upload_date, m.material_id, m.description, GROUP_CONCAT(DISTINCT ca.category_name ORDER BY ca.category_id) AS cat_list
          FROM material_category mc
          JOIN materials m ON m.material_id = mc.material_id
          JOIN categories ca ON mc.category_id = ca.category_id
@@ -115,24 +115,15 @@ class Post
         return $query->fetchAll();
     }
 	
-	 function update_material($material_id,$book,$category)
+	 function update_material($material_id,$ISBN,$name,$author,$category,$description,$tags,$privacy,$status)
     {
-        $ISBN       = $book->get_ISBN();
-        $name       = $book->get_name();
-        $author     = $book->get_author();
-        $uploader_id= $book->get_uploader_id();
-        $upload_date= $book->get_upload_date();
-        $path       = $book->get_path();
-        $status     = $book->get_status();
-        $description= $book->get_description();
-        $tags       = $book->get_tags();
-        $privacy    = $book->get_privacy();
 
-        $query1 = $this->db->query("
-            UPDATE materials
-			set ISBN = $ISBN , name = $name , author = $author , uploader_id = $uploader_id ,  upload_date =  $upload_date , path = $path , status = $status , description = $description , tags = $tags , privacy = $privacy
-			where material_id = $material_id ;
+        $query1 = $this->db->query("UPDATE materials
+			set ISBN = '".$ISBN."' , name = '".$name."' , author = '".$author."' , status = '".$status."' , 
+            description = '".$description."' , tags = '".$tags."' , privacy = '".$privacy."'
+			where material_id = '".$material_id."' ;
             "
 			);
+        return $query1;
     }
 }

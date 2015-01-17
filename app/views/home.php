@@ -25,6 +25,17 @@
     </div>
     </div>
 
+<div class="container">
+    <div class="col-md-3">
+                <div class="list-group" >
+                    <a href="<?php echo ASSET_PATH; ?>/mytable" class="list-group-item">My Table</a>
+                    <a href="<?php echo ASSET_PATH; ?>/search" class="list-group-item">Advance Search</a>
+                    <a href="<?php echo ASSET_PATH; ?>/main/browse" class="list-group-item">Browse Books</a>
+
+                </div>
+            </div>
+        </div>
+
     <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
     <h3 style="color:#fff;">Recent Books</h3>
 
@@ -33,29 +44,26 @@
     <div class="row">
         <?php //include('panel.php');?>
         <!--Search box-->
-
-         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
-                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
-                    <p>hello</p>
+         <?php
+            $i=1;
+            foreach($data['recents'] as $row)
+            {
+            ?>
+         <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>">
+            <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
+                    <h4 style="margin-top:2px; color:#fff;"><?php echo $row['name'];?></h4>
+                    <h5>by <?php echo $row['author'];?></h5>
+                    <p><?php echo $row['description']?></p>
+        </div></a>
+        <?php  
+                if($i%4==0)
+                { ?> 
         </div>
+            <div class="row"> <?php }
+            $i=$i+1;
+        }?>
 
-         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; ">   
-                     <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
-                    <p>hello</p>
-        </div>
-
-         <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; "> 
-
-                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
-                    <p>hello</p>
-
-        </div>
-
-        <div class="col-lg-3" style="background-color:#000; padding:10px; width:24%; margin:5px; ">
-                    <h3 style="margin-top:2px; color:#fff;">Material Name</h3>
-                    <p>hello</p>
-
-        </div>
+         
 
 
     </div>  
@@ -92,39 +100,9 @@
         </div>
         <?php } ?>
 
-    <!-- <div class="row">
-            <?php
-            $i=1;
-            foreach($data['recents'] as $row)
-            {
-            ?>
-                <div class="col-md-3 img-portfolio">
+    
 
-                    <h4>
-                        <a href="<?php echo ASSET_PATH; echo '/main/item/'; echo $row['material_id']?>"><?php echo $row['name'];?></a>
-                    </h4>
-                    <p>by <?php echo $row['author']; ?></p>
-                </div>
-                
-                <?php
-                if($i%2==0)
-                { ?>
-
-          </div>
-
-    <?php if($i==9)
-    {   break;}
-    else
-    { ?>
-            <div class="row"><?php } } ?>
-            <?php
-
-                $i = $i+1;
-
-            } ?>         
-            </div>
-
-    /.row -->
+   
 
 
 

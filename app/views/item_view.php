@@ -1,4 +1,34 @@
+<style type="text/css">
 
+
+#pdf {
+    width: 845px;
+    height: 600px;
+    margin: 2em auto;
+   
+}
+
+
+
+#pdf object {
+   display: block;
+   border: solid 1px #666;
+}
+
+
+</style>
+
+
+
+<script type="text/javascript">
+
+window.onload = function (){
+
+    var success = new PDFObject({ url: "<?php echo ASSET_PATH.$data['item'][0]['path']?>.pdf" }).embed("pdf");
+    
+};
+
+</script>
 <!-- Page Content -->
 <?php define('ACCESS_ALLOWED', 1); ?>
 
@@ -21,13 +51,11 @@
     
     <div class="row">
         <!-- Blog Post Content Column -->
-        <div class="col-lg-9">
-            <iframe id="viewer" src = "<?php echo ASSET_PATH; ?>/ViewerJS/#..<?php echo $data['item'][0]['path']?>.pdf" width='800' height='700' allowfullscreen webkitallowfullscreen></iframe>
+        <div class="col-md-9">
+            <div id="pdf">
+                    <object data="" type="application/pdf" width="100%" height="600%"></object>
+            </div>
             <!-- Post Content -->
-
-            <hr>
-                        <p><i class="fa fa-clock-o"></i>Uploaded on <?php echo $data['item'][0]['upload_date']?></p>
-            <!-- Blog Comments -->
 
             <!-- Comments Form -->
             <div class="well">
@@ -86,12 +114,17 @@
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-            <!-- Blog Search Well -->
-            
-
-            
+        <div class="col-md-3">
+            <ul><h4>Description</h4><br>
+                <li>ISBN :</b><?php echo " ".$data['item'][0]['ISBN']?></li>
+                <li>Uploaded date :</b><?php echo " ".$data['item'][0]['upload_date']?></li>
+                    <li></b><?php echo " ".$data['item'][0]['description']?></li>
+            </ul>
+            <br>
+            <ul><h4>Uploader Details</h4><br>
+                    <li><b>Name :</b><?php echo " ".$data['user']['full_name']?></li>
+                    <li><b>Registration number :</b><?php echo " ".$data['user']['reg_number']?></li>
+            </ul>
 
         </div>
 
