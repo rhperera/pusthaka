@@ -35,21 +35,43 @@
   
 </script>
 
+
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+
+
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <div class="navbar-header">
 
+            <div class="col-lg-3">
+            <a href="<?php
+                                    if(isset($_SESSION['user_name']))
+                                    {
+                                        if($_SESSION["user_type"]=='user')
+                                        {
+                                            echo ASSET_PATH; echo "/main";
+                                        }
+                                        elseif($_SESSION["user_type"]='librarian')
+                                        {
+                                            echo ASSET_PATH; echo "/Lpanel";
+                                        }
+                                        else
+                                        {
+                                            echo ASSET_PATH;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo ASSET_PATH;
+                                    }
+                                        ?>">
+            <img src="http://localhost/ucsc-digital-library/www/images/logo.png" style="margin: 0 0 -20px 10px; position:absolute; z-index:100; "></a>
+            </div>
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
 
-            <a class="navbar-brand" style="color:#000" href="<?php
+           <!-- <a class="navbar-brand" style="color:#000" href="<?php
                             if(isset($_SESSION['user_name']))
                             {
                                 if($_SESSION["user_type"]=='user')
@@ -69,7 +91,7 @@
                             {
                                 echo ASSET_PATH;
                             }
-                                ?>">DIGITAL LIBRARY</a>
+                                ?>">DIGITAL LIBRARY</a> -->
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
