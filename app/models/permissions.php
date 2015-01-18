@@ -22,8 +22,10 @@ class Permissions
         return $result;
     }
 
-    function request_permission(){
-        
+    function request_permission($material_id,$user_id,$uploader_id){
+        $query = $this->db->query("INSERT INTO request values('',$material_id,$user_id,$uploader_id)");
+        $result = $query->fetchAll();
+        return $result;
     }
 
 

@@ -33,5 +33,11 @@ class Settings extends Controller
 	    }
     }
 
-    
+    function request_permission($material_id,$uploader_id)
+    {
+        $user_id = $_SESSION['user_id'];
+        $permission = $this->model('permissions');
+        $request = $permission->request_permission($material_id,$user_id,$uploader_id);
+        
+    }
 }
