@@ -120,8 +120,8 @@ window.onload = function (){
                         <div class="controls">
                             <label>Public availability |</label><span style="color:blue"><?php echo " ".$public; ?></span>
                             <select class="form-control" name="privacy">
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
                             </select>
                         </div>
                     </div>

@@ -32,4 +32,6 @@ class Settings extends Controller
 	    	header("Location: ".ASSET_PATH."/settings");
 	    }
     }
+
+    
 }

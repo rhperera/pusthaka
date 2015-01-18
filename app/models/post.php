@@ -124,6 +124,8 @@ class Post
 			where material_id = '".$material_id."' ;
             "
 			);
+        $query2 = $this->db->query("UPDATE material_category 
+            SET category_id = $category where material_id=$material_id");
         return $query1;
     }
 }

@@ -76,8 +76,8 @@
                         <div class="controls">
                             <label>Do you want to make this book publicly available</label><span style="color:red"> *</span>
                             <select class="form-control" name="privacy">
-                                <option value="1">Yes</option>
-                                <option value="0">No. Let me choose</option>
+                                <option value="0">Yes</option>
+                                <option value="1">No. Let me choose</option>
                             </select>
                         </div>
                     </div>

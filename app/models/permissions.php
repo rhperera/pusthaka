@@ -15,5 +15,16 @@ class Permissions
     	return $query;
     }
 
+    function check_permission($material_id,$user_id)
+    {
+        $query = $this->db->query("SELECT * FROM view_results where material_id=$material_id and user_id=$user_id");
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    function request_permission(){
+        
+    }
+
 
 }

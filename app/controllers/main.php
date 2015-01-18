@@ -42,10 +42,23 @@ class Main extends Controller
             $users = $this->model('user');
             $data['user'] = $users->get_user($user_id);
 
-            $this->view('header',$data);
-            $this->view('navbar',$data);
-            $this->view('item_view',$data);
-            $this->view('footer',$data);
+            $permissions = $this->model('permissions');
+            $data['permission'] = $permissions->check_permission($material_id,$_SESSION['user_id']);
+
+            if( $data['item'][0]['privacy']==0 or $data['permission'])
+            { 
+                $this->view('header',$data);
+                $this->view('navbar',$data);
+                $this->view('item_view',$data);
+                $this->view('footer',$data);
+            }
+            else
+            {
+                $this->view('header',$data);
+                $this->view('navbar',$data);
+                $this->view('request');
+                $this->view('footer',$data);
+            }
         }
         else
         {
