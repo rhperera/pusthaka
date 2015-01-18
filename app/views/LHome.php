@@ -1,31 +1,30 @@
 <div class="container"> 
 
+   <div class="row">
 
 
-
-    <div class="row">
-
-
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="text-align: center;">
                 <h1 class="page-header">Welcome
                     <small><?php echo $_SESSION['user_name'];?></small>
                 </h1>
             </div>
-    </div> 
 
+
+    </div> 
+  
     <div class="row">
 
 
+                <div class="col-md-3" style="margin-top:3.3%; width:25.8%; position:static;">
+                <div class="list-group" >
+                    <a href="index.html" class="list-group-item" style="background-color:#000">Dashboard</a>
+                    <a href="about.html" class="list-group-item" style="background-color:#000">Approved Books</a>
 
-                <div class="col-md-3">
-                <div class="list-group">
-                    <a href="index.html" class="list-group-item">Dashboard</a>
-                    <a href="about.html" class="list-group-item">Approved Books</a>
 
                 </div>
-            </div>
+                </div>
 
-                <div class="col-sm-4">
+           <div class="col-sm-4">
 
                         <div class="panel panel-primary">
                             <div class="panel-heading">
