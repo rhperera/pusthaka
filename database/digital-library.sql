@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2015 at 01:32 PM
+-- Generation Time: Jan 18, 2015 at 08:51 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `collections` (
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`collection_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `tags` varchar(100) DEFAULT NULL,
   `privacy` int(1) NOT NULL,
   PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -126,9 +126,10 @@ CREATE TABLE IF NOT EXISTS `material_category` (
 --
 
 CREATE TABLE IF NOT EXISTS `material_collection` (
-  `collection_id` int(11) DEFAULT NULL,
-  `material_id` int(11) DEFAULT NULL,
-  KEY `collection_id` (`collection_id`)
+  `collection_id` int(11) NOT NULL DEFAULT '0',
+  `material_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`collection_id`,`material_id`),
+  KEY `material_id` (`material_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -146,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   KEY `material_id` (`material_id`),
   KEY `user_id` (`user_id`),
   KEY `uploader_id` (`uploader_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,8 @@ ALTER TABLE `material_category`
 -- Constraints for table `material_collection`
 --
 ALTER TABLE `material_collection`
-  ADD CONSTRAINT `material_collection_ibfk_1` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`collection_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `material_collection_ibfk_3` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `material_collection_ibfk_2` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`collection_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `request`
