@@ -11,7 +11,7 @@
  <div class="row row-centered">
 
   <div class="col-md-4 col-centered" style="left: 69px;">
-    <h1 style="margin-top: 119px; ">Search</h1></br>
+    <h1 style="margin-top: 119px; ">Uploads</h1></br>
         <p><a href="<?php echo ASSET_PATH;?>/mytable"><button style="width: 129px;" type="button" class="btn btn-default">Dashboard</button></a></p>
         <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
         <p><a href="<?php echo ASSET_PATH;?>/search/quick"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>

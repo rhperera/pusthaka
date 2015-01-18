@@ -74,7 +74,7 @@
 <div class="container">
     <br><br>
 
-        <!--the sign in form-->
+        <!--the sign in form
         <?php if(!isset($_SESSION['user_name'])){  ?>
         <div class="row" id="sign">
             <div class="col-lg-3">
@@ -89,16 +89,13 @@
                     <label for="password" style="font-weight: 100 !important;">Password</label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                   </div>
-                  <!--<div class="form-group">
-                    <label>Your Text</label>
-                    <textarea class="form-control" name="Message" rows="3"></textarea>
-                  </div>-->
+                  
                   <br>
                   <button style="width: 100%;" type="submit" class="btn btn-large btn-default">Sign In</button>
                 </form>
             </div>
         </div>
-        <?php } ?>
+        <?php } ?>-->
 
     
 

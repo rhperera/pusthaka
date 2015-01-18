@@ -32,16 +32,14 @@ window.onload = function (){
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Upload
-                <small>materials to the library</small>
-            </h1>
-        </div>
-    </div>
+    <div class="container">
+</br></br></br>
+ <div class="row row-centered">
 
-    <div class="row">
-            <div class="col-md-5">
+    <div class="col-md-5 col-centered">
+        <h1 style="margin-top: 119px; left: 69px;">Review Book</h1></br>
+
+            
                 <form action="<?php echo ASSET_PATH;?>/uploads/do_update/<?php echo $data['material'][0]['material_id'] ?>" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
                         <div class="controls">
@@ -106,7 +104,7 @@ window.onload = function (){
                     </div>
 
                     <?php
-                        if($data['material'][0]['privacy']==1)
+                        if($data['material'][0]['privacy']==0)
                         {
                             $public = "Yes";
                         }
@@ -120,8 +118,16 @@ window.onload = function (){
                         <div class="controls">
                             <label>Public availability |</label><span style="color:blue"><?php echo " ".$public; ?></span>
                             <select class="form-control" name="privacy">
-                                <option value="0">Yes</option>
+                                <?php if($public=="Yes") 
+                                {   ?>
+                                <option selected value="0">Yes</option>
                                 <option value="1">No</option>
+                                <?php   }   
+                                elseif($public=="No")   
+                                    {  ?>
+                                <option value="0">Yes</option>
+                                <option selected value="1">No</option>
+                                <?php  }  ?>
                             </select>
                         </div>
                     </div>
@@ -130,9 +136,19 @@ window.onload = function (){
                      
                     <div class="control-group form-group">
                         <div class="controls">
+                            <?php if($_SESSION['user_type']=='librarian')
+                            {
+                            ?>
                             <input type="submit" name="submit" class="btn btn-default" value="Update and authenticate">
                             <a style="padding-left:37px; color:red;" 
-                            href="<?php echo ASSET_PATH;?>/Lpanel/delete_material/<?php echo $data['material'][0]['material_id'] ?>">Remove material and notify</a>
+                            href="<?php echo ASSET_PATH;?>/lpanel/delete_material/<?php echo $data['material'][0]['material_id'] ?>">Remove material and notify</a>
+                            <?php }  
+                            else{        ?>
+                            <input type="submit" name="submit" class="btn btn-default" value="Update">
+                            <a style="padding-left:37px; color:red;" 
+                            href="<?php echo ASSET_PATH;?>/mytable/delete_material/<?php echo $data['material'][0]['material_id'] ?>">Remove material</a>
+                            <?php } ?>
+                            
                         </div>
                     </div>
 

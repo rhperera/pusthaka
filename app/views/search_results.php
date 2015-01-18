@@ -39,21 +39,22 @@
             </div>
        
     <!-- /.row -->
-
+    </br>
     <!-- Projects Row -->
     <div class="row">
+    
     <?php
     $i=1;
     foreach($data['quick_results'] as $row)
     {
     ?>
-        <div class="col-md-4 img-portfolio">
+        <div class="col-md-6 img-portfolio">
             <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
 
             </a>
-            <h3>
+            <h4>
                 <a href="<?php echo ASSET_PATH?>/main/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
-            </h3>
+            </h4>
             <p>by <?php echo $row['author']; ?></p>
 
             <?php if(isset($_SESSION['user_name']) and $_SESSION['user_type']=="librarian")
@@ -63,10 +64,10 @@
         </div>
 
         <?php 
-        if($i%3==0)
+        if($i%2==0)
         { ?>
     </div>
-    <?php if($i==9)
+    <?php if($i==16)
     {   break;}
     else
     { ?>

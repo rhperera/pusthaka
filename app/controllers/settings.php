@@ -51,7 +51,7 @@ class Settings extends Controller
     function delete_request($material_id,$user_id)
     {
         $permission = $this->model('permissions');
-        $request = $permission->delete_request($user_id,$material_id);
+        $request = $permission->delete_request($material_id,$user_id);
         header("Location: ".ASSET_PATH."/mytable"); 
     }
 }

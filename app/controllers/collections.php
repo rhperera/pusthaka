@@ -44,18 +44,33 @@ class Collections extends Controller
             }
     }
 	
-	function books($collection_id)
+	function books($collection_id,$key='book')
     {
-		$this->model('collection');
-        $data['records'] = $this->collection->get_my_collections($user_id);
-        //$this->load->view('my_collections' , $data);
+		$collection = $this->model('collection');
+        $data['records'] = $collection->get_materials_from_collection($collection_id);
+        $data['collection_name'] = $collection->get_collection_name($collection_id);
+        $data['collection_id'] = $collection_id;
+
+
+        $quick = $this->model('search_material');
+        //$key = str_replace($key,"%20"," ");
+        $data['quick_results']=$quick->simple_search($key);
+
+        $posts = $this->model('post');
+        $data['books'] = $posts->get_materials_by_id($data['records']);
+
+
+        $this->view('header');
+        $this->view('navbar');
+        $this->view('collections' , $data);
+        $this->view('footer');
     }
 	
 	function Index()
 	{
         if(isset($_SESSION['user_name']))
         {
-            $user_id =$_SESSION['user_id'];
+          $user_id =$_SESSION['user_id'];
           $collection = $this->model('collection');
           $data['records'] = $collection->get_my_collections($user_id);
           
@@ -69,6 +84,22 @@ class Collections extends Controller
             header("Location: ".ASSET_PATH);
         }
 	}
+
+    function add_book_to_collection($material_id,$collection_id)
+    {
+        $collection = $this->model('collection');
+        $collection->add_book($collection_id,$material_id);
+    
+        header("Location: ".ASSET_PATH."/collections/books/".$collection_id);
+        
+    }
+
+    function remove_material_from_collection($material_id,$collection_id)
+    {
+        $collection = $this->model('collection');
+        $collection->remove_material($material_id,$collection_id);
+        header("Location: ".ASSET_PATH."/collections/books/".$collection_id);
+    }
 }
 
 ?>

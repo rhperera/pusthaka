@@ -79,7 +79,7 @@ class Post
         $array = $query2->fetchAll();
         $material_id =$array[0]['material_id'];
 
-         $query3 = $this->db->query("INSERT INTO view_results VALUES(".$uploader_id.",".$material_id.")");
+         $query3 = $this->db->query("INSERT INTO view_results VALUES(".$material_id.",".$uploader_id.")");
 
        $query2 = $this->db->query("
             INSERT INTO material_category
@@ -127,5 +127,28 @@ class Post
         $query2 = $this->db->query("UPDATE material_category 
             SET category_id = $category where material_id=$material_id");
         return $query1;
+    }
+
+    function get_materials_by_id($data)
+    {
+        $booklist = array();
+        $i=0;
+
+        foreach ($data as $key) {
+            $query = $this->db->query("
+                SELECT * FROM materials WHERE material_id=".$key['material_id']." AND status=1");
+            $result = $query->fetchAll();
+            $booklist[$i] = $result[0];
+            $i++;
+        }
+        return $booklist;
+    }
+
+    function get_materials_by_uploader()
+    {
+        $uploader_id = $_SESSION['user_id'];
+        $query = $this->db->query("SELECT * FROM materials WHERE uploader_id=$uploader_id");
+        $result = $query->fetchAll();
+        return $result;
     }
 }

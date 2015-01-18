@@ -37,7 +37,8 @@ window.onload = function (){
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
             <h1 class="page-header">
                 <?php echo $data['item'][0]['name'];?>
                 <small>by <?php echo $data['item'][0]['author'];?>
@@ -125,7 +126,14 @@ window.onload = function (){
                     <li><b>Name :</b><?php echo " ".$data['user']['full_name']?></li>
                     <li><b>Registration number :</b><?php echo " ".$data['user']['reg_number']?></li>
             </ul>
-
+            <?php if($_SESSION['user_id']==$data['item'][0]['uploader_id']){ ?>
+            <p><a href="<?php echo ASSET_PATH;?>/mytable/review/<?php echo $data['item'][0]['material_id']?>">Update Material Details</a></p>
+            <p><a href="<?php echo ASSET_PATH;?>/mytable/delete_material/<?php echo $data['item'][0]['material_id']?>">Delete Material</a></p>
+               <?php } 
+               elseif( $_SESSION['user_type']=='librarian'){
+               ?>
+               <p><a href="<?php echo ASSET_PATH;?>/lpanel/review/<?php echo $data['item'][0]['material_id']?>">Update Material Details</a></p>
+               <?php }?>
         </div>
 
     </div>

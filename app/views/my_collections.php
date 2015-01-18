@@ -16,13 +16,13 @@
 <?php
 
 	foreach($data['records'] as $rec){
-      echo '<span><li><a style="display: -webkit-inline-box;" href="';
-      echo ASSET_PATH.'/collections/book/'.$rec['collection_id'];
-      echo '"><p><b>';
+      echo '<h4><span><li><a style="display: -webkit-inline-box;" href="';
+      echo ASSET_PATH.'/collections/books/'.$rec['collection_id'];
+      echo '"><p>';
 		  echo $rec['collection_name']."";
-      echo '</p></b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'; 
+      echo '</p></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'; 
       echo ASSET_PATH.'/collections/delete_collection/'.$rec['collection_id'];
-      echo'"><i  class="fa fa-trash-o"></i></a></li></span>';
+      echo'"><i  class="fa fa-trash-o"></i></a></li></span></h4>';
     }
 ?>
   </ul>

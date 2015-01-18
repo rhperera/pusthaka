@@ -32,7 +32,7 @@ class Collection
     	return $query;
     }
 
-    function get_materials_from_collections($collection_id)
+    function get_materials_from_collection($collection_id)
     {
     	$query = $this->db->query("SELECT * FROM material_collection WHERE collection_id=$collection_id");
     	return $query->fetchAll();
@@ -48,5 +48,11 @@ class Collection
     {
     	$query = $this->db->query("SELECT * FROM collections WHERE user_id=$user_id");
     	return $query->fetchAll();
+    }
+
+    function get_collection_name($collection_id)
+    {
+        $query = $this->db->query("SELECT * FROM collections WHERE collection_id=$collection_id");
+        return $query->fetchAll();
     }
 }
