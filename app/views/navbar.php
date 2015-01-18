@@ -252,7 +252,7 @@
 
             </ul>
 
-		<!-- Blog Sidebar Widgets Column -->
+        <!-- Blog Sidebar Widgets Column -->
 
 
 
