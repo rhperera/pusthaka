@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2015 at 04:46 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Generation Time: Jan 18, 2015 at 01:32 PM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `digital-library`
 --
-CREATE DATABASE IF NOT EXISTS `digital-library` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `digital-library`;
 
 DELIMITER $$
 --
@@ -71,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `collections` (
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`collection_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -80,13 +78,12 @@ CREATE TABLE IF NOT EXISTS `collections` (
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `material_id` int(11) DEFAULT NULL,
-  `comment_content` text,
-  PRIMARY KEY (`comment_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `comment_id` int(11) DEFAULT NULL,
+  `material_id` int(11) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL,
+  `comment_content` text NOT NULL,
+  PRIMARY KEY (`material_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -107,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `tags` varchar(100) DEFAULT NULL,
   `privacy` int(1) NOT NULL,
   PRIMARY KEY (`material_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -133,6 +130,23 @@ CREATE TABLE IF NOT EXISTS `material_collection` (
   `material_id` int(11) DEFAULT NULL,
   KEY `collection_id` (`collection_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request`
+--
+
+CREATE TABLE IF NOT EXISTS `request` (
+  `request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `material_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `uploader_id` int(11) NOT NULL,
+  PRIMARY KEY (`request_id`),
+  KEY `material_id` (`material_id`),
+  KEY `user_id` (`user_id`),
+  KEY `uploader_id` (`uploader_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -169,10 +183,10 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `user_type`, `
 --
 
 CREATE TABLE IF NOT EXISTS `view_results` (
-  `user_id` int(11) DEFAULT NULL,
-  `material_id` int(11) DEFAULT NULL,
-  KEY `user_id` (`user_id`),
-  KEY `material_id` (`material_id`)
+  `material_id` int(11) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`material_id`,`user_id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -184,13 +198,6 @@ CREATE TABLE IF NOT EXISTS `view_results` (
 --
 ALTER TABLE `collections`
   ADD CONSTRAINT `collections_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
-
---
--- Constraints for table `comments`
---
-ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `material_category`
@@ -206,11 +213,19 @@ ALTER TABLE `material_collection`
   ADD CONSTRAINT `material_collection_ibfk_1` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`collection_id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `request`
+--
+ALTER TABLE `request`
+  ADD CONSTRAINT `request_ibfk_3` FOREIGN KEY (`uploader_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `request_ibfk_1` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `request_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `view_results`
 --
 ALTER TABLE `view_results`
-  ADD CONSTRAINT `view_results_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `view_results_ibfk_2` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `view_results_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `view_results_ibfk_1` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
