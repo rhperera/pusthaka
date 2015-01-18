@@ -60,10 +60,10 @@
 
     function category_tab() {
         var category = ["Hardware", "Stories", "Computer Science", "Networks", "Web Development", "Programming"];
-        $('#tab-window').html('<button type="button" class="btn btn-lg btn-default" onclick=trigger_category(' + 0 + ')>' + category[0] + '</button>');
+        $('#tab-window').html('<button type="button" class="btn btn-default" onclick=trigger_category(' + 0 + ')>' + category[0] + '</button>');
         var i;
         for (i = 1; i < category.length; i++) {
-            $('#tab-window').append('<button type="button" class="btn btn-lg btn-default" onclick=trigger_category(' + i + ')>' + category[i] + '</button>');
+            $('#tab-window').append('<button type="button" class="btn btn-default" onclick=trigger_category(' + i + ')>' + category[i] + '</button>');
         }
         $('#tab-window').append('<div id="tab-window2"></div>');
     }
@@ -135,24 +135,27 @@
 <div class="container">
  
  <div id="mycontainer" style="height: 500px">   
-    <div class="row">
-            <div class="col-lg-12">
-               <br><br>
-            </div>
-            <div class="col-lg-12">
+     </br></br></br>
+ <div class="row row-centered">
+
+  <div class="col-md-4 col-centered" style="left: 69px;">
+    <h1 style="margin-top: 119px; ">Browse</h1></br>
+        <p><a href="<?php echo ASSET_PATH;?>/mytable"><button style="width: 129px;" type="button" class="btn btn-default">Dashboard</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/search/quick"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/settings"><button style="width: 129px;" type="button" class="btn btn-default">Settings</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/uploads"><button style="width: 129px;" type="button" class="btn btn-default">Upload</button></a></p>
+    </div>
+
+            <div class="col-lg-8">
 
                 <ul id="myTab" class="nav nav-tabs nav-justified">
-                    <li class=""><a onclick="trigger_recent('recent')" href="#tab-window" data-toggle="tab"><i class="fa fa-book"></i> Recents books uploaded</a>
+                    <li class=""><a onclick="trigger_recent('recent')" href="#tab-window" data-toggle="tab">Recents books uploaded</a>
                     </li>
-                    <li class=""><a  data-toggle="tab"><i class="fa fa-book"></i> My Collection</a>
-                    </li>
-                    <li class=""><a onclick=" trigger_AtoZ()" href="#tab-window" data-toggle="tab"><i class="fa fa-book"></i> Browse A-Z</a>
-                    </li>
-                    <li class=""><a onclick="category_tab()" href="#tab-window" data-toggle="tab"><i class="fa fa-book"></i> Browse by Category</a>
+                    <li class=""><a onclick="category_tab()" href="#tab-window" data-toggle="tab"> Browse by Category</a>
                     </li>
                 </ul>
-            </div>
-        </div>
+          
 
     
                 <div id="myTabContent" class="tab-content">
@@ -162,6 +165,9 @@
                         
                     </div>
                 </div>
+
+                  </div>
+        </div>
             
      </div>
      

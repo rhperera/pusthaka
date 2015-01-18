@@ -11,9 +11,13 @@ class MyTable extends Controller
 
     function Index()
     {
+        $uploader_id = $_SESSION['user_id'];
+        $permissions = $this->model('permissions');
+        $data['requests'] = $permissions->get_all_requests($uploader_id);
+
     	$this->view('header');   	
 		$this->view('navbar');
-        $this->view('navbar_side');
+        $this->view('mytable',$data);
 		$this->view('footer');
     }
 
@@ -28,6 +32,10 @@ class MyTable extends Controller
             var_dump($result);
         }
     }
+
+
+
+
 	
 	
 }

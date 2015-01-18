@@ -23,7 +23,7 @@ class Search extends Controller
         $this->view('footer');
     }
 
-    function quick($key)
+    function quick($key="book")
     {
         $quick = $this->model('search_material');
         //$key = str_replace($key,"%20"," ");

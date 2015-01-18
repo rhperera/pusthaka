@@ -28,5 +28,28 @@ class Permissions
         return $result;
     }
 
+    function check_request($material_id,$user_id,$uploader_id)
+    {
+        $query = $this->db->query("SELECT * FROM request 
+            where material_id=$material_id and user_id=$user_id and uploader_id=$uploader_id");
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    function get_all_requests($uploader_id)
+    {
+        $query = $this->db->query("SELECT * FROM request 
+            where uploader_id=$uploader_id");
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    function delete_request($material_id,$user_id)
+    {
+        $query = $this->db->query("DELETE FROM request where material_id=$material_id and user_id=$user_id");
+        $result = $query->fetchAll();
+        return $result;
+    }
+
 
 }

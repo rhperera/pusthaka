@@ -17,8 +17,17 @@
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <div class="row">
-      <br/><br/>
+     </br></br></br>
+ <div class="row row-centered">
+
+  <div class="col-md-4 col-centered" style="left: 69px;">
+    <h1 style="margin-top: 119px; ">Search</h1></br>
+        <p><a href="<?php echo ASSET_PATH;?>/mytable"><button style="width: 129px;" type="button" class="btn btn-default">Dashboard</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/search"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/settings/quick"><button style="width: 129px;" type="button" class="btn btn-default">Settings</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/uploads"><button style="width: 129px;" type="button" class="btn btn-default">Upload</button></a></p>
+  </div>
 
 
     <div class="col-lg-4">
@@ -28,11 +37,7 @@
                     <button class="btn btn-default" onclick="do_search()" type="button"><i class="fa fa-search"></i></button>
                 </span>
             </div>
-        </div>
-    <div class="col-lg-4">
-            <a href="<?php echo ASSET_PATH; echo '/search'; ?>">Use the advance search</a>
-        </div>
-    </div>
+       
     <!-- /.row -->
 
     <!-- Projects Row -->
@@ -71,6 +76,12 @@
         $i = $i+1;
 
     } ?></div>
+
+     </div>
+    <div class="col-lg-4">
+            <a href="<?php echo ASSET_PATH; echo '/search'; ?>">Use the advance search</a>
+        </div>
+    </div>
     <!-- /.row -->
 
 

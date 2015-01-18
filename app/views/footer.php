@@ -68,12 +68,12 @@
    
 
      <div class="row" >
-                    <div class="col-lg-4 text-center">
+                    <div class="col-lg-3 text-center">
                         <div class="panel panel-default" id="panel">
                             
                         </div>
                     </div>
-                    <div class="col-lg-4 text-center">
+                    <div class="col-lg-6 text-center">
                             <div class="panel-body">
                                 <p>Copyright &copy; University of Colombo School of Computing 2014</p>	
                             </div>

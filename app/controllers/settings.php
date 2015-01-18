@@ -38,6 +38,20 @@ class Settings extends Controller
         $user_id = $_SESSION['user_id'];
         $permission = $this->model('permissions');
         $request = $permission->request_permission($material_id,$user_id,$uploader_id);
-        
+        header("Location: ".ASSET_PATH."/main/item/".$material_id); 
+    }
+
+    function grant_permission($material_id,$user_id)
+    {
+        $permission = $this->model('permissions');
+        $request = $permission->single_material_permission($user_id,$material_id);
+        header("Location: ".ASSET_PATH."/settings/delete_request/".$material_id."/".$user_id); 
+    }
+
+    function delete_request($material_id,$user_id)
+    {
+        $permission = $this->model('permissions');
+        $request = $permission->delete_request($user_id,$material_id);
+        header("Location: ".ASSET_PATH."/mytable"); 
     }
 }

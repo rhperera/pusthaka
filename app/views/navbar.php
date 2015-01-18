@@ -38,7 +38,7 @@
 
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container" style="background-color: rgb(248, 248, 248);">
 
 
         <!-- Brand and toggle get grouped for better mobile display -->

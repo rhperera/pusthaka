@@ -38,12 +38,14 @@ class Main extends Controller
             $category = $this->model('category');
             $data['categories']=$category->get_categories();
 
-            $user_id = $data['item'][0]['uploader_id'];
+            $uploader_id = $data['item'][0]['uploader_id'];
             $users = $this->model('user');
-            $data['user'] = $users->get_user($user_id);
+            $data['user'] = $users->get_user($uploader_id);
 
             $permissions = $this->model('permissions');
             $data['permission'] = $permissions->check_permission($material_id,$_SESSION['user_id']);
+
+            $data['requested'] = $permissions->check_request($material_id,$_SESSION['user_id'],$uploader_id);
 
             if( $data['item'][0]['privacy']==0 or $data['permission'])
             { 
@@ -56,7 +58,7 @@ class Main extends Controller
             {
                 $this->view('header',$data);
                 $this->view('navbar',$data);
-                $this->view('request');
+                $this->view('request',$data);
                 $this->view('footer',$data);
             }
         }

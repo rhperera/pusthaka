@@ -14,7 +14,7 @@
 <!-- Page Content -->
 <div id="con">
 
-    <div class="container">
+    <div class="container" style="background-color:transparent !important">
     <div class="row" style="top:3%;">
         <div class="col-lg-4"></div>
         <div class="col-lg-4"></div>
@@ -25,7 +25,7 @@
     </div>
     </div>
 
-<div class="container">
+<div class="container" style="background-color:transparent !important">
     <div class="col-md-3">
                 <div class="list-group" >
                     <a href="<?php echo ASSET_PATH; ?>/mytable" class="list-group-item">My Table</a>

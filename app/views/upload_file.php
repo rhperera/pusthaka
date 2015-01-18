@@ -6,15 +6,18 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Upload
-                <small>materials to the library</small>
-            </h1>
-        </div>
-    </div>
+    
+     </br></br></br>
+ <div class="row row-centered">
 
-    <div class="row">
+  <div class="col-md-4 col-centered" style="left: 69px;">
+    <h1 style="margin-top: 119px; ">Search</h1></br>
+        <p><a href="<?php echo ASSET_PATH;?>/mytable"><button style="width: 129px;" type="button" class="btn btn-default">Dashboard</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/search"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/settings/quick"><button style="width: 129px;" type="button" class="btn btn-default">Settings</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/collections"><button style="width: 129px;" type="button" class="btn btn-default">Collections</button></a></p>
+  </div>
             <div class="col-md-5">
                 <form action="<?php echo ASSET_PATH;?>/uploads/do_upload" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
@@ -92,7 +95,7 @@
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Upload" style="width: 458px;">
                         </div>
                     </div>
 

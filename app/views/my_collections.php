@@ -1,13 +1,17 @@
 <div class="container">
-  <div class="row">
-    <br/>
-    <div class="col-lg-4">
-        <h2>My Collections</h2>
-    </div>
+  </br></br></br>
+ <div class="row row-centered">
+
+  <div class="col-md-4 col-centered" style="left: 69px;">
+    <h1 style="margin-top: 119px; ">Collections</h1></br>
+        <p><a href="<?php echo ASSET_PATH;?>/mytable"><button style="width: 129px;" type="button" class="btn btn-default">Dashboard</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/search/quick"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/settings"><button style="width: 129px;" type="button" class="btn btn-default">Settings</button></a></p>
+        <p><a href="<?php echo ASSET_PATH;?>/uploads"><button style="width: 129px;" type="button" class="btn btn-default">Upload</button></a></p>
   </div>
-  <div class="row">
-<div class="col-md-3"></div>
-<div class="col-md-3">
+
+<div class="col-md-4">
   <ul>
 <?php
 
@@ -23,7 +27,7 @@
 ?>
   </ul>
 </div>
-<div class="col-md-3"></div>
+
 <div class="col-md-3">
                 <h3>Add a new collection</h3>
                 <form name="sentMessage" action="<?php echo ASSET_PATH;?>/collections/add_collection" method="post" id="contactForm" novalidate="">
