@@ -123,7 +123,7 @@
                 
 							<?php foreach ($data['books'] as $key) 
 							{	?>
-							<li class="list-group-item">
+							<li>
 							<a href="<?php echo ASSET_PATH?>/main/item/<?php echo $key['material_id']?>">
 							<?php echo $key['name'];?></a>&nbsp;by&nbsp;<?php echo $key['author'];?>
 							</li>
