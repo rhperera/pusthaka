@@ -24,12 +24,40 @@
                 </ul>
             </div>
 
-        <div class="row row-centered" style="margin-left:7.83%; left:0; top:0; ">
+
 
                     <div class="col-lg-12" style="text-align: center;">
                     <h1 class="page-header">Welcome
                         <small><?php echo $_SESSION['full_name'];?></small>
                     </h1>
+                    </div>
+
+
+            <div class="col-md-3 col-centered" style="left: 69px;">
+        </br></br></br>
+    </div>
+
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo $data['inactives'][0]['inactive_books']; ?></div>
+                                        <div>New Materials!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="<?php echo ASSET_PATH; echo '/Lpanel/inactives'?>">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Awaiting Approval</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
 
