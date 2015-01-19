@@ -63,14 +63,14 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Enter old password</label>
-                            <input type="text" class="form-control" name="old_password" required="" data-validation-required-message="">
+                            <input type="password" class="form-control" name="old_password" required="" data-validation-required-message="">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Enter new password</label>
-                            <input type="tel" class="form-control" name="new_password" required="" data-validation-required-message="">
+                            <input type="password" class="form-control" name="new_password" required="" data-validation-required-message="">
                         <div class="help-block"></div></div>
                     </div>
                     <!-- For success/fail messages -->
@@ -82,6 +82,7 @@
 
                 if(isset($_SESSION['password_change']))
                 {
+                    
                     if($_SESSION['password_change']=="true")
                         {       ?>
                             <div class="alert alert-success">
