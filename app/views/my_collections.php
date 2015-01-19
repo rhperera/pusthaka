@@ -1,3 +1,15 @@
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
+
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
 <div class="container">
   
 
@@ -69,7 +81,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Collections</h3>
+                    <h3 class="panel-title">Current Collections</h3>
                 </div>
                 
                 <div class="panel-body">
