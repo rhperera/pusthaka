@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
                 	<li>
-                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-table"></i>My Table</a>
+                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-dashboard"></i>My Table</a>
                     </li>
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/collections"><i class="fa fa-fw fa-table"></i>My Collections</a>
@@ -32,6 +32,7 @@
  	<div class="col-md-3 col-centered" style="left: 69px;">
  		
 	</div>
+	
 	<div class="col-sm-4" style="left: 25px;" >
 		</br>
 		<h3>Pending Requests</h3>
