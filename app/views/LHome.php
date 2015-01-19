@@ -79,12 +79,13 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
+                                    <div class="col-xs-6">
                                         <div class="huge"><?php echo $data['all_users'][0]['user_count']; ?></div>
                                         <div>Full User Count</div>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="huge"><?php echo $data['banned_users'][0]['user_count']; ?></div>
+                                        <div>Banned Users</div>
                                     </div>
                                 </div>
                             </div>
