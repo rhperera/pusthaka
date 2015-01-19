@@ -20,7 +20,7 @@ class Main extends Controller
         
         //$data['main']=$this->post->get_materials(10);
         //$data['categories']=$this->category->get_categories();
-        $data['recents']=$model->get_materials(10);
+        $data['recents']=$model->get_materials(3);
         //echo"<pre>"; print_r($data['main']); echo "";
         $this->view('header',$data);
         $this->view('navbar',$data);
