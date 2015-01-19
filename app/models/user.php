@@ -90,4 +90,41 @@ class User
         $result = $query->fetchAll();
         return $result;
     }
+
+    function reset_and_mail($email)
+    {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) 
+        {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        $password = implode($pass);
+
+        $query = $this->db->query("SELECT user_id from users WHERE email='".$email."'");
+        $result=$query->fetchAll();
+        if($result[0])
+        {
+            $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+            $pass = array(); //remember to declare $pass as an array
+            $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+            for ($i = 0; $i < 8; $i++) 
+            {
+                $n = rand(0, $alphaLength);
+                $pass[] = $alphabet[$n];
+            }
+            $password = implode($pass);
+            $new_password = md5($password."abcdefg");
+            $query = $this->db->query("UPDATE users set password='".$new_password."'");
+            if($query)
+            {
+                mail($email, "Password Reset - UCSC Digital Library", "Your new password is ".$password,"dl@ucsc.lk");
+            }
+            
+        }
+    }
+
+  
 }
