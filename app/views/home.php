@@ -1,17 +1,60 @@
 <style>
-     #con
-    {
-        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
-        background-size: cover;
 
-        height:100%;
-    	width:100%;
-    }
+
+.carousel { z-index: -99; } /* keeps this behind all content */
+
+.carousel .item {
+    position: fixed; 
+    width: 100%; height: 100%;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+ 
+}
+.carousel .one {
+    background: url('<?php echo ASSET_PATH;?>/images/slider.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .two {
+    background: url('<?php echo ASSET_PATH;?>/images/slider-1.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .three {
+    background: url('<?php echo ASSET_PATH;?>/images/slider.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .active.left {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+
 </style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({interval: 7000});
+  });
+</script>
+
 
 <!-- Navigation -->
 <?php //include('slider.php')?>
-<!-- Page Content -->
+
+    
+<div id="myCarousel" class="carousel container slide">
+  <div class="carousel-inner">
+            <div class="active item one"></div>
+            <div class="item two"></div>
+            <div class="item three"></div>
+  </div>
+</div>
+
 <div id="con">
 
     <div class="container" style="background-color:transparent !important">
@@ -25,80 +68,36 @@
     </div>
     </div>
 
-<!--<div class="container" style="background-color:transparent !important">
-    <div class="col-md-3">
-                
-                    <a href="<?php echo ASSET_PATH; ?>/mytable" class="list-group-item">My Table</a>
-                    
-                    <a href="<?php echo ASSET_PATH; ?>/main/browse" class="list-group-item">Browse Books</a>
 
-               
-            </div>
-        </div>-->
 
     <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
-    <h3 style="color:#fff;">Recent Books</h3>
+            <h3 style="color:#fff;">Recent Books</h3>
 
+                <div class="row">
+                <?php //include('panel.php');?>
+                <!--Search box-->
+                 <?php
+                    $i=1;
+                    foreach($data['recents'] as $row)
+                    {
+                    ?>
+                 <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>">
+                    <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
+                            <h4 style="margin-top:2px; color:#fff;"><?php echo $row['name'];?></h4>
+                            <h5>by <?php echo $row['author'];?></h5>
+                            <p><?php echo $row['description']?></p>
+                    </div></a>
+                <?php  
+                        if($i%4==0)
+                        { ?> 
+                </div>
 
-
-    <div class="row">
-        <?php //include('panel.php');?>
-        <!--Search box-->
-         <?php
-            $i=1;
-            foreach($data['recents'] as $row)
-            {
-            ?>
-         <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>">
-            <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
-                    <h4 style="margin-top:2px; color:#fff;"><?php echo $row['name'];?></h4>
-                    <h5>by <?php echo $row['author'];?></h5>
-                    <p><?php echo $row['description']?></p>
-        </div></a>
-        <?php  
-                if($i%4==0)
-                { ?> 
-        </div>
-            <div class="row"> <?php }
-            $i=$i+1;
-        }?>
-
-         
-
-
-    </div>  
+                    <div class="row"> <?php }
+                    $i=$i+1; }?>
+                     </div>  
     </div>
 
-</div>
-
-<div class="container">
-    <br><br>
-
-        <!--the sign in form
-        <?php if(!isset($_SESSION['user_name'])){  ?>
-        <div class="row" id="sign">
-            <div class="col-lg-3">
-                <h3>Sign In</h3>
-                <br>
-                <form role="form" action="<?php echo ASSET_PATH; ?>/users/login" method="post" enctype="plain" > 
-                  <div class="form-group">
-                    <label for="name1" style="font-weight: 100 !important;">Username</label>
-                    <input type="username" name="user_name" class="form-control" id="name1" placeholder="Username">
-                  </div>
-                  <div class="form-group">
-                    <label for="password" style="font-weight: 100 !important;">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                  </div>
-                  
-                  <br>
-                  <button style="width: 100%;" type="submit" class="btn btn-large btn-default">Sign In</button>
-                </form>
-            </div>
-        </div>
-        <?php } ?>-->
-
     
-
    
 
 

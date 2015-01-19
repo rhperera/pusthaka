@@ -1,7 +1,19 @@
-<div class="container">
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
 
- <div class="row row-centered">
-<?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
+<div class="container" style="height:100%;">
+  
+
+                <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
                     <li>
@@ -14,7 +26,7 @@
                         <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
@@ -40,7 +52,7 @@
                         <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
@@ -53,10 +65,19 @@
                 </ul>
             </div> <?php }?>
 
+                    <div class="col-lg-12" style="text-align: center;">
+                    <h1 class="page-header">Settings
+                        <small><?php echo $_SESSION['full_name'];?></small>
+                    </h1>
+                    </div>
 
-    <div class="col-md-3 col-centered" style="left: 69px;">
-        
-    </div>
+
+
+    <div class ="row">
+
+            <div class="col-md-3 col-centered" style="left: 69px;">
+                </br></br></br>
+            </div>
     
     <div class="col-md-3">
 
@@ -69,12 +90,14 @@
                             <p class="help-block"></p>
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Enter new password</label>
                             <input type="password" class="form-control" name="new_password" required="" data-validation-required-message="">
                         <div class="help-block"></div></div>
                     </div>
+
                     <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-default" style="padding: 6px 73px;">Change password</button>
                 </form>

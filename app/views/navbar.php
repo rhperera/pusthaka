@@ -45,7 +45,7 @@
 
         <div class="navbar-header">
 
-            <div class="col-md-3" style="margin: 0 0 0 1px; position:absolute; width:18%; z-index:100; background-color:#fff; -moz-box-shadow: 0 0 1px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000;" >
+            <div class="col-md-3" style="position: fixed;left: 331px;width: 242px;margin-left: -225px;border: none;border-radius: 0;overflow-y: auto; background-color:#fff; -moz-box-shadow: 0 0 1px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000;" >
             <a href="<?php
                                     if(isset($_SESSION['user_name']))
                                     {
@@ -120,11 +120,8 @@
                             <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> '; echo $_SESSION['full_name']; echo' <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="'; echo ASSET_PATH; echo "/settings";
-                                
-                                echo '"><i class="fa fa-fw fa-user"></i>Settings</a>
-                                </li>
+
+
                                 <li>
                                     <a href="';
                                     
@@ -138,6 +135,12 @@
                                 }
                                
                                     echo '"><i class="fa fa-fw fa-gear"></i>Dashboard</a>
+                                </li>
+
+                                 <li>
+                                    <a href="'; echo ASSET_PATH; echo "/settings";
+                                
+                                echo '"><i class="fa fa-fw fa-user"></i>Settings</a>
                                 </li>
                             </ul>
                             </li>';
