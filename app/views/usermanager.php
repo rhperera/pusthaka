@@ -59,7 +59,7 @@ $( document ).ready(function() {
 		color: #FFF;
 		background-color: #FFFFFF !important;
 		border-color: none;
-		border-bottom: none !important;
+		border-bottom: none !important;}
 </style>
 
 
