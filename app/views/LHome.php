@@ -1,28 +1,39 @@
 <link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
 
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
 
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
 <div class="container">
 
- <div class="row row-centered">
+    <div class="row row-centered">
 
-                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
-                    <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                    </li>
-                    <li class="active">
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
+                        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                            <li>
+                                <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                            </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                            </li>
+                            <li class="active">
+                                <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                            </li>
 
-                </ul>
-            </div>
+                        </ul>
+                    </div>
 
 
 
@@ -34,10 +45,33 @@
 
 
             <div class="col-md-3 col-centered" style="left: 69px;">
-        </br></br></br>
-    </div>
+                </br></br></br>
+            </div>
 
                     <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo $data['inactives'][0]['inactive_books']; ?></div>
+                                        <div>New Materials!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="<?php echo ASSET_PATH; echo '/Lpanel/inactives'?>">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Awaiting Approval</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                                        <div class="col-sm-4">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
