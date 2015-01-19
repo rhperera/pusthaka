@@ -93,12 +93,11 @@ $( document ).ready(function() {
                 </ul>
             </div>
 
-<<<<<<< HEAD
 
                                 <div class="col-lg-12" style="text-align: center;">
-=======
+
                     <div class="col-lg-12" style="text-align: center;">
->>>>>>> 447fce3befa15f2113aac8c780154b91f7a154a3
+
                     <h1 class="page-header">User Manager
                         <small><?php echo $_SESSION['full_name'];?></small>
                     </h1>
