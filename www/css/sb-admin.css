@@ -115,9 +115,9 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 51px;
-        left: 225px;
-        width: 225px;
+        top: 200px;
+        left: 331px;
+        width: 242px;
         margin-left: -225px;
         border: none;
         border-radius: 0;
@@ -126,7 +126,7 @@ ul.alert-dropdown {
     }
 
     .side-nav>li>a {
-        width: 240px;
+        width: 242px;
     }
 
     .side-nav li a:hover,

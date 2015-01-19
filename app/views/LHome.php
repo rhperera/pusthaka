@@ -17,7 +17,7 @@
 
                 <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                <ul class="nav navbar-nav side-nav" >
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
@@ -43,7 +43,7 @@
     <?php } elseif(isset($_SESSION['user_name']) and $_SESSION['user_type']=='librarian'){?>
               <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                <ul class="nav navbar-nav side-nav">
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/lpanel"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
