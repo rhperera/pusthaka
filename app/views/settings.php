@@ -97,6 +97,13 @@
                         <div class="help-block"></div></div>
                     </div>
 
+                     <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Enter again</label>
+                            <input type="password" class="form-control" name="again_password" required="" data-validation-required-message="">
+                        <div class="help-block"></div></div>
+                    </div>
+
                     <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-default" style="padding: 6px 73px;">Change password</button>
                 </form>
@@ -115,6 +122,12 @@
                 <?php   }elseif ($_SESSION['password_change']=="false") { ?>
                     <div class="alert alert-danger">
                         Wrong password
+                    </div>
+                <?php 
+
+                }elseif ($_SESSION['password_change']=="missmatch") { ?>
+                    <div class="alert alert-danger">
+                        Passwords do not match
                     </div>
                 <?php }
 

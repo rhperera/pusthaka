@@ -25,11 +25,21 @@ class Settings extends Controller
     	{
 	    	$old_password = $_POST['old_password'];
 	    	$new_password = $_POST['new_password'];
+            $again_password = $_POST['again_password'];
 	    	$user_id	  = $_SESSION['user_id'];
 
-	    	$user = $this->model('user');
-	    	$user->update_pass($old_password,$new_password,$user_id);
-	    	header("Location: ".ASSET_PATH."/settings");
+            if($new_password==$again_password)
+            {
+                $user = $this->model('user');
+                $user->update_pass($old_password,$new_password,$user_id);
+                header("Location: ".ASSET_PATH."/settings");
+            }
+            else
+            {
+                $_SESSION['password_change']="missmatch";
+                header("Location: ".ASSET_PATH."/settings");
+            }
+	    	
 	    }
     }
 

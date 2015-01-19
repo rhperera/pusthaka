@@ -30,37 +30,46 @@ class Main extends Controller
     function item($material_id)
     {
         $user_type = $_SESSION['user_type'];
-        if($user_type)
+        if(isset($_SESSION['user_type']))
         {
             $model = $this->model('post');
             $data['item']=$model->get_material($material_id);
 
-            $category = $this->model('category');
-            $data['categories']=$category->get_categories();
+            if($data['item'])
+            {
+                $category = $this->model('category');
+                $data['categories']=$category->get_categories();
 
-            $uploader_id = $data['item'][0]['uploader_id'];
-            $users = $this->model('user');
-            $data['user'] = $users->get_user($uploader_id);
+                $uploader_id = $data['item'][0]['uploader_id'];
+                $users = $this->model('user');
+                $data['user'] = $users->get_user($uploader_id);
 
-            $permissions = $this->model('permissions');
-            $data['permission'] = $permissions->check_permission($material_id,$_SESSION['user_id']);
+                $permissions = $this->model('permissions');
+                $data['permission'] = $permissions->check_permission($material_id,$_SESSION['user_id']);
 
-            $data['requested'] = $permissions->check_request($material_id,$_SESSION['user_id'],$uploader_id);
+                $data['requested'] = $permissions->check_request($material_id,$_SESSION['user_id'],$uploader_id);
 
-            if( $data['item'][0]['privacy']==0 or $data['permission'] or $_SESSION['user_type']=='librarian')
-            { 
-                $this->view('header',$data);
-                $this->view('navbar',$data);
-                $this->view('item_view',$data);
-                $this->view('footer',$data);
+                if( $data['item'][0]['privacy']==0 or $data['permission'] or $_SESSION['user_type']=='librarian')
+                { 
+                    $this->view('header',$data);
+                    $this->view('navbar',$data);
+                    $this->view('item_view',$data);
+                    $this->view('footer',$data);
+                }
+                else
+                {
+                    $this->view('header',$data);
+                    $this->view('navbar',$data);
+                    $this->view('request',$data);
+                    $this->view('footer',$data);
+                }
             }
             else
             {
-                $this->view('header',$data);
-                $this->view('navbar',$data);
-                $this->view('request',$data);
-                $this->view('footer',$data);
+                header("Location: ".ASSET_PATH);
             }
+
+            
         }
         else
         {

@@ -58,16 +58,40 @@ class MyTable extends Controller
     {
         $model = $this->model('post');
         $data['item']=$model->get_material($material_id);
-        $user_id = $data['item'][0]['uploader_id'];
-
-        if(isset($_SESSION['user_name']) and $_SESSION['user_id']==$user_id)
+        if(isset($_SESSION['user_type']) and $data['item'])
         {
-            $user_id    =$_SESSION['user_id'];
-            $user_type  =$_SESSION['user_type'];
-            $post = $this->model('post');
-            $result = $post->delete_material($user_id,$material_id,$user_type);
-            header("Location: ".ASSET_PATH.'/mytable');
+          $user_id = $data['item'][0]['uploader_id'];
+
+          if(isset($_SESSION['user_name']) and $_SESSION['user_id']==$user_id)
+          {
+              $user_id    =$_SESSION['user_id'];
+              $user_type  =$_SESSION['user_type'];
+              $post = $this->model('post');
+              $result = $post->delete_material($user_id,$material_id,$user_type);
+
+              if($_SESSION['user_type']=='librarian')
+                {
+                  header("Location: ".ASSET_PATH.'/lpanel');
+                }
+                else
+                {
+                  header("Location: ".ASSET_PATH.'/mytable');
+                }
+                
+          }
         }
+        else
+        {
+          if($_SESSION['user_type']=='librarian')
+                {
+                  header("Location: ".ASSET_PATH.'/lpanel');
+                }
+                else
+                {
+                  header("Location: ".ASSET_PATH.'/mytable');
+                }
+        }
+        
     }
 
 

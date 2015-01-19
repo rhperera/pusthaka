@@ -40,7 +40,7 @@ class Post
         ");
         $return = $query->fetchAll();
 
-        if(isset($_SESSION['user_name']) and $return[0]['uploader_id']==$_SESSION['user_id'])
+        if($return and isset($_SESSION['user_name']) and $return[0]['uploader_id']==$_SESSION['user_id'])
         {
             return $return;
         //return $query->fetch(PDO::FETCH_OBJ);
@@ -52,6 +52,10 @@ class Post
         ");
             $return = $query->fetchAll();
             return $return;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -109,15 +113,20 @@ class Post
 
     function delete_material($user_id,$material_id,$user_type)
     {
-        $query = $this->db->query("SELECT uploader_id FROM materials");
-        $array = $query->fetchAll();
-        $uploader_id =$array[0]['uploader_id'];
-
-        if($user_id==$uploader_id or $user_type=='admin' or $user_type=='librarian')
+        $query = $this->db->query("SELECT uploader_id FROM materials WHERE material_id=$material_id");
+        if($query)
         {
-            $query = $this->db->query("DELETE FROM materials WHERE material_id=$material_id");
-            return $query;
+            $array = $query->fetchAll();
+            $uploader_id =$array[0]['uploader_id'];
+
+            if($user_id==$uploader_id or $user_type=='admin' or $user_type=='librarian')
+            {
+                $query = $this->db->query("DELETE FROM materials WHERE material_id=$material_id");
+                return true;
+            }
         }
+        
+        
         
     }
 
