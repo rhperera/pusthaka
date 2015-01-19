@@ -111,13 +111,14 @@
                     <a  href="javascript:drop(<?php echo $id;?>);">Approve</a>
                     <a  href="<?php echo ASSET_PATH; echo '/Lpanel/review/'; echo $id;?>" style="padding-left:10px;">Review</a>
                 
-                <div class="row">
-                    <div class="col-md-5">
-                        <div id="<?php echo $id;?>" style="display: none">
-                              <br>
-                            <strong>Are You Sure</strong>
-                             <a  href="<?php echo ASSET_PATH; echo '/Lpanel/authenticate/'; echo $id;?>">YES</i></a>
-                             <a  href="javascript:drop(<?php echo $id;?>);">NO</i></a>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div id="<?php echo $id;?>" style="display: none">
+                                  <br>
+                                <strong>Are You Sure</strong>
+                                 <a  href="<?php echo ASSET_PATH; echo '/Lpanel/authenticate/'; echo $id;?>">YES</i></a>
+                                 <a  href="javascript:drop(<?php echo $id;?>);">NO</i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
