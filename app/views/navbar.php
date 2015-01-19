@@ -146,7 +146,7 @@
 
     
                     
-                    <?php if(!$_SESSION){ ?>
+                    <?php if(!isset($_SESSION['user_name'])){ ?>
                            <form action="<?php echo ASSET_PATH; ?>/users/login" method="post" class="navbar-form navbar-left" >
                             <div class="form-group">
                                     <!-- <?php

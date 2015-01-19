@@ -121,13 +121,13 @@ class User
             $mail = mail($email, "Password Reset - UCSC Digital Library", "Your new password is ".$password,"dl@ucsc.lk");
             if($mail)
             {
-                $query = $this->db->query("UPDATE users set password='".$new_password."'");
+                $query = $this->db->query("UPDATE users set password='".$new_password."' email='".$email."'");
                 $_SESSION['mail_sent']="true";
                 return $query;
             }
             else
             {
-                $_SESSION['mail_sent']="mail_error";
+                $_SESSION['mail_sent']="send_error";
                 return false;
             }
             

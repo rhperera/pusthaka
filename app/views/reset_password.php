@@ -20,7 +20,18 @@
             </div>
             <?php if(isset($_SESSION['mail_sent']))
             {
-                var_dump($_SESSION['mail_sent']);
+                if($_SESSION['mail_sent']=="true")
+                {
+                    echo '<p>Email Sent Sucessfully<p>';
+                }
+                elseif($_SESSION['mail_sent']=="email_error")
+                {
+                    echo '<p>Email not found. Please check again<p>';
+                }
+                elseif($_SESSION['mail_sent']=="send_error")
+                {
+                    echo '<p>Error in sending mail.<p>';
+                }
                 unset($_SESSION['mail_sent']);
             }
             ?>
