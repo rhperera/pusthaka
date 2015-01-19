@@ -36,11 +36,23 @@ class Post
     function get_material($material_id)
     {
         $query = $this->db->query("
-        SELECT * FROM materials WHERE material_id=".$material_id." AND status=1
+        SELECT * FROM materials WHERE material_id=".$material_id."
         ");
         $return = $query->fetchAll();
-        return $return;
+
+        if(isset($_SESSION['user_name']) and $return[0]['uploader_id']==$_SESSION['user_id'])
+        {
+            return $return;
         //return $query->fetch(PDO::FETCH_OBJ);
+        }
+        elseif (isset($_SESSION['user_name']))
+        {
+            $query = $this->db->query("
+        SELECT * FROM materials WHERE material_id=".$material_id." AND status=1
+        ");
+            $return = $query->fetchAll();
+            return $return;
+        }
     }
 
     function get_inactive_material($material_id)

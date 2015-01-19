@@ -25,18 +25,18 @@
     </div>
     </div>
 
-<div class="container" style="background-color:transparent !important">
+<!--<div class="container" style="background-color:transparent !important">
     <div class="col-md-3">
-                <div class="list-group" >
+                
                     <a href="<?php echo ASSET_PATH; ?>/mytable" class="list-group-item">My Table</a>
-                    <a href="<?php echo ASSET_PATH; ?>/search" class="list-group-item">Advance Search</a>
+                    
                     <a href="<?php echo ASSET_PATH; ?>/main/browse" class="list-group-item">Browse Books</a>
 
-                </div>
+               
             </div>
-        </div>
+        </div>-->
 
-    <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
+    <div class="container" style="bottom:30%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
     <h3 style="color:#fff;">Recent Books</h3>
 
 
