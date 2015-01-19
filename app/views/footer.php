@@ -71,7 +71,7 @@
                     <div class="col-lg-3 text-center">
 
                     </div>
-                    <div class="col-lg-6 text-center" style="right:0; left:0; position:static; text-align: center;"">
+                    <div class="col-lg-6 text-center" style="right:0; left:0; position:static; text-align: center;">
                             <div class="panel-body" >
                                 <p>Copyright &copy; University of Colombo School of Computing 2014</p>	
                             </div>

@@ -1,9 +1,8 @@
 <link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
 
-<link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
 
 <div class="container">
-</br></br></br>
+
  <div class="row row-centered">
 
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
