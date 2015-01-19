@@ -65,6 +65,8 @@ $( document ).ready(function() {
 
 <div class="container">
 
+
+
                  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -91,8 +93,12 @@ $( document ).ready(function() {
                 </ul>
             </div>
 
+<<<<<<< HEAD
 
                                 <div class="col-lg-12" style="text-align: center;">
+=======
+                    <div class="col-lg-12" style="text-align: center;">
+>>>>>>> 447fce3befa15f2113aac8c780154b91f7a154a3
                     <h1 class="page-header">User Manager
                         <small><?php echo $_SESSION['full_name'];?></small>
                     </h1>
@@ -107,11 +113,13 @@ $( document ).ready(function() {
             <div class="col-md-3 col-centered" style="left: 69px;">
                 </br></br></br>
             </div>
-		<div class="col-md-4">
+		
+        <div class="col-md-4">
 			<div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Black List</h3>
                 </div>
+                
                 <div class="panel-body">
                     <?php 
                     	if(empty($data['banned_list'])){ echo "Empty";}else{?>
@@ -139,6 +147,8 @@ $( document ).ready(function() {
                 </div>
             </div>
 		</div>
+
+
 		<div class="col-md-4">
 			<div class="panel panel-default">
                 <div class="panel-heading">
