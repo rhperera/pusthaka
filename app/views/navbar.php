@@ -45,7 +45,7 @@
 
         <div class="navbar-header">
 
-            <div class="col-md-3" style="margin: 0 0 0 1px; position:absolute; width:20%; z-index:100; background-color:#fff; -moz-box-shadow: 0 0 1px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000;" >
+            <div class="col-md-3" style="margin: 0 0 0 1px; position:absolute; width:18%; z-index:100; background-color:#fff; -moz-box-shadow: 0 0 1px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000;" >
             <a href="<?php
                                     if(isset($_SESSION['user_name']))
                                     {
@@ -264,6 +264,9 @@
 
     </div>
     <!-- /.container -->
+
+
+
 
     <!--Search search -->
     <div id="search" style="display:none">

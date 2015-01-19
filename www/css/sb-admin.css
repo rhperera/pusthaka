@@ -34,18 +34,18 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 225px;
+        padding-left: 250px;
     }
 
     #page-wrapper {
-        padding: 10px;
+        padding: 0px;
     }
 }
 
 /* Top Navigation */
 
 .top-nav {
-    padding: 0 15px;
+    padding: 0 0px;
 }
 
 .top-nav>li {
@@ -54,8 +54,8 @@ body {
 }
 
 .top-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     line-height: 20px;
     color: #999;
 }
@@ -126,7 +126,7 @@ ul.alert-dropdown {
     }
 
     .side-nav>li>a {
-        width: 225px;
+        width: 240px;
     }
 
     .side-nav li a:hover,

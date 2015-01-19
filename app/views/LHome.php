@@ -1,4 +1,89 @@
-<div class="container"> 
+<link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
+
+<link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
+
+<div class="container">
+</br></br></br>
+ <div class="row row-centered">
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li class="active">
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        <div class="row row-centered" style="margin-left:7.83%; left:0; top:0; ">
+
+                    <div class="col-lg-12" style="text-align: center;">
+                    <h1 class="page-header">Welcome
+                        <small><?php echo $_SESSION['full_name'];?></small>
+                    </h1>
+                    </div>
+
+
+
+
+    
+    </div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container"> 
 
    <div class="row">
 
@@ -113,5 +198,5 @@
 
 
                     
-      </div>
+      </div> -->
 

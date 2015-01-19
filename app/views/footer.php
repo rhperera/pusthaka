@@ -69,12 +69,10 @@
 
      <div class="row" >
                     <div class="col-lg-3 text-center">
-                        <div class="panel panel-default" id="panel">
-                            
-                        </div>
+
                     </div>
-                    <div class="col-lg-6 text-center">
-                            <div class="panel-body">
+                    <div class="col-lg-6 text-center" style="right:0; left:0; position:static; text-align: center;"">
+                            <div class="panel-body" >
                                 <p>Copyright &copy; University of Colombo School of Computing 2014</p>	
                             </div>
                     </div>
