@@ -62,5 +62,17 @@ class Category
         $query = $this->db->query("SELECT category_name from categories where category_id=$category_id");
         return $query->fetchAll();
     }
+
+    function add_category($category_name)
+    {
+        $query = $this->db->query("INSERT into categories values('','".$category_name."')");
+        $result = $query->fetchAll();
+    }
+
+    function delete_category($category_id)
+    {
+        $query = $this->db->query("DELETE from categories where category_id=$category_id");
+        $result = $query->fetchAll();
+    }
    
 }

@@ -1,20 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Raveen
- * Date: 8/24/14
- * Time: 12:49 AM
- */
-class Categories extends CI_Controller
+
+class Categories extends Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('category');
+        
 
     }
 
-    function view($category_id)
+    /*function view($category_id)
 
     {
         $data['books']=$this->category->category_result($category_id);
@@ -26,5 +21,40 @@ class Categories extends CI_Controller
         $this->load->view('navbar',$data);
         $this->load->view('search_results',$data);
         $this->load->view('footer',$data);
+    }*/
+
+    function add_category()
+    {
+        if(isset($_SESSION['user_type']) and $_SESSION['user_type']=='librarian')
+        {
+            $category_name = $_POST['category_name'];
+            $cats = $this->model('category');
+            $result = $cats->add_category($category_name);
+            if($result)
+            {
+                $_SESSION['add_cat']="true";
+            }
+            else
+            {
+                $_SESSION['add_cat']="false";
+            }
+        }
+    }
+
+    function delete_category($category_id)
+    {
+        if(isset($_SESSION['user_type']) and $_SESSION['user_type']=='librarian')
+        {
+            $cats = $this->model('category');
+            $result = $cats->delete_category($category_id);
+            if($result)
+            {
+                $_SESSION['delete_cat']="true";
+            }
+            else
+            {
+                $_SESSION['delete_cat']="false";
+            }
+        }
     }
 }

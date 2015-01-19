@@ -4,7 +4,58 @@
     $('#'+name).toggle();
     $('#'+name).val('');
   }
+
+
+
+$( document ).ready(function() {
+    
+
+
+    $("#title").keyup(function(){
+        var t = $("#title").val();
+        var a = $("#author").val();
+        var u = $("#username").val();
+
+        var base_url = window.location.origin + window.location.pathname;
+
+        var data = {
+            "action": 'recent'
+        };
+        data = $(this).serialize() + "&" + $.param(data);
+        
+        $.ajax({
+
+            type: "POST",
+            dataType: "json",
+            url: 'search/advance_search/'+t+'/'+a+'/'+u,//Relative or absolute path to response.php file
+            data: data,
+            success: function (data) {
+                
+                if (data['json'][0]) {
+                    $('#tab-window2').html("");
+                    $('#tab-window3').html("");
+                    for (var j = 0; j < data['json'].length; j++) {
+                        $('#tab-window2').append(
+                            '<tr>\
+                                <td>' + data['json'][j]['reg_number'] + '</td>\
+                                <td>' + data['json'][j]['full_name'] + '</td>\
+                                <td>' + data['json'][j]['user_name'] + '</td>\
+                                <td><a href="'+ base_url + '/ban_user/' + data['json'][j]['user_id'] + '">ban user</a></td>\
+                            </tr>');    
+                    }                   
+                }
+                else{
+                    $('#tab-window3').html("NO RESULTS");
+                    $('#tab-window2').html("");
+                }              
+            }
+        });
+        return false;
+    });
+});
+
 </script>
+
 <style>
      #con
     {
