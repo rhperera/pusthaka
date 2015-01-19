@@ -117,12 +117,25 @@ class User
             }
             $password = implode($pass);
             $new_password = md5($password."abcdefg");
-            $query = $this->db->query("UPDATE users set password='".$new_password."'");
-            if($query)
+            
+            $mail = mail($email, "Password Reset - UCSC Digital Library", "Your new password is ".$password,"dl@ucsc.lk");
+            if($mail)
             {
-                mail($email, "Password Reset - UCSC Digital Library", "Your new password is ".$password,"dl@ucsc.lk");
+                $query = $this->db->query("UPDATE users set password='".$new_password."'");
+                $_SESSION['mail_sent']="true";
+                return $query;
+            }
+            else
+            {
+                $_SESSION['mail_sent']="mail_error";
+                return false;
             }
             
+        }
+        else
+        {
+            $_SESSION['mail_sent']="email_error";
+            return false;
         }
     }
 
