@@ -17,7 +17,7 @@
 </style>
 
 <div id="con">
-<div class="container">
+<div class="container" style="height:100%;">
   
 
                 <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
@@ -79,9 +79,9 @@
 
 
 
-    <div class ="row">
 
-            <div class="col-md-3 col-centered" >
+
+            <div class="col-md-3" >
                 </br></br></br>
             </div>
 

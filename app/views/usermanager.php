@@ -142,9 +142,9 @@ $( document ).ready(function() {
 
 
 
-	<div class ="row">
 
-            <div class="col-md-3 col-centered" style="left: 69px;">
+
+            <div class="col-md-3">
                 </br></br></br>
             </div>
 		
