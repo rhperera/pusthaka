@@ -147,8 +147,11 @@
     
                     
                     <?php if(!isset($_SESSION['user_name'])){ ?>
+
                            <form action="<?php echo ASSET_PATH; ?>/users/login" method="post" class="navbar-form navbar-left" >
                             <div class="form-group">
+                                <a href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
+
                                     <!-- <?php
                                         if($data['error']==1)
                                         {
@@ -161,6 +164,7 @@
                             </div>
                                 <input type="submit" class="btn btn-primary" placeholder="sad" value="Sign in" align="center">
                             </form>
+
 
                     <?php } ?>
 
