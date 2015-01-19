@@ -36,7 +36,7 @@ window.onload = function (){
 </br></br></br>
  <div class="row row-centered">
 
-    <div class="col-md-5 col-centered">
+    <div class="col-md-4 col-centered">
         <h1 style="margin-top: 119px; left: 69px;">Review Book</h1></br>
 
             
@@ -162,7 +162,7 @@ window.onload = function (){
             </div>
 
             <!--the book pdf view-->
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div id="pdf">
                     <object data="<?php echo $data['material'][0]['path']?>" type="application/pdf" width="100%" height="600%"></object>
                 </div>
