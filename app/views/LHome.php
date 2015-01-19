@@ -83,14 +83,14 @@
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"><?php echo $data['inactives'][0]['inactive_books']; ?></div>
-                                        <div>New Materials!</div>
+                                        <div class="huge"><?php echo $data['all_users'][0]['user_count']; ?></div>
+                                        <div>Full User Count</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?php echo ASSET_PATH; echo '/Lpanel/inactives'?>">
+                            <a href="<?php echo ASSET_PATH; echo '/usermanager'?>">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Awaiting Approval</span>
+                                    <span class="pull-left">User Manager</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>

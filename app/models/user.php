@@ -66,4 +66,19 @@ class User
             $_SESSION["password_change"]="false";
         }
     }
+
+    function user_count()
+    {
+        $query = $this->db->query("SELECT COUNT(user_id) as user_count from users WHERE user_type='user'");
+        $result = $query->fetchAll();
+        return $result;
+
+    }
+
+    function get_banned_user_count()
+    {
+        $query = $this->db->query("SELECT COUNT(user_id) as user_count from users WHERE user_type='user' and banned=1");
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

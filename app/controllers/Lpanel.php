@@ -18,6 +18,11 @@ class Lpanel extends Controller
     {
         $panel = $this->model('librarianpanel');
         $data['inactives']=$panel->get_inactives();
+
+        $user = $this->model('user');
+        $data['all_users'] = $user->user_count();
+        $data['banned_users'] = $user->get_banned_user_count();
+        
         $this->view('header');
         $this->view('navbar');
         $this->view('LHome',$data);
