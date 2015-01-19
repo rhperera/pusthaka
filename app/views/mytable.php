@@ -7,30 +7,30 @@
                  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
-                    <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                	<li>
+                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-table"></i>My Table</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="<?php echo ASSET_PATH;?>/collections"><i class="fa fa-fw fa-table"></i>My Collections</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-search"></i>Browse</a>
                     </li>
-                    <li class="active">
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i>Search</a>
+                    </li>
+                    <li >
+                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i>Settings</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i>Upload</a>
                     </li>
 
                 </ul>
             </div>
 
  	<div class="col-md-3 col-centered" style="left: 69px;">
- 		</br></br></br>
- 		<h1 style="margin-top: 119px; ">My Table</h1></br>
-		<p><a href="<?php echo ASSET_PATH;?>/collections"><button style="width: 129px;" type="button" class="btn btn-default">My Collections</button></a></p>
-        <p><a href="<?php echo ASSET_PATH;?>/main/browse"><button style="width: 129px;" type="button" class="btn btn-default">Browse</button></a></p>
-        <p><a href="<?php echo ASSET_PATH;?>/search/quick"><button style="width: 129px;" type="button" class="btn btn-default">Advance Search</button></a></p>
-        <p><a href="<?php echo ASSET_PATH;?>/settings"><button style="width: 129px;" type="button" class="btn btn-default">Settings</button></a></p>
-        <p><a href="<?php echo ASSET_PATH;?>/uploads"><button style="width: 129px;" type="button" class="btn btn-default">Upload</button></a></p>
+ 		
 	</div>
 	<div class="col-sm-4" style="left: 25px;" >
 		</br>

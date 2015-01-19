@@ -36,7 +36,7 @@
             </div>
         </div>-->
 
-    <div class="container" style="bottom:30%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
+    <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
     <h3 style="color:#fff;">Recent Books</h3>
 
 
