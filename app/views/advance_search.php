@@ -17,7 +17,7 @@
 </style>
 
 <div id="con">
-<div class="container">
+<div class="container" style="height:100%;">
   
 
                 <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
@@ -79,9 +79,9 @@
 
 
 
-    <div class ="row">
 
-            <div class="col-md-3 col-centered" >
+
+            <div class="col-md-3" >
                 </br></br></br>
             </div>
 
@@ -103,7 +103,7 @@
           <div class="col-lg-3" style="width: 23%;">
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>Full or Part of Title</label>
+                    <label>Title or Tag</label>
                     <div class="input-group">
                     <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
                     <span class="input-group-btn">

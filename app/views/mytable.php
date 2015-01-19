@@ -76,9 +76,8 @@
 
 
 
-	<div class ="row">
 
-            <div class="col-md-3 col-centered">
+            <div class="col-md-3">
                 </br></br></br>
             </div>
 		

@@ -72,9 +72,9 @@
 
 
 
-    <div class ="row">
 
-            <div class="col-md-3 col-centered" style="left: 69px;">
+
+            <div class="col-md-3">
                 </br></br></br>
             </div>
     
@@ -84,7 +84,7 @@
                 <form name="sentMessage" action="<?php echo ASSET_PATH;?>/settings/update_password" method="post" id="contactForm" novalidate="">
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Enter old password</label>
+                            <label>Old password</label>
                             <input type="password" class="form-control" name="old_password" required="" data-validation-required-message="">
                             <p class="help-block"></p>
                         </div>
@@ -92,14 +92,14 @@
 
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Enter new password</label>
+                            <label>New password</label>
                             <input type="password" class="form-control" name="new_password" required="" data-validation-required-message="">
                         <div class="help-block"></div></div>
                     </div>
 
                      <div class="control-group form-group">
                         <div class="controls">
-                            <label>Enter again</label>
+                            <label>Enter Again</label>
                             <input type="password" class="form-control" name="again_password" required="" data-validation-required-message="">
                         <div class="help-block"></div></div>
                     </div>
