@@ -62,6 +62,18 @@ $( document ).ready(function() {
 		border-bottom: none !important;}
 </style>
 
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
+
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
 
 <div class="container">
 

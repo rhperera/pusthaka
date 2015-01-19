@@ -5,75 +5,153 @@
     $('#'+name).val('');
   }
 </script>
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
+
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
 <div class="container">
-  <div class="row">
-    <br/>
-    <div class="col-lg-4">
-        <h2>Advance Search</h2>
-    </div>
-  </div>
- <br>
-  <div class="row">
-    <div class="col-lg-3">
-        <h3>Sort search by</h3>
-    </div>
-  </div>
-  <br>
+  
+
+                <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/collections"><i class="fa fa-fw fa-table"></i> My Collections</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                    </li>                    
+                    <li >
+                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i> Settings</a>
+                    </li>
+
+
+                </ul>
+            </div>
+    <?php } elseif(isset($_SESSION['user_name']) and $_SESSION['user_type']=='librarian'){?>
+              <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/lpanel"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/usermanager"><i class="fa fa-fw fa-table"></i> User Manager</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                    </li>                    
+                    <li >
+                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i> Settings</a>
+                    </li>
+
+
+                </ul>
+            </div> <?php }?>
+
+                    <div class="col-lg-12" style="text-align: center;">
+                    <h1 class="page-header">Advanced Search
+                        <small><?php echo $_SESSION['full_name'];?></small>
+                    </h1>
+                    </div>
+
+
+
+    <div class ="row">
+
+            <div class="col-md-3 col-centered" >
+                </br></br></br>
+            </div>
+
+            <div class="col-lg-4">
+                <h3>Sort search by</h3>
+            </div>
+
+            <div class="col-md-3 col-centered">
+                </br></br></br>
+            </div>
+
+
   <div class="row">
 
-    <div class="col-lg-3">
-      <div class="control-group form-group">
-          <div class="controls">
-              <label>Full or part of title</label>
-              <div class="input-group">
-              <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
-              <span class="input-group-btn">
-                  <button class="btn btn-default" onclick="tog('title')" type="button"><i class="fa fa-check-square"></i></button>
-              </span>
+            <div class="col-md-3" style="left: 69px;">
+                
             </div>
-              <p class="help-block"></p>
-          </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="control-group form-group">
-          <div class="controls">
-              <label>Name of author</label>
-              <div class="input-group">
-              <input type="text" id="author" class="form-control" name="name" required data-validation-required-message="Please enter.">
-              <span class="input-group-btn">
-                  <button class="btn btn-default" onclick="tog('author')" type="button"><i class="fa fa-check-square"></i></button>
-              </span>
+
+          <div class="col-lg-3" style="width: 23%;">
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Full or Part of Title</label>
+                    <div class="input-group">
+                    <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" onclick="tog('title')" type="button"><i class="fa fa-check-square"></i></button>
+                    </span>
+                  </div>
+                    <p class="help-block"></p>
+                </div>
             </div>
           </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="control-group form-group">
-          <div class="controls">
-              <label>ISBN</label>
-            <div class="input-group">
-              <input type="text" id ="ISBN" class="form-control" name="name" required data-validation-required-message="Please enter.">
-              <span class="input-group-btn">
-                  <button class="btn btn-default" onclick="tog('ISBN')" type="button"><i class="fa fa-check-square"></i></button>
-              </span>
+
+
+          <div class="col-lg-3" style="width: 23%;">
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Name of Author</label>
+                    <div class="input-group">
+                    <input type="text" id="author" class="form-control" name="name" required data-validation-required-message="Please enter.">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" onclick="tog('author')" type="button"><i class="fa fa-check-square"></i></button>
+                    </span>
+                  </div>
+                </div>
             </div>
           </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="control-group form-group">
-          <div class="controls">
-              <label>Uploaded user name</label>
-              <div class="input-group">
-              <input type="text" id="username" class="form-control" name="name" required data-validation-required-message="Please enter.">
-              <span class="input-group-btn">
-                  <button class="btn btn-default" onclick="tog('username')" type="button"><i class="fa fa-check-square"></i></button>
-              </span>
+
+            <div class="col-md-3">
+                
+            </div>
+
+          <div class="col-lg-3" style="width: 23%;">
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Uploaded User</label>
+                    <div class="input-group">
+                    <input type="text" id="username" class="form-control" name="name" required data-validation-required-message="Please enter.">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" onclick="tog('username')" type="button"><i class="fa fa-check-square"></i></button>
+                    </span>
+                  </div>
+                </div>
             </div>
           </div>
-      </div>
-    </div>
+
+
+
+
 
 
   </div>
