@@ -103,7 +103,7 @@
           <div class="col-lg-3" style="width: 23%;">
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>Full or Part of Title</label>
+                    <label>Title or Tag</label>
                     <div class="input-group">
                     <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
                     <span class="input-group-btn">
