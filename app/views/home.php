@@ -101,7 +101,8 @@
             </div>
 
 
-                    <div class="row"> <?php }
+                    <div class="row"> 
+                    <?php }
                     $i=$i+1; }?>
                      </div>  
 
