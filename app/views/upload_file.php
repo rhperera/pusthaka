@@ -169,20 +169,33 @@
 
         <div class="col-md-4" style="top: 30px">
             <?php
-                if(isset($_SESSION['save'])){
-                 if($_SESSION['save']=='success')
+                if(isset($_SESSION['upload'])){
+                 if($_SESSION['upload']=='true')
                      {
                         echo '<div class="alert alert-success">
                                     <strong>Success!</strong> You successfully uploaded ';
                                      echo ' to the library.';
                               echo '</div>';
                      }
-                     else if($_SESSION['save']=='fail')
+                     elseif($_SESSION['upload']=='false')
                      {
-                         echo '<div class="alert alert-success">
-                    <strong>Well done!</strong> You successfully read this important alert message.
+                         echo '<div class="alert alert-warning">
+                    <strong>Error in upload</strong>
                 </div>';
                      }
+                     elseif($_SESSION['upload']=='book_error')
+                     {
+                         echo '<div class="alert alert-warning">
+                    <strong>Error on uploaded materal</strong> check if the type is pdf
+                </div>';
+                     }
+                     elseif($_SESSION['upload']=='max_size')
+                     {
+                         echo '<div class="alert alert-warning">
+                    <strong>Upload max size reached</strong>
+                </div>';
+                     }
+                     unset($_SESSION['upload']);
                  }
                      ?>
         </div>

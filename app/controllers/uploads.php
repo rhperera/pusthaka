@@ -35,9 +35,10 @@ class Uploads extends Controller
         if ($_FILES['file']['size']<50000000) 
         {
         # code...
-            if ($_FILES["file"]["error"] > 0) 
+            if ($_FILES["file"]["error"] > 0 or !in_array($_FILES["file"]["type"], array('application/pdf'))) 
             {
-              echo "Error: " . $_FILES["file"]["error"] . "<br>";
+              $_SESSION['upload']="book_error";  
+                header("Location: ".ASSET_PATH.'/uploads');
             } 
             else 
             {
@@ -73,23 +74,30 @@ class Uploads extends Controller
                 $book       = new Material($ISBN,$name,$author,$uploader_id,$date,$path,$status,$description,$tags,$privacy);
                 $post = $this->model('post');
                 $save1   =$post->save_material($book,$category);
-                
-                
-            }
-          }
-
-          if($save1)
+                if($save1)
                 {
-                    
-                  header("Location: ".ASSET_PATH.'/uploads/upload/success');
+                  $_SESSION['upload']="true";  
+                  header("Location: ".ASSET_PATH.'/uploads');
                   
                 }
                 else
                 {
-                    
-                  header("Location: ".ASSET_PATH.'/uploads/upload/fail');
+                  $_SESSION['upload']="false";    
+                  header("Location: ".ASSET_PATH.'/uploads');
                    
                 }
+                
+                
+            }
+          }
+          else
+          {
+            $_SESSION['upload']="max_size";    
+            header("Location: ".ASSET_PATH.'/uploads');
+          }
+          
+
+                
 
     }
 
