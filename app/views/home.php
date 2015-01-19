@@ -70,32 +70,41 @@
 
 
 
-    <div class="container" style="bottom:10%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
+    <div class="container" style="bottom:5%; left: 0; right: 0; position:absolute; background-color:rgba(255, 255, 255, 0.25);">
             <h3 style="color:#fff;">Recent Books</h3>
 
-                <div class="row">
-                <?php //include('panel.php');?>
-                <!--Search box-->
-                 <?php
-                    $i=1;
-                    foreach($data['recents'] as $row)
-                    {
-                    ?>
-                 <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>">
-                    <div class="col-lg-3" style="background-color:#000; padding:10px; width:24.5%; margin:5px; ">
-                            <h4 style="margin-top:2px; color:#fff;"><?php echo $row['name'];?></h4>
-                            <h5>by <?php echo $row['author'];?></h5>
-                            <p><?php echo $row['description']?></p>
-                    </div></a>
-                <?php  
-                        if($i%4==0)
+
+                         <?php //include('panel.php');?>
+                        <!--Search box-->
+                         <?php
+                            $i=1;
+                            foreach($data['recents'] as $row)
+                            {
+                            ?>
+
+                  <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>"><h3 class="panel-title"><?php echo $row['name'];?></h3></a>
+                        </div>
+
+                         <div class="panel-body">
+                                <h5>by <?php echo $row['author'];?></h5>
+                                <p><?php echo $row['description']?></p>
+                         </div>
+              
+                    </div>
+                  </div>
+
+                        <?php if($i%3==0)
                         { ?> 
-                </div>
+            </div>
+
 
                     <div class="row"> <?php }
                     $i=$i+1; }?>
                      </div>  
-    </div>
+
 
     
    

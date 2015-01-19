@@ -12,6 +12,8 @@
 
 <link rel="shortcut icon" href="<?php echo ASSET_PATH;?>/images/icon.ico" type="image/icon" />
 
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
 <?php #echo link_tag('../assets/css/bootstrap.min.css'); ?>
 <!-- Bootstrap Core CSS-->
 <link href="<?php echo ASSET_PATH;?>/css/bootstrap.min.css" rel="stylesheet">
