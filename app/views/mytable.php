@@ -75,12 +75,12 @@
                 </div>
                 
                 <div class="panel-body">
-				<ol class="list-group">
+				
 			    	<?php
 			    	$num = count($data['requests']);
 			    	for($i = 0; $i < $num; $i++) 
 					{   ?>
-			        	<li class="list-group-item">
+			        	<li>
 			        		<?php
 			        		echo $data['request_details'][$i]['full_name'].'&nbsp;&nbsp;<i style="color:blue" class="fa fa-hand-o-right"></i>';
 			        		echo $data['request_details'][$i]['name']; echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -92,7 +92,7 @@
 			        		style="float: right;padding-right: 11px;"><i  class="fa fa-check"></i></a>
 			        	</li>
 			       <?php } ?>
-			    </ol>
+			    
                 </div>
             </div>
 		</div>
@@ -105,15 +105,13 @@
                 </div>
                 
                 <div class="panel-body">
-                <ol class="list-group">
-						<ul>
+                
 							<?php foreach ($data['books'] as $key) 
 							{	?>
 							<li><a href="<?php echo ASSET_PATH?>/main/item/<?php echo $key['material_id']?>">
 								<?php echo $key['name'];?></a>&nbsp;by&nbsp;<?php echo $key['author'];?></li>
 							<?php } ?>
-						</ul>
-				</ol>
+						
                 </div>
             </div>
 		</div>
