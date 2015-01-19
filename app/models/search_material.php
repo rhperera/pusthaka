@@ -11,7 +11,7 @@ class Search_material
 
     function simple_search($key)
     {
-        $query = $this->db->query("SELECT * FROM materials WHERE name LIKE '%".$key."%'");
+        $query = $this->db->query("SELECT * FROM materials WHERE name LIKE '%".$key."%' or tags LIKE '%".$key."%'");
         return $query->fetchAll();
     }
 
@@ -21,9 +21,10 @@ class Search_material
         return $query->fetchAll();
     }
 
-    function tag_search($key)
+    
+    function uploader_search($key)
     {
-        $query = $this->db->query("SELECT * FROM materials WHERE tags LIKE '%".$key."%'");
+        $query = $this->db->query("SELECT * FROM materials WHERE uploader_id LIKE '%".$key."%'");
         return $query->fetchAll();
     }
     

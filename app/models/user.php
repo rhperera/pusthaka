@@ -13,8 +13,10 @@ class User
 
     function login($user_name,$password)
     {
-        
-        $query = $this->db->query("SELECT * FROM users WHERE user_name='".$user_name."' AND password='".$password."' AND banned=0");
+
+        $key="abcdefg";
+        $new_password=md5($password.$key);
+        $query = $this->db->query("SELECT * FROM users WHERE user_name='".$user_name."' AND password='".$new_password."' AND banned=0");
         //$query = $this->db->get();
         return $query->fetchAll();
     }
@@ -55,8 +57,15 @@ class User
         $query = $this->db->query("SELECT password from users WHERE user_id=$user_id");
         $result = $query->fetchAll();
         $old = $result[0]['password'];
-        if($old==$old_password)
+
+        $old_password=md5($old_password."abcdefg");
+        
+
+        if($old_password==$old)
         {
+           
+            $new_password=md5($new_password."abcdefg");
+
             $query = $this->db->query("UPDATE users set password='".$new_password."' WHERE user_id=$user_id");
             $result = $query->fetchAll();
             $_SESSION["password_change"]="true";
