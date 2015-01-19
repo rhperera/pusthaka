@@ -1,36 +1,38 @@
-<!--The Container-->
-<!--The closing div tag is in the footer.php-->
 <style>
-    
+     #con
+    {
+        background:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
+
+    }
 </style>
 
+<div id="con">
 <div class="container">
+  
 
-    
-     </br></br></br>
- <div class="row row-centered">
-
- <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-dashboard"></i>My Table</a>
+                        <a href="<?php echo ASSET_PATH;?>/mytable"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/collections"><i class="fa fa-fw fa-table"></i>My Collections</a>
+                        <a href="<?php echo ASSET_PATH;?>/collections"><i class="fa fa-fw fa-table"></i> My Collections</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-search"></i>Browse</a>
+                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i>Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                    </li>                    
                     <li >
-                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i>Settings</a>
+                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i> Settings</a>
                     </li>
-                    <li>
-                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i>Upload</a>
-                    </li>
+
 
                 </ul>
             </div>
@@ -39,31 +41,43 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="margin-left:7.83%; margin-top:14.5%; left:0; top:0; width:18%; z-index:1000">
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/lpanel"><i class="fa fa-fw fa-dashboard"></i>Dashboard</a>
+                        <a href="<?php echo ASSET_PATH;?>/lpanel"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/usermanager"><i class="fa fa-fw fa-table"></i>User Manager</a>
+                        <a href="<?php echo ASSET_PATH;?>/usermanager"><i class="fa fa-fw fa-table"></i> User Manager</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-search"></i>Browse</a>
+                        <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i>Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
+                    <li>
+                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                    </li>                    
                     <li >
-                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i>Settings</a>
+                        <a href="<?php echo ASSET_PATH;?>/settings"><i class="fa fa-fw fa-edit"></i> Settings</a>
                     </li>
-                    <li>
-                        <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i>Upload</a>
-                    </li>
+
 
                 </ul>
             </div> <?php }?>
 
+                    <div class="col-lg-12" style="text-align: center;">
+                    <h1 class="page-header">Upload a File
+                        <small><?php echo $_SESSION['full_name'];?></small>
+                    </h1>
+                    </div>
 
-    <div class="col-md-3 col-centered" style="left: 69px;">
-        
-    </div>
+
+
+    <div class ="row">
+
+            <div class="col-md-3 col-centered" style="left: 69px;">
+                </br></br></br>
+            </div>
+
+
             <div class="col-md-5">
                 <form action="<?php echo ASSET_PATH;?>/uploads/do_upload" method="post" enctype="multipart/form-data">
                     <div class="control-group form-group">
@@ -72,6 +86,7 @@
                             <input type="text" class="form-control" name="ISBN" required data-validation-required-message="Please enter.">
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Title</label><span style="color:red"> *</span>
@@ -79,12 +94,14 @@
                             <p class="help-block"></p>
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Author</label><span style="color:red"> *</span>
                             <input type="text" class="form-control" name="author" required data-validation-required-message="Please enter.">
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Category</label><span style="color:red"> *</span>
@@ -113,6 +130,7 @@
                             <textarea rows="4" name="description" cols="100" class="form-control" id="description" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Add tags</label>
@@ -139,6 +157,7 @@
                             <input type="file" name="file" value="file"/>
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <input type="submit" name="submit" class="btn btn-primary" value="Upload" style="width: 458px;">
@@ -148,6 +167,7 @@
 
                 </form>
             </div>
+
         <div class="col-md-4" style="top: 30px">
             <?php
                 if(isset($_SESSION['save'])){
@@ -171,3 +191,5 @@
             <!-- Sidebar Column -->
 
         </div>
+
+

@@ -11,7 +11,7 @@
 
 <div id="con">
 
-<div class="container">
+<div class="container" style="height:100%;">
 
 
 
@@ -28,7 +28,7 @@
                         <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
@@ -54,7 +54,7 @@
                         <a href="<?php echo ASSET_PATH;?>/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
                     </li>
                     <li>
-                        <a href="<?php echo ASSET_PATH;?>/search/quick"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
+                        <a href="<?php echo ASSET_PATH;?>/search"><i class="fa fa-fw fa-search"></i> Advanced Search</a>
                     </li>
                     <li>
                         <a href="<?php echo ASSET_PATH;?>/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
@@ -68,7 +68,7 @@
             </div> <?php }?>
 
                     <div class="col-lg-12" style="text-align: center;">
-                    <h1 class="page-header">My Table
+                    <h1 class="page-header">Dashboard
                         <small><?php echo $_SESSION['full_name'];?></small>
                     </h1>
                     </div>

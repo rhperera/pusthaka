@@ -39,6 +39,7 @@ class Lpanel extends Controller
          $this->view('footer');
     }
 
+
     function authenticate($id)
     {
         $panel = $this->model('librarianpanel');
