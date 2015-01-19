@@ -1,5 +1,3 @@
-<link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
-
 <style>
      #con
     {

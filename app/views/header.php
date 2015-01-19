@@ -16,6 +16,9 @@
 <!-- Bootstrap Core CSS-->
 <link href="<?php echo ASSET_PATH;?>/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- sb admin -->
+<link href="<?php echo ASSET_PATH;?>/css/sb-admin.css" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="<?php echo ASSET_PATH;?>/css/modern-business.css" rel="stylesheet">
 
