@@ -26,7 +26,7 @@
 </style>
 
 <div id="con">
-<div class="container" style="height:100%;">
+<div class="container">
   
 
                 <?php  if(isset($_SESSION['user_name']) and $_SESSION['user_type']=='user') {?>
@@ -90,9 +90,6 @@
 
 
 
-            <div class="col-md-3">
-                </br></br></br>
-            </div>
 
 
     <!-- <div class="col-lg-4">
@@ -113,7 +110,7 @@
     foreach($data['quick_results'] as $row)
     {
     ?>
-        <div class="col-md-4">
+        <div class="col-md-4" style="left:25%;">
             <div class="panel panel-default">
                     <div class="panel-heading">
                             <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
