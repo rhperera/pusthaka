@@ -83,7 +83,7 @@
                             ?>
 
                   <div class="col-md-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <a href="<?php echo ASSET_PATH;?>/main/item/<?php echo $row['material_id'];?>"><h3 class="panel-title"><?php echo $row['name'];?></h3></a>
                         </div>

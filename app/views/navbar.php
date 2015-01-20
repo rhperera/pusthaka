@@ -99,7 +99,16 @@
                             </li>';
 
 
-                            echo '<li>
+                            echo '
+                            <li>
+                                <a href="';   echo ASSET_PATH;   echo '/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
+                            </li>
+
+                            <li>
+                                <a href="';   echo ASSET_PATH;   echo '/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                            </li>
+
+                            <li>
                                 <a href="';   echo ASSET_PATH;   echo '/users/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
                             </li>
 
