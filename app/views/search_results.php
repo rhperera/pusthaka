@@ -1,10 +1,10 @@
 <!-- Page Content -->
 <script>
   function do_search(){
-      var a = $('#search_box2').val();
+      var a = $('#search_box').val();
       if(a.length<3)
       {
-          $('#search_box2').css("color","red");
+          $('#search_box').css("color","red");
       }
       else
       {
