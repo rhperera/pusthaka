@@ -110,7 +110,7 @@
 
                     
                     <a  href="<?php echo ASSET_PATH; echo '/Lpanel/authenticate/'; echo $id;?>">Approve</i></a>
-                                 <a  href="javascript:drop(<?php echo $id;?>);" style="padding-left:10px;">Reject</i></a>
+                                 <a  href="<?php echo ASSET_PATH?>/lpanel/delete_material/<?php echo $id;?>" style="padding-left:10px;">Reject</i></a>
                     <a  href="<?php echo ASSET_PATH; echo '/Lpanel/review/'; echo $id;?>" style="padding-left:10px;">Review</a>
                 
 
