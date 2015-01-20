@@ -74,10 +74,29 @@
                     </h1>
                     </div>
 
+            <div class="col-md-12" style="margin-bottom:10px;">
+                        <div class="col-md-3">
+                </br></br></br>
+            </div>
+
+                <div class="col-md-2">
+                <img class="img-thumbnail" src="http://placehold.it/150x150" alt="">
+                </div>
+                <div class="col-md-4">
+                <h4>Name: <?php echo $_SESSION['full_name'];?></h4>
+                <h4>Email: </h4>
+                <h4>Registration Number: </h4>
+                </div>
+            </div>
+
+
+    <div class="col-md-12">
+
 
             <div class="col-md-3">
                 </br></br></br>
             </div>
+            <h3>Activites</h3>
 
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
@@ -129,4 +148,4 @@
                             </a>
                         </div>
                     </div>
-
+        </div>
