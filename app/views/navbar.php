@@ -45,7 +45,7 @@
 
         <div class="navbar-header">
 
-            <div class="col-md-3" style="position: fixed; left: 331px; width: 242px; margin-left: -225px; border: none; border-radius: 0; overflow-y: auto; background-color:#fff; -moz-box-shadow: 0 0 10px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000;" >
+            <div class="col-md-3" style="position: fixed; left: 331px; width: 242px; margin-left: -225px; border: none; border-radius: 0; overflow-y: auto; background-color:#fff; -moz-box-shadow: 0 0 10px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000; -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px;" >
             <a href="<?php
                                     if(isset($_SESSION['user_name']))
                                     {
@@ -75,26 +75,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-
-
-                
-
-
-                
-                <!-- Logout -->
+   <!-- Logout -->
                 <?php
                     # code...
                     if(isset($_SESSION['user_name']))
                     {
                         echo ' 
                             <li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> '; echo $_SESSION['full_name']; echo' <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-
-
-                                        <li>
-                                            <a href="';
+                            
+                                <a href="';
                                             
                                         if($_SESSION["user_type"]=='user')
                                         {
@@ -105,16 +94,8 @@
                                             echo ASSET_PATH; echo "/Lpanel";
                                         }
                                        
-                                            echo '"><i class="fa fa-fw fa-gear"></i>Dashboard</a>
-                                        </li>
+                                            echo '" ><i class="fa fa-user"></i> '; echo $_SESSION['full_name']; echo' </a>
 
-
-                                         <li>
-                                            <a href="'; echo ASSET_PATH; echo "/settings";
-                                        
-                                        echo '"><i class="fa fa-fw fa-user"></i>Settings</a>
-                                        </li>
-                                </ul>
                             </li>';
 
 

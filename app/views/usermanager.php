@@ -147,16 +147,62 @@ $( document ).ready(function() {
             <div class="col-md-3">
                 </br></br></br>
             </div>
+
+
+            <div class="col-md-4">
+                <input class="form-control" type="text" id="search_bar" placeholder="Search users"> 
+            </div>
+
+            <div class="col-md-4">   
+            </div>
+
+
+            <div class="col-md-3">
+                </br></br></br>
+            </div>
+
+            <div class="col-md-3">
+                </br></br></br>
+            </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="form-group">
+                        <h4>Current Users</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Reg Number</th>
+                                <th>Full Name</th>
+                                <th>User Name</th>
+                                    
+                            </tr>
+                        </thead>
+                        <tbody id="tab-window2">
+                                
+                        <tbody>
+                    </table>
+                    <div id="tab-window3"></div>
+                </div>
+            </div>
+        </div>
 		
         <div class="col-md-4">
 			<div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Black List</h3>
+                     <div class="form-group">
+                        <h4>Blacklisted Users</h4>
+                    </div>
+                    
                 </div>
                 
                 <div class="panel-body">
-                    <?php 
-                    	if(empty($data['banned_list'])){ echo "Empty";}else{?>
+                    
                     	<table class="table table-hover table-bordered">
                     		<thead>
                     			<tr>
@@ -167,6 +213,8 @@ $( document ).ready(function() {
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php 
+                        if(empty($data['banned_list'])){ echo "";}else{?>
                             <?php foreach($data['banned_list'] as $banned){ ?>      
                                 
                                     <tr>
@@ -183,29 +231,5 @@ $( document ).ready(function() {
 		</div>
 
 
-		<div class="col-md-4">
-			<div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="form-group">
-                        <input class="form-control" type="text" id="search_bar" placeholder="Search users">
-                    </div>
-                </div>
-                <div class="panel-body">
-                	<table class="table table-bordered table-hover table-striped">
-                    	<thead>
-                    		<tr>
-                                <th>Reg Number</th>
-                                <th>Full Name</th>
-                                <th>User Name</th>
-                                    
-                            </tr>
-                        </thead>
-                        <tbody id="tab-window2">
-                    			
-                    	<tbody>
-                    </table>
-                    <div id="tab-window3"></div>
-                </div>
-            </div>
-		</div>
+
 	</div>
