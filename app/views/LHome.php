@@ -80,12 +80,12 @@
             </div>
 
                 <div class="col-md-2">
-                <img class="img-thumbnail" src="http://placehold.it/150x150" alt="">
+                <img class="img-thumbnail" src="<?php echo ASSET_PATH;?>/images/librarian.png" alt="">
                 </div>
                 <div class="col-md-4">
                 <h4>Name: <?php echo $_SESSION['full_name'];?></h4>
-                <h4>Email: </h4>
-                <h4>Registration Number: </h4>
+                <h4>Email: <?php echo $_SESSION['email'];?></h4>
+                <h4>Registration Number: <?php echo $_SESSION['reg_number'];?></h4>
                 </div>
             </div>
 
