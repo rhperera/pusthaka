@@ -28,7 +28,6 @@ $( document ).ready(function() {
                         	'<tr>\
                                 <td>' + data['json'][j]['reg_number'] + '</td>\
                                 <td>' + data['json'][j]['full_name'] + '</td>\
-                                <td>' + data['json'][j]['user_name'] + '</td>\
                                 <td><a href="'+ base_url + '/ban_user/' + data['json'][j]['user_id'] + '">ban user</a></td>\
                             </tr>');	
                     }                   
@@ -179,7 +178,7 @@ $( document ).ready(function() {
                             <tr>
                                 <th>Reg Number</th>
                                 <th>Full Name</th>
-                                <th>User Name</th>
+                                
                                     
                             </tr>
                         </thead>
@@ -208,7 +207,7 @@ $( document ).ready(function() {
                     			<tr>
                                     <th>Reg Number</th>
                                     <th>Full Name</th>
-                                    <th>User Name</th>
+                                    
                                     
                                 </tr>
                             </thead>
@@ -220,7 +219,7 @@ $( document ).ready(function() {
                                     <tr>
                                         <td><?php echo $banned['reg_number'];?></td>
                                         <td><?php echo $banned['full_name'];?></td>
-                                        <td><?php echo $banned['user_name'];?></td>
+                                        
                                         <td><a href="<?php echo ASSET_PATH;?>/usermanager/unban_user/<?php echo $banned['user_id']; ?>">Authorize</a></td>
                                     </tr>
                                 <?php }}?>
