@@ -139,7 +139,7 @@
                
     </div>
 
-        <div class="col-md-4">
+        <!--<div class="col-md-4">
 
                 <h3>Change Home Page Text</h3>
                 <form name="sentMessage" action="" method="post" id="contactForm" novalidate="">
@@ -148,10 +148,10 @@
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
 
-                    <!-- For success/fail messages -->
+                    
                     <button type="submit" class="btn btn-default" style="padding: 6px 73px;">Save</button>
                 </form>
                 <br>
-         </div>
+         </div>-->
 
 </div>
