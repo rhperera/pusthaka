@@ -95,13 +95,13 @@
             </div>
 
 
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
             <div class="input-group">
                 <input type="text" class="form-control" id="search_box2">
                 <span class="input-group-btn">
                     <button class="btn btn-default" onclick="do_search()" type="button"><i class="fa fa-search"></i></button>
                 </span>
-            </div>
+            </div>-->
        
     <!-- /.row -->
     </br>
@@ -113,40 +113,50 @@
     foreach($data['quick_results'] as $row)
     {
     ?>
-        <div class="col-md-6 img-portfolio">
-            <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                            <a href="<?php echo ASSET_PATH?>posts/item/<?php echo $row['material_id']?>">
 
-            </a>
-            <h4>
-                <a href="<?php echo ASSET_PATH?>/main/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
-            </h4>
-            <p>by <?php echo $row['author']; ?></p>
+                            </a>
+                            <h4>
+                                <a href="<?php echo ASSET_PATH?>/main/item/<?php echo $row['material_id']?>"><?php echo $row['name'];?></a>
+                            </h4>
+                    </div>
+                        <div class="panel-body">
+                            <p>by <?php echo $row['author']; ?></p>
 
-            <?php if(isset($_SESSION['user_name']) and $_SESSION['user_type']=="librarian")
-                {  ?>
-            <a href="<?php echo ASSET_PATH;?>/Lpanel/review/<?php echo $row['material_id']; ?>">Review Book</a>
-            <?php }?>
-        </div>
+                            <?php if(isset($_SESSION['user_name']) and $_SESSION['user_type']=="librarian")
+                                {  ?>
+                            <a href="<?php echo ASSET_PATH;?>/Lpanel/review/<?php echo $row['material_id']; ?>">Review Book</a>
+                            <?php }?>
+                         </div>
+              
+                    </div>
+                  </div>
 
         <?php 
         if($i%2==0)
         { ?>
+    
     </div>
+
     <?php if($i==16)
     {   break;}
     else
     { ?>
-    <div class="row"><?php } } ?>
-    <?php
 
-        $i = $i+1;
+            <div class="row">
+                <?php } } ?>
+                <?php
 
-    } ?></div>
+                    $i = $i+1;
+
+                } ?>
+            </div>
 
      </div>
-    <div class="col-lg-4">
-            <a href="<?php echo ASSET_PATH; echo '/search'; ?>">Use the advance search</a>
-        </div>
+   
     </div>
     <!-- /.row -->
 
