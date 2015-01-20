@@ -15,7 +15,7 @@ class Search_material
         return $query->fetchAll();
     }
 
-    function author_search($key)
+   /* function author_search($key)
     {
         $query = $this->db->query("SELECT * FROM materials WHERE author LIKE '%".$key."%' and status=1");
         return $query->fetchAll();
@@ -26,26 +26,35 @@ class Search_material
     {
         $query = $this->db->query("SELECT * FROM materials WHERE uploader_id LIKE '%".$key."%' and status=1");
         return $query->fetchAll();
-    }
+    }*/
 
-    function full_search($title,$author,$username)
+    function full_search($title,$author)
     {
-        if($title==0)
+        if($title and $author)
         {
-            $title="";
+            $query=$this->db->query("SELECT * FROM materials WHERE name LIKE '%".$title."%' and author LIKE '%".$author."%'");
+            $result=$query->fetchAll();
+            return $result;
         }
-        if($author==0)
+       
+        elseif(!$title and $author)
         {
-            $author="";
-        }
-        if($username==0)
-        {
-            $username="";
+            $query=$this->db->query("SELECT * FROM materials WHERE author LIKE '%".$author."%'");
+            $result=$query->fetchAll();
+            return $result;
         }
 
-        $query=$this->db->query("SELECT * FROM materials WHERE name LIKE '%".$title."%' and author LIKE '%".$author."%' and uploader_id LIKE '%".$username."%'");
-        $result=$query->fetchAll();
-        return $result;
+        elseif($title and !$author)
+        {
+            $query=$this->db->query("SELECT * FROM materials WHERE name LIKE '%".$title."%'");
+            $result=$query->fetchAll();
+            return $result;
+        }
+        elseif(!$title and !$author)
+        {
+            
+            return false;
+        }
     }
     
 }

@@ -7,52 +7,52 @@
 
 
 
-$( document ).ready(function() {
+//$( document ).ready(function() {
     
 
 
-    $("#title").keyup(function(){
+    function call_ajax(){
         var t = $("#title").val();
         var a = $("#author").val();
         var u = $("#username").val();
 
         var base_url = window.location.origin + window.location.pathname;
 
+       //alert(base_url+'/advance_search');
+
         var data = {
-            "action": 'recent'
+            "title" : t,"author":a,"username":u
         };
         data = $(this).serialize() + "&" + $.param(data);
+
+        //alert(data);
         
         $.ajax({
 
             type: "POST",
             dataType: "json",
-            url: 'search/advance_search/'+t+'/'+a+'/'+u,//Relative or absolute path to response.php file
+            url: base_url+'/advance_search',//Relative or absolute path to response.php file
             data: data,
             success: function (data) {
                 
-                if (data['json'][0]) {
-                    $('#tab-window2').html("");
-                    $('#tab-window3').html("");
-                    for (var j = 0; j < data['json'].length; j++) {
-                        $('#tab-window2').append(
-                            '<tr>\
-                                <td>' + data['json'][j]['reg_number'] + '</td>\
-                                <td>' + data['json'][j]['full_name'] + '</td>\
-                                <td>' + data['json'][j]['user_name'] + '</td>\
-                                <td><a href="'+ base_url + '/ban_user/' + data['json'][j]['user_id'] + '">ban user</a></td>\
-                            </tr>');    
+                if (data[0]) {
+                    //$('#results').html("");
+                    $('#results').html("");
+                    for (var j = 0; j < data.length; j++) {
+                        $('#results').append(
+                            '<li>' + data[j]['name'] + ' by ' + data[j]['author'] + '</li>');    
                     }                   
                 }
                 else{
-                    $('#tab-window3').html("NO RESULTS");
-                    $('#tab-window2').html("");
+                    $('#results').html("NO RESULTS");
+                    
                 }              
             }
         });
+
         return false;
-    });
-});
+    }
+//});
 
 </script>
 
@@ -137,7 +137,8 @@ $( document ).ready(function() {
             </div>
 
             <div class="col-lg-4">
-                <h3>Sort search by</h3>
+                <h3>Sort search by
+                    </h3>
             </div>
 
             <div class="col-md-3">
@@ -157,9 +158,7 @@ $( document ).ready(function() {
                     <label>Title or Tag</label>
                     <div class="input-group">
                     <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" onclick="tog('title')" type="button"><i class="fa fa-check-square"></i></button>
-                    </span>
+                    
                   </div>
                     <p class="help-block"></p>
                 </div>
@@ -173,9 +172,7 @@ $( document ).ready(function() {
                     <label>Name of Author</label>
                     <div class="input-group">
                     <input type="text" id="author" class="form-control" name="name" required data-validation-required-message="Please enter.">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" onclick="tog('author')" type="button"><i class="fa fa-check-square"></i></button>
-                    </span>
+                    
                   </div>
                 </div>
             </div>
@@ -188,20 +185,19 @@ $( document ).ready(function() {
           <div class="col-lg-3" style="width: 23%;">
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>Uploaded User</label>
-                    <div class="input-group">
-                    <input type="text" id="username" class="form-control" name="name" required data-validation-required-message="Please enter.">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" onclick="tog('username')" type="button"><i class="fa fa-check-square"></i></button>
-                    </span>
-                  </div>
-                </div>
+                    <label></label>
+                     <div class="input-group">
+            <a href="javascript: call_ajax()"><button class="btn btn-default">Search</button></a>
+        </div>
+            </div>
             </div>
           </div>
+  </div>
 
-
-
-
-
-
+  <div class="row">
+    <div class="col-md-3" style="left: 69px;">
+    </div>
+    <div class="col-md-7">
+        <div id="results"><ul></ul></div>
+    </div>
   </div>
