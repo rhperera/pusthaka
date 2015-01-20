@@ -26,18 +26,20 @@
                 $('#tab-window').append('<div class="row');
                 for (var j = 0; j < data['json'].length; j++) {
                     $('#tab-window').append(
-                        '<div class="col-md-3">\
-                            <div class="media"> \
-                                <div class="media-body><h4 class="media-heading"><a href="item/' + data['json'][j]['material_id'] + '">' + data['json'][j]['name'] +
-                                '</a></h4>\
+                        '<div class="col-md-6">\
+                            <div class="panel panel-default">\
+                            <div class="panel-heading"><h4><a href="item/' + data['json'][j]['material_id'] + '">' + data['json'][j]['name'] +
+                                '</a></h4></div>\
+                                <div class="panel-body">\
                                     <p>By ' + data['json'][j]['author'] + '</p> \
+                                </div>\
                                 </div>\
                             </div>\
                         </div>');
 
 
                     if (i % 4 == 0) {
-                        $('#tab-window').append("</div><div class='row'>");
+                        $('#tab-window').append("</div><div class='row' >");
                     }
                     i = i + 1;
                 }
@@ -50,7 +52,7 @@
 
     function trigger_AtoZ() {
         var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "j", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        $('#tab-window').html('<button type="button" class="btn btn-lg btn-default">' + alphabet[0] + '</button>');
+        $('#tab-window').html('<button type="button" class="btn btn-lg btn-default" >' + alphabet[0] + '</button>');
         var i;
         for (i = 1; i < alphabet.length; i++) {
             $('#tab-window').append('<button type="button" class="btn btn-lg btn-default">' + alphabet[i] + '</button>');
@@ -96,11 +98,13 @@
                     $('#tab-window2').append('<div class="row');
                     for (var j = 0; j < data['json'].length; j++) {
                         $('#tab-window2').append(
-                        '<div class="col-md-3">\
-                            <div class="media"> \
-                                <div class="media-body><h4 class="media-heading"><a href="item/' + data['json'][j]['material_id'] + '">' + data['json'][j]['name'] +
-                                '</a></h4>\
+                    '<div class="col-md-6">\
+                            <div class="panel panel-default">\
+                            <div class="panel-heading"><h4><a href="item/' + data['json'][j]['material_id'] + '">' + data['json'][j]['name'] +
+                                '</a></h4></div>\
+                                <div class="panel-body">\
                                     <p>By ' + data['json'][j]['author'] + '</p> \
+                                </div>\
                                 </div>\
                             </div>\
                         </div>');
