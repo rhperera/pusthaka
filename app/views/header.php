@@ -12,7 +12,8 @@
 
 <link rel="shortcut icon" href="<?php echo ASSET_PATH;?>/images/icon.ico" type="image/icon" />
 
-<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<!-- Google Fonts -->
+<link href="http://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" type="text/css">
 
 <?php #echo link_tag('../assets/css/bootstrap.min.css'); ?>
 <!-- Bootstrap Core CSS-->
@@ -37,7 +38,7 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
+<script src="<?php echo ASSET_PATH;?>/js/bootstrap.js"></script>
 
 </head>
 <body style="background-color: rgb(248, 248, 248);">

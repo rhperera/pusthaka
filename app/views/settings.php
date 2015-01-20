@@ -80,7 +80,7 @@
     
     <div class="col-md-4">
 
-                <h3>Change password</h3>
+                <h3>Change Password</h3>
                 <form name="sentMessage" action="<?php echo ASSET_PATH;?>/settings/update_password" method="post" id="contactForm" novalidate="">
                     <div class="control-group form-group">
                         <div class="controls">

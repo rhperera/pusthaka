@@ -96,7 +96,7 @@
             <div class="col-md-3">
                 </br></br></br>
             </div>
-            <h3>Activites</h3>
+            <div class="col-md-6"><h3>Activites</h3></div>
 
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
