@@ -40,7 +40,7 @@
                     $('#results').html("");
                     for (var j = 0; j < data.length; j++) {
                         $('#results').append(
-                            '<li>' + data[j]['name'] + ' by ' + data[j]['author'] + '</li>');    
+                '<a href="main/item/'+data[j]['material_id']+'"><li>' + data[j]['name'] + ' by ' + data[j]['author'] + '</a></li>');    
                     }                   
                 }
                 else{
