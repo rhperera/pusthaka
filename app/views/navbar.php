@@ -16,21 +16,7 @@
     }
 
 
-    $(document).ready(function(){
-    //Handles menu drop down
-    $('.dropdown-menu').find('form').click(function (e) {
-        e.stopPropagation();
-        });
-    });
 
-
-    
-    function scroll() {
-    $('html, body').animate({
-        scrollTop: $("#sign").offset().top
-    }, 600);
-
-}
 
   
 </script>
@@ -126,12 +112,6 @@
                 ?>
 
 
-                <!-- <li>
-                    <a href="#" onclick="showSearch()" style="color:#ffffff">Search</a>
-                </li> -->
-
-
-                <!-- search -->
  
 
     
@@ -140,83 +120,20 @@
 
                            <form action="<?php echo ASSET_PATH; ?>/users/login" method="post" class="navbar-form navbar-left" >
                             <div class="form-group">
-                                <a href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
 
-                                    <!-- <?php
-                                        if($data['error']==1)
-                                        {
-                                            echo '<p style="color: red;">username / password did not match</p>';
-                                        }
-                                    ?> -->
                                 <input type="text" class="form-control" placeholder="Username" required data-validation-required-message="Please enter your name." id="name" name="user_name">
                                 <input type="password" class="form-control" placeholder="Password" required data-validation-required-message="Please enter your name." id="password" name="password">
                       
                             </div>
                                 <input type="submit" class="btn btn-primary" placeholder="sad" value="Sign in" align="center">
+                                <a class="btn btn-primary" href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
                             </form>
 
 
                     <?php } ?>
 
 
-<!--raveen
 
-                
-                <?php
-                if(isset($_SESSION['user_name']))
-                    {
-                    echo ' <li>
-                               <a href="'; echo ASSET_PATH; echo '/mytable';    
-                               echo '" style="color:#000">'; echo $_SESSION['full_name'];
-                               echo '</a>
-                               </li>';
-                }
-                
-                ?>
-                
-                 <li>
-                    <a href="#" onclick="showSearch()" style="color:#000">Search</a>
-                </li>
-
-                <?php
-
-                    # code...
-
-                    if(isset($_SESSION['user_name']))
-                    {   
-                        echo ' <li>
-                                   <a style="color:#000" href="';   echo ASSET_PATH;   echo '/users/logout">Logout</a></li>';
-
-                      
-
-                    }
-                    else
-                    {
-                        echo ' <li>
-                                   <a style="color:#000" href="javascript: scroll()" >Login</a></li>';
-
-                    }
-
-                ?>
-
-                -->
-
-
-               
-
-                <!--
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-                        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                            <form method="post" action="login" accept-charset="UTF-8">
-                                <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
-                                <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
-                                <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
-                                <label class="string optional" for="user_remember_me"> Remember me</label>
-                                <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
-                            </form>
-                        </div>
-                </li>-->
                 
 
             </ul>
