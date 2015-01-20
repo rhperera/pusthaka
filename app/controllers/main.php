@@ -51,6 +51,7 @@ class Main extends Controller
 
                 if( $data['item'][0]['privacy']==0 or $data['permission'] or $_SESSION['user_type']=='librarian')
                 { 
+                    $_SESSION['pdf_path']=$data['item'][0]['path'];
                     $this->view('header',$data);
                     $this->view('navbar',$data);
                     $this->view('item_view',$data);

@@ -46,7 +46,7 @@ class MyTable extends Controller
 
       if(isset($_SESSION['user_name']) and $_SESSION['user_id']==$user_id)
         {
-
+              $_SESSION['pdf_path']=$data['material'][0]['path'];
               $this->view('header');
               $this->view('navbar');
               $this->view('review',$data);

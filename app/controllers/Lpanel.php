@@ -75,7 +75,7 @@ class Lpanel extends Controller
       $data['categories']=$category->get_categories();
       $data['category'] = $category->get_category_by_material($material_id);
 
-
+      $_SESSION['pdf_path']=$data['material'][0]['path'];
 
 
 

@@ -24,7 +24,7 @@
 
 window.onload = function (){
 
-    var success = new PDFObject({ url: "<?php echo ASSET_PATH.$data['material'][0]['path']?>.pdf" }).embed("pdf");
+    var success = new PDFObject({ url: "<?php echo ASSET_PATH?>/home" }).embed("pdf");
     
 };
 
@@ -164,7 +164,7 @@ window.onload = function (){
             <!--the book pdf view-->
             <div class="col-md-8">
                 <div id="pdf">
-                    <object data="<?php echo $data['material'][0]['path']?>" type="application/pdf" width="100%" height="600%"></object>
+                    <object data="" type="application/pdf" width="100%" height="600%"></object>
                 </div>
 
             </div>
