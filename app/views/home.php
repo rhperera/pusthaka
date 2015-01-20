@@ -14,17 +14,17 @@
  
 }
 .carousel .one {
-    background: url('<?php echo ASSET_PATH;?>/images/slider.jpg');
-    background-size: cover;
-    -moz-background-size: cover;
-}
-.carousel .two {
     background: url('<?php echo ASSET_PATH;?>/images/slider-1.jpg');
     background-size: cover;
     -moz-background-size: cover;
 }
+.carousel .two {
+    background: url('<?php echo ASSET_PATH;?>/images/slider-2.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
 .carousel .three {
-    background: url('<?php echo ASSET_PATH;?>/images/slider.jpg');
+    background: url('<?php echo ASSET_PATH;?>/images/slider-3.jpg');
     background-size: cover;
     -moz-background-size: cover;
 }
@@ -38,7 +38,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.carousel').carousel({interval: 7000});
+    $('.carousel').carousel({interval: 4000});
   });
 </script>
 
