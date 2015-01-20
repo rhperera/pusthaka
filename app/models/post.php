@@ -14,6 +14,13 @@ class Post
         $this->db = $db;
     }
 
+    function get_all()
+    {
+        $query = $this->db->query("SELECT COUNT(material_id) as mat_count from materials");
+        $return = $query->fetchAll();
+        return $return;
+    }
+
     function get_materials($num)
     {
         $query = $this->db->query("

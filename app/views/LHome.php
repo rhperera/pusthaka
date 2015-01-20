@@ -103,7 +103,7 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="huge"><?php echo $data['all_users'][0]['user_count']; ?></div>
+                                        <div class="huge"><?php echo $data['books'][0]['mat_count']; ?></div>
                                         <div>Total Books</div>
                                     </div>
                                     <div class="col-xs-6 text-right">
