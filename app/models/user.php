@@ -107,6 +107,7 @@ class User
         $result=$query->fetchAll();
         if($result[0])
         {
+            $user_id = $result[0]['user_id'];
             $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
             $pass = array(); //remember to declare $pass as an array
             $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -121,7 +122,7 @@ class User
             $mail = mail($email, "Password Reset - UCSC Digital Library", "Your new password is ".$password,"dl@ucsc.lk");
             if($mail)
             {
-                $query = $this->db->query("UPDATE users set password='".$new_password."' email='".$email."'");
+                $query = $this->db->query("UPDATE users set password='".$new_password."' where email='".$email."'");
                 $_SESSION['mail_sent']="true";
                 return $query;
             }
