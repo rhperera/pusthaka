@@ -195,7 +195,7 @@ $( document ).ready(function() {
 			<div class="panel panel-default">
                 <div class="panel-heading">
                      <div class="form-group">
-                        <h4>Blacklisted Users</h4>
+                        <h4>Banned Users</h4>
                     </div>
                     
                 </div>

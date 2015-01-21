@@ -37,9 +37,9 @@
                 
                 if (data[0]) {
                     //$('#results').html("");
-                    $('#results').html("");
+                    $('.panel-body').html("");
                     for (var j = 0; j < data.length; j++) {
-                        $('#results').append(
+                        $('.panel-body').append(
                 '<a href="main/item/'+data[j]['material_id']+'"><li>' + data[j]['name'] + ' by ' + data[j]['author'] + '</a></li>');    
                     }                   
                 }
@@ -148,7 +148,7 @@
 
   <div class="row">
 
-            <div class="col-md-3" style="left: 69px;">
+            <div class="col-md-3">
                 
             </div>
 
@@ -156,10 +156,10 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label>Title or Tag</label>
-                    <div class="input-group">
+                    
                     <input type="text" id="title" class="form-control" name="name" required data-validation-required-message="Please enter.">
                     
-                  </div>
+                  
                     <p class="help-block"></p>
                 </div>
             </div>
@@ -170,34 +170,45 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label>Name of Author</label>
-                    <div class="input-group">
+                    
                     <input type="text" id="author" class="form-control" name="name" required data-validation-required-message="Please enter.">
                     
-                  </div>
+                  
                 </div>
             </div>
           </div>
 
-            <div class="col-md-3">
-                
-            </div>
+        
 
           <div class="col-lg-3" style="width: 23%;">
             <div class="control-group form-group">
                 <div class="controls">
                     <label></label>
                      <div class="input-group">
-            <a href="javascript: call_ajax()"><button class="btn btn-default">Search</button></a>
-        </div>
+                         <a href="javascript: call_ajax()"><button class="btn btn-default">Search</button></a>
+                    </div>
             </div>
             </div>
           </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3" style="left: 69px;">
-    </div>
-    <div class="col-md-7">
-        <div id="results"><ul></ul></div>
-    </div>
+
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search Results</h3>
+                </div>
+                
+                <div class="panel-body">
+
+
+                </div>
+            </div>
+        </div>
+
+
   </div>

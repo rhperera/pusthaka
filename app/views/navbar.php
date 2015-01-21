@@ -126,7 +126,7 @@
                       
                             </div>
                                 <input type="submit" class="btn btn-primary" placeholder="sad" value="Sign in" align="center">
-                                <a class="btn btn-primary" href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
+                                <a class="btn btn-warning" href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
                             </form>
 
 

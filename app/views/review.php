@@ -3,7 +3,7 @@
 
 #pdf {
     width: 700px;
-    height: 600px;
+    height: 800px;
     margin: 2em auto;
    
 }
@@ -30,14 +30,39 @@ window.onload = function (){
 
 </script>
 
+<style>
+     #con
+    {
+        background-image:url('<?php echo ASSET_PATH;?>/images/slider.jpg'); 
+        background-size: cover;
+
+        height:100%;
+        width:100%;
+    }
+</style>
+
+<div id="con">
+
 <div class="container">
 
     <div class="container">
+                         <div class="col-lg-12" style="text-align: center;">
+                    <h1 class="page-header">Review
+                        <small><?php echo $_SESSION['full_name'];?></small>
+                    </h1>
+                    </div>
 </br></br></br>
  <div class="row row-centered">
 
+
+
     <div class="col-md-4 col-centered">
-        <h1 style="margin-top: 119px; left: 69px;">Review Book</h1></br>
+
+                <br><br><br>
+                <h4>Uploader Details</h4>
+                <ul>    <li><b>Name :</b><?php echo " ".$data['user']['full_name']?></li>
+                    <li><b>Registration number :</b><?php echo " ".$data['user']['reg_number']?></li>
+                </ul><br>
 
             
                 <form action="<?php echo ASSET_PATH;?>/uploads/do_update/<?php echo $data['material'][0]['material_id'] ?>" method="post" enctype="multipart/form-data">
@@ -134,14 +159,13 @@ window.onload = function (){
 
                     <div id="success"></div>
                      
-                    <div class="control-group form-group">
+                    <div class="control-group form-group" style="width:365px;">
                         <div class="controls">
                             <?php if($_SESSION['user_type']=='librarian')
                             {
                             ?>
                             <input type="submit" name="submit" class="btn btn-default" value="Update and authenticate">
-                            <a style="padding-left:37px; color:red;" 
-                            href="<?php echo ASSET_PATH;?>/lpanel/delete_material/<?php echo $data['material'][0]['material_id'] ?>">Remove material and notify</a>
+                            <a class="btn btn-danger" href="<?php echo ASSET_PATH;?>/lpanel/delete_material/<?php echo $data['material'][0]['material_id'] ?>">Remove material and notify</a>
                             <?php }  
                             else{        ?>
                             <input type="submit" name="submit" class="btn btn-default" value="Update">
@@ -155,16 +179,13 @@ window.onload = function (){
 
                 </form>
 
-                <ul><h4>Uploader Details</h4><br>
-                    <li><b>Name :</b><?php echo " ".$data['user']['full_name']?></li>
-                    <li><b>Registration number :</b><?php echo " ".$data['user']['reg_number']?></li>
-                </ul>
+
             </div>
 
             <!--the book pdf view-->
             <div class="col-md-8">
                 <div id="pdf">
-                    <object data="" type="application/pdf" width="100%" height="600%"></object>
+                    <object data="<?php echo $data['material'][0]['path']?>" type="application/pdf" width="100%" height="600%"></object>
                 </div>
 
             </div>
