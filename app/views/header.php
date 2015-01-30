@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>UCSC Digital Library</title>
+<title><?php echo $GLOBALS['lang']['title']; ?></title>
 
 <link rel="shortcut icon" href="<?php echo ASSET_PATH;?>/images/icon.ico" type="image/icon" />
 

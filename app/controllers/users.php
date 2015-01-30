@@ -58,5 +58,60 @@ class Users extends Controller
         header("Location: ".ASSET_PATH."/main");
     }
 
+    function add_user()
+    {
+        if(isset($_SESSION['user_name']))
+        {
+            if($_SESSION['user_type']=='librarian' or $_SESSION['user_type']=='admin')
+            {
+                $user_name  = $_POST['user_name'];
+                $email      = $_POST['email'];
+                $password   =$_POST['password'];
+                $again_password=$_POST['again_password'];
+                $user_type  ='user';
+                $full_name  =$_POST['full_name'];
+                $reg_number =$_POST['reg_number'];
+                $batch_year =$_POST['batch_year'];
+
+                if($password==$again_password)
+                {
+                    if($user_name and $email and $password and $full_name and $reg_number and $batch_year)
+                    {
+                        $user = $this->model('user');
+                        $result = $user->register_user($user_name,$email,$password,$user_type,$full_name,$reg_number,$batch_year);
+                        if($result)
+                            {
+                                $_SESSION['register_user']='success';
+                                header("Location: ".ASSET_PATH."/settings");
+                            }
+                        else
+                            {
+                                $_SESSION['register_user']='unsuccess';
+                                header("Location: ".ASSET_PATH."/settings");
+                            }
+                    }
+                    else
+                    {
+                        $_SESSION['register_user']='fill_all';
+                        header("Location: ".ASSET_PATH."/settings");
+                    }   
+                }
+                else
+                {
+                    $_SESSION['register_user']='wrong_password';
+                    header("Location: ".ASSET_PATH."/settings");
+                }
+            }
+            else
+            {
+                header("Location: ".ASSET_PATH."/main");
+            }
+    }
+    else
+    {
+        header("Location: ".ASSET_PATH."/main");
+    }
+
     
+    }
 }

@@ -69,7 +69,7 @@
 
 
                     <div class="col-lg-12" style="text-align: center;">
-                    <h1 class="page-header">Welcome
+                    <h1 class="page-header"><?php echo $GLOBALS['lang']['welcome'];?>
                         <small><?php echo $_SESSION['full_name'];?></small>
                     </h1>
                     </div>
@@ -83,7 +83,7 @@
                 <img class="img-thumbnail" src="<?php echo ASSET_PATH;?>/images/librarian.png" alt="">
                 </div>
                 <div class="col-md-4">
-                <h4>Name: <?php echo $_SESSION['full_name'];?></h4>
+                <h4><?php echo $GLOBALS['lang']['name'];?>: <?php echo $_SESSION['full_name'];?></h4>
                 <h4>Email: <?php echo $_SESSION['email'];?></h4>
                 
                 </div>

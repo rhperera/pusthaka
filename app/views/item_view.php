@@ -94,10 +94,6 @@ window.onload = function (){
 
     </div>
     <!-- /.row -->
-    
-
-
-    >
 
 
 

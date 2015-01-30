@@ -31,8 +31,8 @@
 
         <div class="navbar-header">
 
-            <div class="col-md-3" style="position: fixed; left: 331px; width: 242px; margin-left: -225px; border: none; border-radius: 0; overflow-y: auto; background-color:#fff; -moz-box-shadow: 0 0 10px 0 #000; -webkit-box-shadow: 0 0 10px 0 #000; -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px;" >
-            <a href="<?php
+            
+            <div class="navbar-brand"><a href="<?php
                                     if(isset($_SESSION['user_name']))
                                     {
                                         if($_SESSION["user_type"]=='user')
@@ -52,11 +52,8 @@
                                     {
                                         echo ASSET_PATH;
                                     }
-                                        ?>">
-            <img src="<?php echo ASSET_PATH;?>/images/logo.png" ></a>
+                                        ?>"><?php echo $GLOBALS['lang']['nav_header'];?></a>
             </div>
-
-
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -87,23 +84,23 @@
 
                             echo '
                             <li>
-                                <a href="';   echo ASSET_PATH;   echo '/main/browse"><i class="fa fa-fw fa-file"></i> Browse</a>
+                                <a href="';   echo ASSET_PATH;   echo '/main/browse"><i class="fa fa-fw fa-file"></i>'; echo $GLOBALS['lang']['browse']; echo '</a>
                             </li>
 
                             <li>
-                                <a href="';   echo ASSET_PATH;   echo '/uploads"><i class="fa fa-fw fa-upload"></i> Upload</a>
+                                <a href="';   echo ASSET_PATH;   echo '/uploads"><i class="fa fa-fw fa-upload"></i>'; echo $GLOBALS['lang']['upload']; echo '</a>
                             </li>
 
                             <li>
-                                <a href="';   echo ASSET_PATH;   echo '/users/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+                                <a href="';   echo ASSET_PATH;   echo '/users/logout"><i class="fa fa-fw fa-power-off"></i>'; echo $GLOBALS['lang']['sign-out']; echo '</a>
                             </li>
 
                             <li>
                                 <div class="navbar-form navbar-left" role="search">
                                       <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search" id="search_box" >
+                                        <input type="text" class="form-control" placeholder="'; echo $GLOBALS['lang']['search']; echo '" id="search_box" >
                                       </div>
-                                  <button onclick="do_search()" class="btn btn-default" >Search</button>
+                                  <button onclick="do_search()" class="btn btn-default" >'; echo $GLOBALS['lang']['search']; echo '</button>
                                 </div>
                             </li>';
 
@@ -125,8 +122,8 @@
                                 <input type="password" class="form-control" placeholder="Password" required data-validation-required-message="Please enter your name." id="password" name="password">
                       
                             </div>
-                                <input type="submit" class="btn btn-primary" placeholder="sad" value="Sign in" align="center">
-                                <a class="btn btn-warning" href="<?php echo ASSET_PATH; ?>/reset_password">Forgot password</a>
+                                <input type="submit" class="btn btn-primary" placeholder="sad" value="<?php echo $GLOBALS['lang']['sign-in'];?>" align="center">
+                                <a class="btn btn-warning" href="<?php echo ASSET_PATH; ?>/reset_password"><?php echo $GLOBALS['lang']['forgot_password'];?></a>
                             </form>
 
 
@@ -155,12 +152,7 @@
 
 
     <!--Search search -->
-    <div id="search" style="display:none">
-      <a class="btn btn-default" onclick="do_search()" type="button" style="position:fixed; right:3px; top:50px; border-radius:5px; border:2px solid;">
-      <i class="fa fa-search"></i>
-      </a>
-      <input type="text" id="search_box" class="form-control" style="width:230px; position:fixed; right:42px; top:50px; border-radius:5px; border:2px solid; height:36px; font-size:17px"/>
-      </div>
+   
       
     <style>
                 #search::-webkit-input-placeholder { font-style: italic; }

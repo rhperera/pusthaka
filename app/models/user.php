@@ -140,5 +140,20 @@ class User
         }
     }
 
+    function register_user($user_name,$email,$password,$user_type,$full_name,$reg_number,$batch_year)
+    {
+        if(isset($_SESSION['user_name']))
+        {
+            if($_SESSION['user_type']=='librarian' or $_SESSION['user_type']=='admin')
+            {
+                $password=md5($password."abcdefg");
+                $query=$this->db->query("INSERT INTO users VALUES(
+                    '','".$user_name."','".$email."','".$password."','".$user_type."',
+                    '".$full_name."','".$reg_number."',0,'".$batch_year."')");
+                return $query;
+            }
+        }
+    }
+
   
 }

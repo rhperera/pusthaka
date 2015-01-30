@@ -210,12 +210,10 @@
 
 
 
-            <div class="col-md-3">
-                </br></br></br>
-            </div>
+     
 
 
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
                 <ul id="myTab" class="nav nav-tabs nav-justified">
                     <li class=""><a onclick="trigger_recent('recent')" href="#tab-window" data-toggle="tab">Recent Books</a>
@@ -229,7 +227,7 @@
                     <div id="myTabContent" class="tab-content">
                         <br>
                         <div class="tab-pane fade active in" id="tab-window">
-                            <h1>Browse The Library</h1>
+                            
                             
                         </div>
                     </div>

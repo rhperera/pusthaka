@@ -74,13 +74,38 @@
 
 
 
-            <div class="col-md-3">
-                </br></br></br>
-            </div>
+   
     
-    <div class="col-md-4">
+    <div class="col-md-3">
 
                 <h3>Change Password</h3>
+                <span> <?php 
+
+                if(isset($_SESSION['password_change']))
+                {
+                    
+                    if($_SESSION['password_change']=="true")
+                        {       ?>
+                            
+                                <p style="color:blue">Successfully changed</p>
+                            
+                <?php   }elseif ($_SESSION['password_change']=="false") { ?>
+                    
+                        <p style="color:red">Wrong password</p>
+                    
+                <?php 
+
+                }elseif ($_SESSION['password_change']=="missmatch") { ?>
+                    
+                        <p style="color:red">Passwords do not match</p>
+                    
+                <?php }
+
+                unset($_SESSION['password_change']);
+
+
+
+            }    ?></span>
                 <form name="sentMessage" action="<?php echo ASSET_PATH;?>/settings/update_password" method="post" id="contactForm" novalidate="">
                     <div class="control-group form-group">
                         <div class="controls">
@@ -109,49 +134,102 @@
                 </form>
                 <br>
 
-                <?php 
-
-                if(isset($_SESSION['password_change']))
-                {
-                    
-                    if($_SESSION['password_change']=="true")
-                        {       ?>
-                            <div class="alert alert-success">
-                                Successfully changed
-                            </div>
-                <?php   }elseif ($_SESSION['password_change']=="false") { ?>
-                    <div class="alert alert-danger">
-                        Wrong password
-                    </div>
-                <?php 
-
-                }elseif ($_SESSION['password_change']=="missmatch") { ?>
-                    <div class="alert alert-danger">
-                        Passwords do not match
-                    </div>
-                <?php }
-
-                unset($_SESSION['password_change']);
-
-
-
-            }    ?>
+               
                
     </div>
 
-        <!--<div class="col-md-4">
+    <div class="col-md-4">
 
-                <h3>Change Home Page Text</h3>
-                <form name="sentMessage" action="" method="post" id="contactForm" novalidate="">
-                            <div class="form-group">
-                                <label>Enter New Text</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
+                <h3>Add user</h3>
+                <span> <?php 
 
+                if(isset($_SESSION['register_user']))
+                {
                     
-                    <button type="submit" class="btn btn-default" style="padding: 6px 73px;">Save</button>
-                </form>
-                <br>
-         </div>-->
+                    if($_SESSION['register_user']=="success")
+                        {       ?>
+                            
+                                <p style="color:blue">Successfully added</p>
+                            
+                <?php   }elseif ($_SESSION['register_user']=="unsuccess") { ?>
+                    
+                        <p style="color:red">Error in adding. Check again</p>
+                    
+                <?php 
 
+                }elseif ($_SESSION['register_user']=="wrong_password") { ?>
+                    
+                        <p style="color:red">Passwords do not match</p>
+                <?php
+                }elseif ($_SESSION['register_user']=="fill_all") { ?>
+                    
+                        <p style="color:red">Please fill all fields</p>
+                    
+                <?php }
+
+                unset($_SESSION['register_user']);
+
+
+
+            }    ?></span>
+                <form name="sentMessage" action="<?php echo ASSET_PATH;?>/users/add_user" method="post" id="contactForm" novalidate="">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" name="user_name" required="" data-validation-required-message="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" required="" data-validation-required-message="">
+                        <div class="help-block"></div></div>
+                    </div>
+
+                     <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Renter password</label>
+                            <input type="password" class="form-control" name="again_password" required="" data-validation-required-message="">
+                        <div class="help-block"></div></div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" required="" data-validation-required-message="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" name="full_name" required="" data-validation-required-message="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Registration number</label>
+                            <input type="text" class="form-control" name="reg_number" required="" data-validation-required-message="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Batch year</label>
+                            <input type="text" class="form-control" name="batch_year" required="" data-validation-required-message="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-default" style="padding: 6px 73px;">Add User</button>
+                </form>
+            </div>
 </div>

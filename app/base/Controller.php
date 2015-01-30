@@ -11,7 +11,7 @@ class Controller
 
     public function getDb()
     {
-        return new PDO('mysql:host=127.0.0.1;dbname=digital-library','root','');
+        return new PDO('mysql:host=127.0.0.1;dbname=pusthaka-db','root','');
     }
 
     protected function model($model)

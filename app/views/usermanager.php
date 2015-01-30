@@ -28,7 +28,7 @@ $( document ).ready(function() {
                         	'<tr>\
                                 <td>' + data['json'][j]['reg_number'] + '</td>\
                                 <td>' + data['json'][j]['full_name'] + '</td>\
-                                <td><a href="'+ base_url + '/ban_user/' + data['json'][j]['user_id'] + '">ban user</a></td>\
+                                <td><a href="'+ base_url + '/ban_user/' + data['json'][j]['user_id'] + '">ban</a></td>\
                             </tr>');	
                     }                   
                 }
@@ -137,16 +137,11 @@ $( document ).ready(function() {
                     </h1>
                     </div>
 
+<div class="row">
 
-
-
-
-
-
-            <div class="col-md-3">
-                </br></br></br>
+            <div class="col-md-4">
+                
             </div>
-
 
             <div class="col-md-4">
                 <input class="form-control" type="text" id="search_bar" placeholder="Search users"> 
@@ -156,16 +151,12 @@ $( document ).ready(function() {
             </div>
 
 
-            <div class="col-md-3">
-                </br></br></br>
-            </div>
+           </br></br></br>
+</div>
 
-            <div class="col-md-3">
-                </br></br></br>
-            </div>
+<div class="row">
 
-
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="form-group">
@@ -191,7 +182,7 @@ $( document ).ready(function() {
             </div>
         </div>
 		
-        <div class="col-md-4">
+        <div class="col-md-6">
 			<div class="panel panel-default">
                 <div class="panel-heading">
                      <div class="form-group">
@@ -228,6 +219,7 @@ $( document ).ready(function() {
                 </div>
             </div>
 		</div>
+        </div>
 
 
 
